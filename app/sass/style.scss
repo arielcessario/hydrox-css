@@ -1,0 +1,544 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "compass";
+
+body, html {
+  //overflow: hidden;
+}
+
+body {
+  font: 100% / 1.5 Arial;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#group1 {
+
+  //background: linear-gradient(to right,
+  //        #e3312d 0px, #ffef26 1000px,
+  //        #ffef26 1001px, #e3312d 2000px,
+  //        #e3312d 2001px, #ffefff 3000px,
+  //        #ffefff 3001px, #04002a 4000px,
+  //        #04002a 4001px, #A8FF94 5000px,
+  //        #A8FF94 5001px, #000700 6000px,
+  //        #000700 6001px, #FFEF26 7000px,
+  //        #FFEF26 7001px, #E3312D 8000px,
+  //        #E3312D 8001px, #FFEF26 9000px,
+  //        #FFEF26 9001px, #00E9C5 10000px,
+  //        #00E9C5 10001px, #2A2300 11000px);
+  min-width: 11000px;
+
+}
+
+#secciones {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: row;
+  max-width: 11000px;
+
+  @media (max-width: 700px) {
+    //max-width: 100%;
+  }
+}
+
+#seccion-01 {
+
+}
+
+#seccion-02 {
+
+  //margin-left: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#seccion-03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-05 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-06 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-07 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-08 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-09 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-13 {
+  background-color: #000700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#seccion-01-container,
+#seccion-02-container,
+#seccion-03-container,
+#seccion-04-container,
+#seccion-05-container,
+#seccion-06-container,
+#seccion-07-container,
+#seccion-08-container,
+#seccion-09-container,
+#seccion-10-container,
+#seccion-11-container,
+#seccion-12-container,
+#seccion-13-container {
+  position: relative;
+  max-width: 800px;
+  width: 80%;
+  max-height: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#seccion-02-container,
+#seccion-03-container,
+#seccion-04-container,
+#seccion-05-container,
+#seccion-06-container,
+#seccion-07-container,
+#seccion-08-container,
+#seccion-09-container,
+#seccion-10-container,
+#seccion-11-container,
+#seccion-12-container,
+#seccion-13-container {
+  @media (max-width: 700px) {
+    display: inline;
+  }
+}
+
+.left-container,
+.right-container,
+.upper-container,
+.bottom-container {
+  position: static;
+  z-index: 100;
+}
+
+.left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    @media (max-width: 700px) and (min-width: 400px) {
+      max-width: 400px;
+    }
+
+    @media (max-width: 399px) {
+      max-width: 360px;
+    }
+  }
+}
+
+.right-container {
+  @media (max-width: 700px) {
+    position: absolute;
+    width: 360px;
+    max-width: 360px;
+    margin-left: -360px;
+  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  max-height: 300px;
+  min-height: 300px;
+
+}
+
+.upper-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.s-hidden {
+}
+
+.titulo {
+  //position: absolute;
+  //top: 10%;
+  //left: 70%;
+  font-size: 42px;
+  font-weight: bold;
+  position: static;
+}
+
+.sub-titulo {
+
+  //position: absolute;
+  //top: 30%;
+  //left: 70%;
+  font-size: 33px;
+  position: static;
+
+}
+
+.detalle {
+  //position: absolute;
+  //top: 45%;
+  //left: 70%;
+  margin-top: 30px;
+  min-height: 150px;
+  position: static;
+}
+
+.imagen-main {
+  //position: absolute;
+  //top: 5%;
+  //left: 0;
+  position: static;
+
+}
+
+.thumbs {
+  //position: absolute;
+  //top: 75%;
+  //left: 70%;
+  pointer-events: all;
+
+}
+
+#seccion-02-imagen-main.ng-enter,
+#seccion-03-imagen-main.ng-enter,
+#seccion-04-imagen-main.ng-enter,
+#seccion-05-imagen-main.ng-enter,
+#seccion-06-imagen-main.ng-enter,
+#seccion-07-imagen-main.ng-enter,
+#seccion-08-imagen-main.ng-enter,
+#seccion-09-imagen-main.ng-enter,
+#seccion-10-imagen-main.ng-enter,
+#seccion-11-imagen-main.ng-enter,
+#seccion-12-imagen-main.ng-enter,
+#seccion-13-imagen-main.ng-enter {
+  -webkit-animation: titulo-enter 0.8s !important;
+  -moz-animation: titulo-enter 0.8s !important;
+  -ms-animation: titulo-enter 0.8s !important;
+  -o-animation: titulo-enter 0.8s !important;
+  animation: titulo-enter 0.8s !important;
+
+}
+
+#seccion-02-titulo.ng-enter,
+#seccion-03-titulo.ng-enter,
+#seccion-04-titulo.ng-enter,
+#seccion-05-titulo.ng-enter,
+#seccion-06-titulo.ng-enter,
+#seccion-07-titulo.ng-enter,
+#seccion-08-titulo.ng-enter,
+#seccion-09-titulo.ng-enter,
+#seccion-10-titulo.ng-enter,
+#seccion-11-titulo.ng-enter,
+#seccion-12-titulo.ng-enter,
+#seccion-13-titulo.ng-enter {
+  -webkit-animation: titulo-enter 0.8s !important;
+  -moz-animation: titulo-enter 0.8s !important;
+  -ms-animation: titulo-enter 0.8s !important;
+  -o-animation: titulo-enter 0.8s !important;
+  animation: titulo-enter 0.8s !important;
+
+}
+
+#seccion-02-sub-titulo.ng-enter,
+#seccion-03-sub-titulo.ng-enter,
+#seccion-04-sub-titulo.ng-enter,
+#seccion-05-sub-titulo.ng-enter,
+#seccion-06-sub-titulo.ng-enter,
+#seccion-07-sub-titulo.ng-enter,
+#seccion-08-sub-titulo.ng-enter,
+#seccion-09-sub-titulo.ng-enter,
+#seccion-10-sub-titulo.ng-enter,
+#seccion-11-sub-titulo.ng-enter,
+#seccion-12-sub-titulo.ng-enter,
+#seccion-13-sub-titulo.ng-enter {
+  -moz-animation: titulo-enter 0.9s ease-in; /* Firefox */
+  -webkit-animation: titulo-enter 0.9s ease-in; /* Safari and Chrome */
+  -o-animation: titulo-enter 0.9s ease-in; /* Opera */
+  animation: titulo-enter 0.9s ease-in;
+
+}
+
+#seccion-02-detalle.ng-enter,
+#seccion-03-detalle.ng-enter,
+#seccion-04-detalle.ng-enter,
+#seccion-05-detalle.ng-enter,
+#seccion-06-detalle.ng-enter,
+#seccion-07-detalle.ng-enter,
+#seccion-08-detalle.ng-enter,
+#seccion-09-detalle.ng-enter,
+#seccion-10-detalle.ng-enter,
+#seccion-11-detalle.ng-enter,
+#seccion-12-detalle.ng-enter,
+#seccion-13-detalle.ng-enter {
+  -webkit-animation: titulo-enter 1s !important;
+  -moz-animation: titulo-enter 1s !important;
+  -ms-animation: titulo-enter 1s !important;
+  -o-animation: titulo-enter 1s !important;
+  animation: titulo-enter 1s !important;
+}
+
+#seccion-02-thumbs.ng-enter,
+#seccion-03-thumbs.ng-enter,
+#seccion-04-thumbs.ng-enter,
+#seccion-05-thumbs.ng-enter,
+#seccion-06-thumbs.ng-enter,
+#seccion-07-thumbs.ng-enter,
+#seccion-08-thumbs.ng-enter,
+#seccion-09-thumbs.ng-enter,
+#seccion-10-thumbs.ng-enter,
+#seccion-11-thumbs.ng-enter,
+#seccion-12-thumbs.ng-enter,
+#seccion-13-thumbs.ng-enter {
+  -webkit-animation: titulo-enter 1.1s !important;
+  -moz-animation: titulo-enter 1.1s !important;
+  -ms-animation: titulo-enter 1.1s !important;
+  -o-animation: titulo-enter 1.1s !important;
+  animation: titulo-enter 1.1s !important;
+
+}
+
+@-webkit-keyframes titulo-enter {
+  0% {
+
+    opacity: 0;
+    transform: translate(1000px, 0px);
+
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+#seccion-02-titulo.ng-leave,
+#seccion-02-sub-titulo.ng-leave,
+#seccion-02-imagen-main.ng-leave,
+#seccion-03-titulo.ng-leave,
+#seccion-03-sub-titulo.ng-leave,
+#seccion-03-imagen-main.ng-leave
+#seccion-04-titulo.ng-leave,
+#seccion-04-sub-titulo.ng-leave,
+#seccion-04-imagen-main.ng-leave
+#seccion-05-titulo.ng-leave,
+#seccion-05-sub-titulo.ng-leave,
+#seccion-05-imagen-main.ng-leave
+#seccion-06-titulo.ng-leave,
+#seccion-06-sub-titulo.ng-leave,
+#seccion-06-imagen-main.ng-leave
+#seccion-07-titulo.ng-leave,
+#seccion-07-sub-titulo.ng-leave,
+#seccion-07-imagen-main.ng-leave
+#seccion-08-titulo.ng-leave,
+#seccion-08-sub-titulo.ng-leave,
+#seccion-08-imagen-main.ng-leave
+#seccion-09-titulo.ng-leave,
+#seccion-09-sub-titulo.ng-leave,
+#seccion-09-imagen-main.ng-leave
+#seccion-10-titulo.ng-leave,
+#seccion-10-sub-titulo.ng-leave,
+#seccion-10-imagen-main.ng-leave
+#seccion-11-titulo.ng-leave,
+#seccion-11-sub-titulo.ng-leave,
+#seccion-11-imagen-main.ng-leave
+#seccion-12-titulo.ng-leave,
+#seccion-12-sub-titulo.ng-leave,
+#seccion-12-imagen-main.ng-leave
+#seccion-13-titulo.ng-leave,
+#seccion-13-sub-titulo.ng-leave,
+#seccion-14-imagen-main.ng-leave
+#seccion-15-titulo.ng-leave,
+#seccion-15-sub-titulo.ng-leave,
+#seccion-15-imagen-main.ng-leave,
+#seccion-16-titulo.ng-leave,
+#seccion-16-sub-titulo.ng-leave,
+#seccion-16-imagen-main.ng-leave {
+  -webkit-animation: titulo-leave 0.4s !important;
+  -moz-animation: titulo-leave 0.4s !important;
+  -ms-animation: titulo-leave 0.4s !important;
+  -o-animation: titulo-leave 0.4s !important;
+  animation: titulo-leave 0.4s !important;
+}
+
+@-webkit-keyframes titulo-leave {
+  0% {
+
+    opacity: 1;
+    transform: translate(0px, 0px);
+
+  }
+
+  100% {
+
+    opacity: 0;
+    transform: translate(-1000px, 0px);
+
+  }
+}
+
+#seccion-02.ng-enter,
+#seccion-03.ng-enter,
+#seccion-04.ng-enter,
+#seccion-05.ng-enter,
+#seccion-06.ng-enter,
+#seccion-07.ng-enter,
+#seccion-08.ng-enter,
+#seccion-09.ng-enter,
+#seccion-10.ng-enter,
+#seccion-11.ng-enter,
+#seccion-12.ng-enter,
+#seccion-13.ng-enter {
+  background-color: violet;
+  -webkit-animation: view-enter 0.8s !important;
+  -moz-animation: view-enter 0.8s !important;
+  -ms-animation: view-enter 0.8s !important;
+  -o-animation: view-enter 0.8s !important;
+  animation: view-enter 0.8s !important;
+}
+
+@-webkit-keyframes view-enter {
+  from {
+
+    opacity: 0;
+  }
+
+  to {
+
+    opacity: 1;
+  }
+}
+
+#seccion-03 {
+  //background-color: darkkhaki;
+
+}
+
+#seccion-04 {
+  //background-color: gray;
+
+}
+
+#seccion-05 {
+  //background-color: lavenderblush;
+
+}
+
+#seccion-01,
+#seccion-02,
+#seccion-03,
+#seccion-04,
+#seccion-05,
+#seccion-06,
+#seccion-07,
+#seccion-08,
+#seccion-09,
+#seccion-10,
+#seccion-11,
+#seccion-12,
+#seccion-13 {
+  width: 100%;
+  margin-left: 200px;
+  min-width: 800px;
+  max-width: 800px;
+  height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  @media (max-width: 700px) {
+    //margin-left: 200px;
+  }
+}
+
+@font-face {
+  font-family: 'Bebas Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Bebas Regular'), url('BebasNeue Regular.otf') format('woff');
+}
+
+

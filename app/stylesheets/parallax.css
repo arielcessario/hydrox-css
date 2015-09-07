@@ -1,0 +1,84 @@
+/* line 1, ../sass/parallax.scss */
+.debug-on .parallax__group {
+  -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+  transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+
+/* line 6, ../sass/parallax.scss */
+.debug-on .parallax__layer {
+  box-shadow: 0 0 0 2px #000;
+  opacity: 0.9;
+}
+
+/* line 11, ../sass/parallax.scss */
+.parallax {
+  height: 100vh;
+  max-height: 90%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 28, ../sass/parallax.scss */
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  min-width: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 36, ../sass/parallax.scss */
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;
+}
+
+/* line 46, ../sass/parallax.scss */
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+  z-index: 1;
+}
+
+/* line 52, ../sass/parallax.scss */
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
+}
+
+/* line 59, ../sass/parallax.scss */
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 72, ../sass/parallax.scss */
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+  width: 12000px;
+  background: black url("../img/degradado.svg") 50% 50% repeat;
+}

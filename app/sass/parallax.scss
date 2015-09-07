@@ -1,0 +1,115 @@
+.debug-on .parallax__group {
+  -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+  transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+
+.debug-on .parallax__layer {
+  box-shadow: 0 0 0 2px #000;
+  opacity: 0.9;
+}
+
+.parallax {
+  //height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  max-height: 90%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  min-width: 1000px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;
+}
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(.7);
+  transform: translateZ(90px) scale(.7);
+  z-index: 1;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  //background: url("../img/degradado.svg") 50% 50% no-repeat;
+}
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2;
+  //background: linear-gradient(to right, red 100px, blue);
+  width: 12000px;
+  //margin-left: 1000px;
+  background: black url("../img/degradado.svg") 50% 50% repeat;
+  //border-style:none;
+  //background: linear-gradient(to right,
+  //        #e3312d 0%,
+  //        #ffef26 15%,
+  //        #e3312d 23%,
+  //        #ffefff 31%,
+  //        #04002a 39%,
+  //        #A8FF94 47%,
+  //        #000700 55%,
+  //        #FFEF26 63%,
+  //        #E3312D 71%,
+  //        #FFEF26 79%,
+  //        #00E9C5 86%,
+  //        #2A2300 100%
+  //);
+
+  //background: linear-gradient(to right,
+  //        #e3312d 0px, #ffef26 1200px,
+  //        #ffef26 1201px, #e3312d 2200px,
+  //        #e3312d 2201px, #ffefff 3200px,
+  //        #ffefff 3201px, #04002a 4200px,
+  //        #04002a 4201px, #A8FF94 5200px,
+  //        #A8FF94 5201px, #000700 6200px,
+  //        #000700 6201px, #FFEF26 7200px,
+  //        #FFEF26 7201px, #E3312D 8200px,
+  //        #E3312D 8201px, #FFEF26 9200px,
+  //        #FFEF26 9201px, #00E9C5 10200px,
+  //        #00E9C5 10201px, #2A2300 11200px
+  //);
+
+  //-webkit-filter: blur(5px);
+  //-moz-filter: blur(5px);
+  //-o-filter: blur(5px);
+  //-ms-filter: blur(5px);
+  //filter: blur(5px);
+}
