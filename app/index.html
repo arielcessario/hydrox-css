@@ -20,6 +20,22 @@
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-controller="MainController as mainCtrl">
+
+<div id="menu">
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(1100);">Zapatillas</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(2100);">Bota</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(3100);">Medias</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(4100);">Jardinero</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(5100);">Pantalón</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(6100);">Calza</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(7100);">Remera Neo</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(8100);">Remera Lycra</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(9100);">Barbijo</div>
+    <div class="menu-button" ng-click="mainCtrl.scrollTo(10100);">Miton</div>
+
+</div>
+
+
 <div class="parallax" id="main-container">
     <div id="group1" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
@@ -389,13 +405,15 @@
 
     </div>
 
+</div>
 
-    <!-- In production use:
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-    -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="app.js"></script>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

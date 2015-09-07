@@ -17,21 +17,71 @@ function MainController($scope) {
 
     vm.seccion = 'seccion-01';
     vm.ypos = 0;
+    vm.scrollTo = scrollTo;
     vm.selectImage = function (img) {
         vm.img = img;
     };
 
 
     var mainContainer = angular.element(document.querySelector('#main-container'));
-    console.log(mainContainer);
 
-    mainContainer[0].addEventListener("DOMMouseScroll", function(e){
+
+    var pos_origin = 0;
+
+    function scrollTo(pos) {
+
+        //var cantidad = pos;
+        var timer = 0;
+        var speed = 20;
+
+        var is_end = false;
+        var pos_actual = document.getElementById('main-container').scrollLeft;
+        var pos_next = pos_actual + (pos / 25);
+
+
+        if (pos_origin == 0) {
+            pos_origin = pos_actual;
+        }
+
+        if ((pos_actual < pos && pos_next > pos) ||
+            (pos_actual > pos && pos_next < pos)) {
+
+            is_end = true;
+            pos_origin = 0;
+        }
+
+
+        //for(var i = 0; i<cantidad/8; i++){
+        if (document.getElementById('main-container').scrollLeft != pos) {
+            setTimeout(function () {
+                //console.log(document.getElementById('parallax').scrollTop);
+
+                if (pos < document.getElementById('main-container').scrollLeft) {
+
+                    document.getElementById('main-container').scrollLeft -= pos_origin / 25;
+
+                } else {
+                    document.getElementById('main-container').scrollLeft += pos / 25;
+
+                }
+                //console.log(document.getElementById('parallax').scrollTop);
+                //timer += 1;
+                if (!is_end) {
+                    vm.scrollTo(pos);
+                }
+            }, 10);
+
+        }
+    }
+
+
+    mainContainer[0].addEventListener("DOMMouseScroll", function (e) {
         var e = window.event || e;
 
-        mainContainer[0].scrollLeft = mainContainer[0].scrollLeft + ((e.detail/3) * 132);
+        mainContainer[0].scrollLeft = mainContainer[0].scrollLeft + ((e.detail / 3) * 132);
     });
 
-    mainContainer[0].addEventListener("mousewheel", function(e){
+    mainContainer[0].addEventListener("mousewheel", function (e) {
         var e = window.event || e;
         //console.log(mainContainer[0].scrollLeft);
         //console.log(e.wheelDeltaY);
