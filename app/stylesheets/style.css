@@ -429,6 +429,10 @@ body {
   0% {
     opacity: 0;
     transform: translate(1000px, 0px);
+    -o-transform: translate(1000px, 0px);
+    -webkit-transform: translate(1000px, 0px);
+    -moz-transform: translate(1000px, 0px);
+    -ms-transform: translate(1000px, 0px);
   }
   40% {
     opacity: 0;
@@ -436,9 +440,34 @@ body {
   100% {
     opacity: 1;
     transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
   }
 }
-/* line 400, ../sass/style.scss */
+@-moz-keyframes titulo-enter {
+  0% {
+    opacity: 0;
+    transform: translate(1000px, 0px);
+    -o-transform: translate(1000px, 0px);
+    -webkit-transform: translate(1000px, 0px);
+    -moz-transform: translate(1000px, 0px);
+    -ms-transform: translate(1000px, 0px);
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+  }
+}
+/* line 435, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -498,7 +527,17 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 465, ../sass/style.scss */
+@-moz-keyframes titulo-leave {
+  0% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-1000px, 0px);
+  }
+}
+/* line 515, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -527,7 +566,15 @@ body {
     opacity: 1;
   }
 }
-/* line 512, ../sass/style.scss */
+@-moz-keyframes view-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 576, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,

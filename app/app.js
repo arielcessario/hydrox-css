@@ -23,19 +23,18 @@ function MainController($scope) {
 
 
     var mainContainer = angular.element(document.querySelector('#main-container'));
+    console.log(mainContainer);
 
+    mainContainer[0].addEventListener("DOMMouseScroll", function(e){
+        var e = window.event || e;
+
+        mainContainer[0].scrollLeft = mainContainer[0].scrollLeft + ((e.detail/3) * 132);
+    });
 
     mainContainer[0].addEventListener("mousewheel", function(e){
         var e = window.event || e;
-        console.log(mainContainer[0].scrollLeft);
-        console.log(e.wheelDeltaY);
-        mainContainer[0].scrollLeft = mainContainer[0].scrollLeft - e.wheelDeltaY;
-    });
-
-    mainContainer[0].addEventListener("wheel", function(e){
-        var e = window.event || e;
-        console.log(mainContainer[0].scrollLeft);
-        console.log(e.wheelDeltaY);
+        //console.log(mainContainer[0].scrollLeft);
+        //console.log(e.wheelDeltaY);
         mainContainer[0].scrollLeft = mainContainer[0].scrollLeft - e.wheelDeltaY;
     });
 
@@ -43,7 +42,7 @@ function MainController($scope) {
 
         //animate();
         //requestAnimationFrame(animate);
-        console.log(mainContainer[0].scrollLeft);
+        //console.log(mainContainer[0].scrollLeft);
 
 
         vm.ypos = mainContainer[0].scrollLeft;

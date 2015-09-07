@@ -80,5 +80,5 @@
   transform: translateZ(-600px) scale(3);
   z-index: 2;
   width: 12000px;
-  background: black url("../img/degradado.svg") 50% 50% repeat;
+  background: white url("../img/degradado.svg") 50% 50% repeat;
 }
