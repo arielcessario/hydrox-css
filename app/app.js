@@ -18,6 +18,7 @@ function MainController($scope) {
     vm.seccion = 'seccion-01';
     vm.ypos = 0;
     vm.scrollTo = scrollTo;
+    vm.scrollToMobile = scrollToMobile;
     vm.selectImage = function (img) {
         vm.img = img;
     };
@@ -27,6 +28,13 @@ function MainController($scope) {
 
 
     var pos_origin = 0;
+
+    function scrollToMobile(pos) {
+
+
+        scrollTo(pos + (500 - (window.innerWidth / 2)));
+
+    }
 
     function scrollTo(pos) {
 
@@ -92,7 +100,7 @@ function MainController($scope) {
 
         //animate();
         //requestAnimationFrame(animate);
-        //console.log(mainContainer[0].scrollLeft);
+        console.log(mainContainer[0].scrollLeft);
 
 
         vm.ypos = mainContainer[0].scrollLeft;

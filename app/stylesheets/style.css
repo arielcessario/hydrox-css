@@ -78,8 +78,8 @@ body {
   padding: 0;
 }
 
-/* line 22, ../sass/style.scss */
-#menu {
+/* line 23, ../sass/style.scss */
+#menu #menu-desktop {
   position: fixed;
   width: 700px;
   height: 50px;
@@ -92,13 +92,78 @@ body {
   bottom: 0px;
   justify-content: space-around;
 }
+@media (max-width: 700px) {
+  /* line 23, ../sass/style.scss */
+  #menu #menu-desktop {
+    visibility: collapse;
+    display: none;
+  }
+}
+/* line 42, ../sass/style.scss */
+#menu #menu-mobile-buttons {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  bottom: 90px;
+  right: 40px;
+  align-items: center;
+  z-index: 400;
+}
+/* line 51, ../sass/style.scss */
+#menu #menu-mobile-buttons button {
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  border: 0px solid;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+/* line 63, ../sass/style.scss */
+#menu #button-derecha,
+#menu #button-izquierda {
+  position: fixed;
+  z-index: 400;
+  height: 80px;
+  width: 80px;
+  border: 0px solid;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  border-radius: 80px;
+  bottom: 10px;
+}
+/* line 77, ../sass/style.scss */
+#menu #button-derecha {
+  background-color: red;
+  right: 30px;
+}
+@media (min-width: 700px) {
+  /* line 77, ../sass/style.scss */
+  #menu #button-derecha {
+    visibility: collapse;
+    display: none;
+  }
+}
+/* line 86, ../sass/style.scss */
+#menu #button-izquierda {
+  background-color: red;
+  left: 30px;
+}
+@media (min-width: 700px) {
+  /* line 86, ../sass/style.scss */
+  #menu #button-izquierda {
+    visibility: collapse;
+    display: none;
+  }
+}
 
-/* line 36, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 #group1 {
   min-width: 11000px;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 #secciones {
   position: absolute;
   top: 0;
@@ -109,12 +174,12 @@ body {
   max-width: 11000px;
 }
 
-/* line 68, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 #seccion-01 {
   min-width: 1000px !important;
 }
 
-/* line 73, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 #seccion-02 {
   display: flex;
   justify-content: center;
@@ -122,7 +187,7 @@ body {
   flex-direction: column;
 }
 
-/* line 83, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #seccion-03 {
   display: flex;
   justify-content: center;
@@ -130,7 +195,7 @@ body {
   flex-direction: column;
 }
 
-/* line 90, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #seccion-04 {
   display: flex;
   justify-content: center;
@@ -138,7 +203,7 @@ body {
   flex-direction: column;
 }
 
-/* line 97, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 #seccion-05 {
   display: flex;
   justify-content: center;
@@ -146,7 +211,7 @@ body {
   flex-direction: column;
 }
 
-/* line 104, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 #seccion-06 {
   display: flex;
   justify-content: center;
@@ -154,7 +219,7 @@ body {
   flex-direction: column;
 }
 
-/* line 111, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 #seccion-07 {
   display: flex;
   justify-content: center;
@@ -162,7 +227,7 @@ body {
   flex-direction: column;
 }
 
-/* line 118, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 #seccion-08 {
   display: flex;
   justify-content: center;
@@ -170,7 +235,7 @@ body {
   flex-direction: column;
 }
 
-/* line 125, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
 #seccion-09 {
   display: flex;
   justify-content: center;
@@ -178,7 +243,7 @@ body {
   flex-direction: column;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 #seccion-10 {
   display: flex;
   justify-content: center;
@@ -186,7 +251,7 @@ body {
   flex-direction: column;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 #seccion-11 {
   display: flex;
   justify-content: center;
@@ -194,7 +259,7 @@ body {
   flex-direction: column;
 }
 
-/* line 146, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 #seccion-12 {
   display: flex;
   justify-content: center;
@@ -202,7 +267,7 @@ body {
   flex-direction: column;
 }
 
-/* line 153, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 #seccion-13 {
   background-color: #000700;
   display: flex;
@@ -211,7 +276,7 @@ body {
   flex-direction: column;
 }
 
-/* line 161, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 #seccion-01-container,
 #seccion-02-container,
 #seccion-03-container,
@@ -237,7 +302,7 @@ body {
 }
 
 @media (max-width: 700px) {
-  /* line 185, ../sass/style.scss */
+  /* line 246, ../sass/style.scss */
   #seccion-02-container,
   #seccion-03-container,
   #seccion-04-container,
@@ -254,7 +319,7 @@ body {
   }
 }
 
-/* line 202, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 .left-container,
 .right-container,
 .upper-container,
@@ -263,26 +328,26 @@ body {
   z-index: 100;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 271, ../sass/style.scss */
 .left-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 700px) and (min-width: 400px) {
-  /* line 214, ../sass/style.scss */
+  /* line 275, ../sass/style.scss */
   .left-container img {
     max-width: 400px;
   }
 }
 @media (max-width: 399px) {
-  /* line 214, ../sass/style.scss */
+  /* line 275, ../sass/style.scss */
   .left-container img {
     max-width: 360px;
   }
 }
 
-/* line 225, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
 .right-container {
   display: flex;
   justify-content: space-around;
@@ -292,7 +357,7 @@ body {
   min-height: 300px;
 }
 @media (max-width: 700px) {
-  /* line 225, ../sass/style.scss */
+  /* line 286, ../sass/style.scss */
   .right-container {
     position: absolute;
     width: 360px;
@@ -301,49 +366,49 @@ body {
   }
 }
 
-/* line 241, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
 .upper-container {
   display: flex;
   justify-content: flex-end;
 }
 
-/* line 246, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 .bottom-container {
   display: flex;
   flex-direction: row;
 }
 
-/* line 255, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 .titulo {
   font-size: 42px;
   font-weight: bold;
   position: static;
 }
 
-/* line 264, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 .sub-titulo {
   font-size: 33px;
   position: static;
 }
 
-/* line 274, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 .detalle {
   margin-top: 30px;
   min-height: 150px;
   position: static;
 }
 
-/* line 283, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 .imagen-main {
   position: static;
 }
 
-/* line 291, ../sass/style.scss */
+/* line 352, ../sass/style.scss */
 .thumbs {
   pointer-events: all;
 }
 
-/* line 299, ../sass/style.scss */
+/* line 360, ../sass/style.scss */
 #seccion-02-imagen-main.ng-enter,
 #seccion-03-imagen-main.ng-enter,
 #seccion-04-imagen-main.ng-enter,
@@ -363,7 +428,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 319, ../sass/style.scss */
+/* line 380, ../sass/style.scss */
 #seccion-02-titulo.ng-enter,
 #seccion-03-titulo.ng-enter,
 #seccion-04-titulo.ng-enter,
@@ -383,7 +448,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 339, ../sass/style.scss */
+/* line 400, ../sass/style.scss */
 #seccion-02-sub-titulo.ng-enter,
 #seccion-03-sub-titulo.ng-enter,
 #seccion-04-sub-titulo.ng-enter,
@@ -405,7 +470,7 @@ body {
   animation: titulo-enter 0.9s ease-in;
 }
 
-/* line 358, ../sass/style.scss */
+/* line 419, ../sass/style.scss */
 #seccion-02-detalle.ng-enter,
 #seccion-03-detalle.ng-enter,
 #seccion-04-detalle.ng-enter,
@@ -425,7 +490,7 @@ body {
   animation: titulo-enter 1s !important;
 }
 
-/* line 377, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 #seccion-02-thumbs.ng-enter,
 #seccion-03-thumbs.ng-enter,
 #seccion-04-thumbs.ng-enter,
@@ -487,7 +552,7 @@ body {
     -ms-transform: translate(0px, 0px);
   }
 }
-/* line 451, ../sass/style.scss */
+/* line 512, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -557,7 +622,7 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 531, ../sass/style.scss */
+/* line 593, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -594,7 +659,7 @@ body {
     opacity: 1;
   }
 }
-/* line 592, ../sass/style.scss */
+/* line 652, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,

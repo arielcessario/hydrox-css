@@ -18,19 +18,80 @@ body {
   padding: 0;
 }
 
+#menu {
 
-#menu{
-  position: fixed;
-  width: 700px;
-  height: 50px;
-  z-index: 400;
-  background: linear-gradient(to bottom, black, rgba(0,0,0,0));
-  color: white;
-  display: flex;
-  flex-direction: row;
-  left: calc(50% - 350px);
-  bottom: 0px;
-  justify-content: space-around;
+  #menu-desktop {
+    position: fixed;
+    width: 700px;
+    height: 50px;
+    z-index: 400;
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+    color: white;
+    display: flex;
+    flex-direction: row;
+    left: calc(50% - 350px);
+    bottom: 0px;
+    justify-content: space-around;
+
+    @media (max-width: 700px) {
+      visibility: collapse;
+      display: none;
+    }
+  }
+
+  #menu-mobile-buttons {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    bottom: 90px;
+    right: 40px;
+    align-items: center;
+    z-index: 400;
+    button {
+      margin: 5px;
+      height: 40px;
+      width: 40px;
+      border: 0px solid;
+      -webkit-border-radius: 40px;
+      -moz-border-radius: 40px;
+      border-radius: 40px;
+
+    }
+  }
+
+  #button-derecha,
+  #button-izquierda {
+
+    position: fixed;
+    z-index: 400;
+    height: 80px;
+    width: 80px;
+    border: 0px solid;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+    bottom: 10px;
+  }
+
+  #button-derecha {
+    background-color: red;
+    right: 30px;
+    @media (min-width: 700px) {
+      visibility: collapse;
+      display: none;
+    }
+  }
+
+  #button-izquierda {
+    background-color: red;
+    left: 30px;
+    @media (min-width: 700px) {
+      visibility: collapse;
+      display: none;
+    }
+  }
+
 }
 
 #group1 {
@@ -211,7 +272,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  img{
+  img {
     @media (max-width: 700px) and (min-width: 400px) {
       max-width: 400px;
     }
@@ -512,6 +573,7 @@ body {
 
   }
 }
+
 @-moz-keyframes titulo-leave {
   0% {
 
@@ -548,8 +610,7 @@ body {
   animation: view-enter 0.8s !important;
 }
 
-@-webkit-keyframes view-enter
-{
+@-webkit-keyframes view-enter {
   from {
 
     opacity: 0;
@@ -561,8 +622,7 @@ body {
   }
 }
 
-@-moz-keyframes view-enter
-{
+@-moz-keyframes view-enter {
   from {
 
     opacity: 0;

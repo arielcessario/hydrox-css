@@ -25,8 +25,14 @@
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 700px) {
+  /* line 11, ../sass/parallax.scss */
+  .parallax {
+    overflow-x: auto;
+  }
+}
 
-/* line 28, ../sass/parallax.scss */
+/* line 31, ../sass/parallax.scss */
 .parallax__group {
   position: relative;
   height: 100vh;
@@ -35,7 +41,7 @@
   transform-style: preserve-3d;
 }
 
-/* line 36, ../sass/parallax.scss */
+/* line 39, ../sass/parallax.scss */
 .parallax__layer {
   position: absolute;
   top: 0;
@@ -46,14 +52,14 @@
   transform-origin-x: 100%;
 }
 
-/* line 46, ../sass/parallax.scss */
+/* line 49, ../sass/parallax.scss */
 .parallax__layer--fore {
   -webkit-transform: translateZ(90px) scale(0.7);
   transform: translateZ(90px) scale(0.7);
   z-index: 1;
 }
 
-/* line 52, ../sass/parallax.scss */
+/* line 55, ../sass/parallax.scss */
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -61,7 +67,7 @@
   background: url("../img/burbujas.svg") 50% 50% repeat;
 }
 
-/* line 59, ../sass/parallax.scss */
+/* line 62, ../sass/parallax.scss */
 .parallax__layer--back {
   -webkit-transform: translateZ(-300px) scale(2);
   transform: translateZ(-300px) scale(2);
@@ -74,7 +80,7 @@
   filter: blur(5px);
 }
 
-/* line 72, ../sass/parallax.scss */
+/* line 75, ../sass/parallax.scss */
 .parallax__layer--deep {
   -webkit-transform: translateZ(-600px) scale(3);
   transform: translateZ(-600px) scale(3);
