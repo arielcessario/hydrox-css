@@ -17,6 +17,7 @@ function MainController($scope) {
 
     vm.seccion = 'seccion-01';
     vm.ypos = 0;
+    vm.openMobile = false;
     vm.scrollTo = scrollTo;
     vm.scrollToMobile = scrollToMobile;
     vm.selectImage = function (img) {
@@ -32,6 +33,7 @@ function MainController($scope) {
     function scrollToMobile(pos) {
 
 
+        vm.openMobile = false;
         scrollTo(pos + (500 - (window.innerWidth / 2)));
 
     }
