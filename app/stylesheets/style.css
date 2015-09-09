@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -380,35 +380,46 @@ body {
 
 /* line 316, ../sass/style.scss */
 .titulo {
-  font-size: 42px;
-  font-weight: bold;
+  font-family: 'Bebas Regular', sans-serif;
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase;
   position: static;
 }
 
-/* line 325, ../sass/style.scss */
+/* line 328, ../sass/style.scss */
 .sub-titulo {
-  font-size: 33px;
+  font-family: 'Bebas Regular', sans-serif;
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase;
   position: static;
 }
 
-/* line 335, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 .detalle {
   margin-top: 30px;
   min-height: 150px;
+  font-family: 'Bebas Regular', sans-serif;
+  font-size: 26px;
+  font-variant: small-caps;
+  color: white;
   position: static;
 }
 
-/* line 344, ../sass/style.scss */
+/* line 355, ../sass/style.scss */
 .imagen-main {
   position: static;
 }
 
-/* line 352, ../sass/style.scss */
+/* line 363, ../sass/style.scss */
 .thumbs {
   pointer-events: all;
 }
 
-/* line 360, ../sass/style.scss */
+/* line 371, ../sass/style.scss */
 #seccion-02-imagen-main.ng-enter,
 #seccion-03-imagen-main.ng-enter,
 #seccion-04-imagen-main.ng-enter,
@@ -428,7 +439,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 380, ../sass/style.scss */
+/* line 391, ../sass/style.scss */
 #seccion-02-titulo.ng-enter,
 #seccion-03-titulo.ng-enter,
 #seccion-04-titulo.ng-enter,
@@ -448,7 +459,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 400, ../sass/style.scss */
+/* line 411, ../sass/style.scss */
 #seccion-02-sub-titulo.ng-enter,
 #seccion-03-sub-titulo.ng-enter,
 #seccion-04-sub-titulo.ng-enter,
@@ -470,7 +481,7 @@ body {
   animation: titulo-enter 0.9s ease-in;
 }
 
-/* line 419, ../sass/style.scss */
+/* line 430, ../sass/style.scss */
 #seccion-02-detalle.ng-enter,
 #seccion-03-detalle.ng-enter,
 #seccion-04-detalle.ng-enter,
@@ -490,7 +501,7 @@ body {
   animation: titulo-enter 1s !important;
 }
 
-/* line 438, ../sass/style.scss */
+/* line 449, ../sass/style.scss */
 #seccion-02-thumbs.ng-enter,
 #seccion-03-thumbs.ng-enter,
 #seccion-04-thumbs.ng-enter,
@@ -552,7 +563,7 @@ body {
     -ms-transform: translate(0px, 0px);
   }
 }
-/* line 512, ../sass/style.scss */
+/* line 523, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -622,7 +633,7 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 593, ../sass/style.scss */
+/* line 604, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -659,7 +670,7 @@ body {
     opacity: 1;
   }
 }
-/* line 652, ../sass/style.scss */
+/* line 663, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,

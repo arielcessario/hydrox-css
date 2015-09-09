@@ -146,13 +146,13 @@ function MainController($scope) {
         if ((mainContainer[0].scrollLeft > 5800 && mainContainer[0].scrollLeft < 6800) && vm.seccion != 'seccion-07') {
             //console.log('entra');
             vm.seccion = 'seccion-07';
-            vm.img = 'zapa_neoprene_01.gif';
+            vm.img = 'calza_04.gif';
             //$scope.$apply();
         }
         if ((mainContainer[0].scrollLeft > 6800 && mainContainer[0].scrollLeft < 7800) && vm.seccion != 'seccion-08') {
             //console.log('entra');
             vm.seccion = 'seccion-08';
-            vm.img = 'calza_01.gif';
+            vm.img = 'remera_neoprene_02.gif';
             //$scope.$apply();
         }
         if ((mainContainer[0].scrollLeft > 7800 && mainContainer[0].scrollLeft < 8800) && vm.seccion != 'seccion-09') {
@@ -164,13 +164,13 @@ function MainController($scope) {
         if ((mainContainer[0].scrollLeft > 8800 && mainContainer[0].scrollLeft < 9800) && vm.seccion != 'seccion-10') {
             //console.log('entra');
             vm.seccion = 'seccion-10';
-            vm.img = 'remera_neoprene_01.gif';
+            vm.img = 'barbijo.gif';
             //$scope.$apply();
         }
         if ((mainContainer[0].scrollLeft > 9800 && mainContainer[0].scrollLeft < 10800) && vm.seccion != 'seccion-11') {
             //console.log('entra');
             vm.seccion = 'seccion-11';
-            vm.img = 'barbijo.gif';
+            vm.img = 'milton_01.gif';
             //$scope.$apply();
         }
         if ((mainContainer[0].scrollLeft > 10800 && mainContainer[0].scrollLeft < 11800) && vm.seccion != 'seccion-12') {
