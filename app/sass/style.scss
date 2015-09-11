@@ -40,12 +40,20 @@ body {
   //}
 
   #menu-mobile-buttons {
+    right: 40px;
+  }
+  #menu-thumbs-buttons {
+
+    left: 40px;
+  }
+
+  #menu-mobile-buttons,
+  #menu-thumbs-buttons {
     position: fixed;
     display: flex;
     flex-direction: column;
     width: 50px;
     bottom: 90px;
-    right: 40px;
     align-items: center;
     z-index: 400;
     button {
@@ -120,9 +128,9 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 11000px;
-  height: 100%;
 
-  @media (max-width: 700px) {
+  @media (min-width: 700px) {
+    height: 100%;
     //max-width: 100%;
   }
 }

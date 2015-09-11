@@ -34,22 +34,28 @@
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9100);">Barbijo</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10100);">Miton</button>
     </div>
+    <div id="menu-thumbs-buttons" ng-if="mainCtrl.openThumbs">
+        <img ng-repeat="thumb in mainCtrl.thumbs" ng-click="mainCtrl.selectImage(thumb.big)"
+             ng-src="{{'img/'+thumb.small}}"
+             alt="{{thumb.big}}"
+             width="75">
+    </div>
     <div id="menu-mobile">
-        <button id="button-izquierda"></button>
+        <button id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"></button>
         <!--<div id="menu-mobile-spacer"></div>-->
         <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"></button>
     </div>
     <!--<div id="menu-desktop">-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(1100);">Zapatillas</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(2100);">Bota</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(3100);">Medias</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(4100);">Jardinero</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(5100);">Pantalón</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(6100);">Calza</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(7100);">Remera Neo</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(8100);">Remera Lycra</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(9100);">Barbijo</div>-->
-        <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(10100);">Miton</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(1100);">Zapatillas</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(2100);">Bota</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(3100);">Medias</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(4100);">Jardinero</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(5100);">Pantalón</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(6100);">Calza</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(7100);">Remera Neo</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(8100);">Remera Lycra</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(9100);">Barbijo</div>-->
+    <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(10100);">Miton</div>-->
     <!--</div>-->
 </div>
 
@@ -94,23 +100,7 @@
                         Ribeteada con Lycra <br>
                         Talles: 32, 34, XS, S, M, L, XL, XXL
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-02'" id="seccion-02-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('zapa_neoprene_01.gif')" src="img/zapa_neoprene_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('Zapa_neoprene_02.gif')" src="img/Zapa_neoprene_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -136,31 +126,7 @@
                         Ribeteada con lycra <br>
                         Talles: XS,S,M,L,XL,XXL <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-03'" id="seccion-03-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('bota_01.gif')" src="img/bota_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('bota_02.gif')" src="img/bota_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('bota_03.gif')" src="img/bota_03t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -185,23 +151,6 @@
                         Ribeteado con lycra <br>
                         Talles: 32,34,XS(36),S(38),M(40)
                         L(42),Xl(44),XXL(46) <br>
-                    </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-04'" id="seccion-04-thumbs" class="thumbs">
-
-                        <img ng-click="mainCtrl.selectImage('medias_neoprene_01.gif')" src="img/medias_neoprene_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('Zapa_neoprene_02.gif')" src="img/medias_neoprene_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
                     </div>
                 </div>
             </div>
@@ -231,39 +180,7 @@
                         Ribeteado con Lycra. <br>
                         Talles: S,M;L,XL,XXL <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-05'" id="seccion-05-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('jardinero_01.gif')" src="img/jardinero_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('jardinero_02.gif')" src="img/jardinero_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('jardinero_04.gif')" src="img/jardinero_04t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('jardinero_04.gif')" src="img/jardinero_04t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -289,51 +206,7 @@
                         Ribeteada con Lycra <br>
                         Talles: 32, 34, XS, S, M, L, XL, XXL <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-06'" id="seccion-06-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('pantalon_neoprene_01.gif')" src="img/pantalon_neoprene_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('pantalon_neoprene_02.gif')" src="img/pantalon_neoprene_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('pantalon_neoprene_03.gif')" src="img/pantalon_neoprene_03t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-
-
-                        <img ng-click="mainCtrl.selectImage('pantalon_neoprene_04.gif')" src="img/pantalon_neoprene_04t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-
-
-                        <img ng-click="mainCtrl.selectImage('pantalon_neoprene_05.gif')" src="img/pantalon_neoprene_05t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -359,39 +232,7 @@
                         Talles: 6-8-10-12 (niños) <br>
                         S,M;L,XL,XXL (adultos) <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-07'" id="seccion-07-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('calza_01.gif')" src="img/calza_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('calza_02.gif')" src="img/calza_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('calza_03.gif')" src="img/calza_03t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('calza_04.gif')" src="img/calza_04t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -419,23 +260,7 @@
                         Talles: 6,8,10,12 (niños) <br>
                         S,M,L,XL,XXL (adultos) <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-08'" id="seccion-08-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('remera_neoprene_01.gif')" src="img/remera_neoprene_01t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('remera_neoprene_02.gif')" src="img/remera_neoprene_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -462,51 +287,7 @@
                         Talles: 6,8,10,12 (niños) <br>
                         S,M,L,XL,XXL (adultos) <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-09'" id="seccion-09-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('remera_lycra_01.gif')" src="img/remera_lycra_01.gif"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('remera_lycra_02.gif')" src="img/remera_lycra_02t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('remera_lycra_03.gif')" src="img/remera_lycra_03t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                        <img ng-click="mainCtrl.selectImage('remera_lycra_04.gif')" src="img/remera_lycra_04t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-
-                        <img ng-click="mainCtrl.selectImage('remera_lycra_05.gif')" src="img/remera_lycra_05t.png"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-
-
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -557,23 +338,7 @@
                         Estampa en superficia superior <br>
                         Talle Unico <br>
                     </div>
-                    <div ng-if="mainCtrl.seccion == 'seccion-11'" id="seccion-11-thumbs" class="thumbs">
 
-                        <img ng-click="mainCtrl.selectImage('milton_01.gif')" src="img/milton_01.gif"
-
-                             alt=""
-
-                             width="75">
-
-                        <img ng-click="mainCtrl.selectImage('milton_02.gif')" src="img/milton_02.gif"
-
-                             alt=""
-
-                             width="75">
-
-                        <img src="" alt="">
-
-                    </div>
                 </div>
             </div>
         </div>
