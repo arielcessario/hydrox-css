@@ -112,6 +112,9 @@ function MainController($scope) {
             //console.log('entra');
             vm.seccion = 'seccion-02';
             vm.img = 'zapa_neoprene_01.gif';
+            if ((mainContainer[0].scrollLeft > 1000) && (mainContainer[0].scrollLeft< 1600)){
+
+            }
 
         }
 
