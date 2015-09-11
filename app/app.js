@@ -57,7 +57,7 @@ function MainController($scope) {
 
 
         vm.openMobile = false;
-        scrollTo(pos + (500 - (window.innerWidth / 2)));
+        scrollTo(pos + (550 - (window.innerWidth / 2)));
 
     }
 
