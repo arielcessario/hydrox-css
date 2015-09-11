@@ -45,6 +45,7 @@ function MainController($scope) {
         //var cantidad = pos;
         var timer = 0;
         var speed = 20;
+        vm.header = false;
 
         var is_end = false;
         var pos_actual = document.getElementById('main-container').scrollLeft;
@@ -108,6 +109,12 @@ function MainController($scope) {
 
 
         vm.ypos = mainContainer[0].scrollLeft;
+
+        if (mainContainer[0].scrollLeft > 800) {
+            vm.header = true;
+        }else{
+            vm.header = false;
+        }
 
 
         if ((mainContainer[0].scrollLeft > 800 && mainContainer[0].scrollLeft < 1800) && vm.seccion != 'seccion-02') {
@@ -231,8 +238,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-11';
             vm.img = 'milton_01.gif';
             vm.thumbs = [
-                {big:'milton_01.gif', small:'milton_01t.png'},
-                {big:'milton_02.gif', small:'milton_02t.png'}
+                {big:'milton_01t.gif', small:'milton_01t.png'},
+                {big:'milton_02t.gif', small:'milton_02t.png'}
             ];
             //$scope.$apply();
         }
@@ -240,7 +247,7 @@ function MainController($scope) {
             vm.openThumbs = false;
             //console.log('entra');
             vm.seccion = 'seccion-12';
-            vm.img = 'milton_01.gif';
+            vm.img = 'milton_01t.gif';
             //$scope.$apply();
         }
         if ((mainContainer[0].scrollLeft > 11800 && mainContainer[0].scrollLeft < 12800) && vm.seccion != 'seccion-13') {

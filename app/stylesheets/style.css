@@ -302,32 +302,31 @@ body {
 /* line 272, ../sass/style.scss */
 .left-container,
 .right-container,
-.upper-container,
 .bottom-container {
   position: static;
   z-index: 100;
 }
 
-/* line 280, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 .left-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 700px) and (min-width: 400px) {
-  /* line 284, ../sass/style.scss */
+  /* line 283, ../sass/style.scss */
   .left-container img {
     max-width: 400px;
   }
 }
 @media (max-width: 399px) {
-  /* line 284, ../sass/style.scss */
+  /* line 283, ../sass/style.scss */
   .left-container img {
     max-width: 360px;
   }
 }
 
-/* line 295, ../sass/style.scss */
+/* line 294, ../sass/style.scss */
 .right-container {
   display: flex;
   justify-content: space-around;
@@ -337,7 +336,7 @@ body {
   min-height: 300px;
 }
 @media (max-width: 700px) {
-  /* line 295, ../sass/style.scss */
+  /* line 294, ../sass/style.scss */
   .right-container {
     position: absolute;
     width: 360px;
@@ -346,19 +345,24 @@ body {
   }
 }
 
-/* line 311, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 .upper-container {
+  position: fixed;
+  top: 0;
+  z-index: 100;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-/* line 316, ../sass/style.scss */
+/* line 321, ../sass/style.scss */
 .bottom-container {
   display: flex;
   flex-direction: row;
 }
 
-/* line 325, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .titulo {
   font-family: 'Bebas Regular', sans-serif;
   color: white;
@@ -368,7 +372,7 @@ body {
   position: static;
 }
 
-/* line 337, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 .sub-titulo {
   font-family: 'Bebas Regular', sans-serif;
   color: white;
@@ -378,7 +382,7 @@ body {
   position: static;
 }
 
-/* line 351, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 .detalle {
   margin-top: 30px;
   min-height: 150px;
@@ -389,17 +393,17 @@ body {
   position: static;
 }
 
-/* line 364, ../sass/style.scss */
+/* line 369, ../sass/style.scss */
 .imagen-main {
   position: static;
 }
 
-/* line 372, ../sass/style.scss */
+/* line 377, ../sass/style.scss */
 .thumbs {
   pointer-events: all;
 }
 
-/* line 380, ../sass/style.scss */
+/* line 385, ../sass/style.scss */
 #seccion-02-imagen-main.ng-enter,
 #seccion-03-imagen-main.ng-enter,
 #seccion-04-imagen-main.ng-enter,
@@ -419,7 +423,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 400, ../sass/style.scss */
+/* line 405, ../sass/style.scss */
 #seccion-02-titulo.ng-enter,
 #seccion-03-titulo.ng-enter,
 #seccion-04-titulo.ng-enter,
@@ -439,7 +443,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 420, ../sass/style.scss */
+/* line 425, ../sass/style.scss */
 #seccion-02-sub-titulo.ng-enter,
 #seccion-03-sub-titulo.ng-enter,
 #seccion-04-sub-titulo.ng-enter,
@@ -461,7 +465,7 @@ body {
   animation: titulo-enter 0.9s ease-in;
 }
 
-/* line 439, ../sass/style.scss */
+/* line 444, ../sass/style.scss */
 #seccion-02-detalle.ng-enter,
 #seccion-03-detalle.ng-enter,
 #seccion-04-detalle.ng-enter,
@@ -481,7 +485,7 @@ body {
   animation: titulo-enter 1s !important;
 }
 
-/* line 458, ../sass/style.scss */
+/* line 463, ../sass/style.scss */
 #seccion-02-thumbs.ng-enter,
 #seccion-03-thumbs.ng-enter,
 #seccion-04-thumbs.ng-enter,
@@ -543,7 +547,7 @@ body {
     -ms-transform: translate(0px, 0px);
   }
 }
-/* line 532, ../sass/style.scss */
+/* line 537, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -613,7 +617,7 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 613, ../sass/style.scss */
+/* line 618, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -650,7 +654,7 @@ body {
     opacity: 1;
   }
 }
-/* line 672, ../sass/style.scss */
+/* line 677, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,
@@ -678,4 +682,85 @@ body {
   font-style: normal;
   font-weight: normal;
   src: local("Bebas Regular"), url("BebasNeue Regular.otf") format("woff");
+}
+/* line 716, ../sass/style.scss */
+.hi-icon-effect-8 .hi-icon {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+  -moz-transition: -moz-transform ease-out 0.1s, background 0.2s;
+  transition: transform ease-out 0.1s, background 0.2s;
+}
+
+/* line 723, ../sass/style.scss */
+.hi-icon-effect-8 .hi-icon:after {
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+/* line 736, ../sass/style.scss */
+.hi-icon-effect-8 .hi-icon:hover {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-transform: scale(0.93);
+  -moz-transform: scale(0.93);
+  -ms-transform: scale(0.93);
+  transform: scale(0.93);
+  color: #fff;
+}
+
+/* line 745, ../sass/style.scss */
+.hi-icon-effect-8 .hi-icon:hover:after {
+  -webkit-animation: sonarEffect 1.3s ease-out 75ms;
+  -moz-animation: sonarEffect 1.3s ease-out 75ms;
+  animation: sonarEffect 1.3s ease-out 75ms;
+}
+
+@-webkit-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -webkit-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@-moz-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    -moz-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc, 0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

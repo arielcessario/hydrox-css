@@ -23,16 +23,16 @@
 
 <div id="menu">
     <div id="menu-mobile-buttons" ng-if="mainCtrl.openMobile">
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1100);">Zapatillas</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2100);">Bota</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(3100);">Medias</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4100);">Jardinero</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5100);">Pantalón</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6100);">Calza</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7100);">Remera Neo</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8100);">Remera Lycra</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9100);">Barbijo</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10100);">Miton</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1100);mainCtrl.openMobile = false;">Zapatillas</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2100);mainCtrl.openMobile = false;">Bota</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(3100);mainCtrl.openMobile = false;">Medias</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4100);mainCtrl.openMobile = false;">Jardinero</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5100);mainCtrl.openMobile = false;">Pantalón</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6100);mainCtrl.openMobile = false;">Calza</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7100);mainCtrl.openMobile = false;">Remera Neo</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8100);mainCtrl.openMobile = false;">Remera Lycra</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9100);mainCtrl.openMobile = false;">Barbijo</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10100);mainCtrl.openMobile = false;">Miton</button>
     </div>
     <div id="menu-thumbs-buttons" ng-if="mainCtrl.openThumbs">
         <img ng-repeat="thumb in mainCtrl.thumbs" ng-click="mainCtrl.selectImage(thumb.big)"
@@ -41,9 +41,13 @@
              width="75">
     </div>
     <div id="menu-mobile">
-        <button id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"></button>
+        <button id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
+                ng-mouseover="mainCtrl.openThumbs = true">
+
+        </button>
         <!--<div id="menu-mobile-spacer"></div>-->
-        <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"></button>
+        <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"
+                ng-mouseover="mainCtrl.openMobile = true"></button>
     </div>
     <!--<div id="menu-desktop">-->
     <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(1100);">Zapatillas</div>-->
@@ -57,6 +61,11 @@
     <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(9100);">Barbijo</div>-->
     <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(10100);">Miton</div>-->
     <!--</div>-->
+</div>
+
+<div class="upper-container">
+    <img src="img/logo_seccion.png" ng-if="mainCtrl.header" id="seccion-02-titulo"
+         class="titulo"/>
 </div>
 
 
@@ -79,10 +88,7 @@
         </div>
 
         <div id="seccion-02">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-02'" id="seccion-02-titulo"
-                     class="titulo"/>
-            </div>
+
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-02'" id="seccion-02-imagen-main" class="imagen-main">
@@ -105,10 +111,7 @@
             </div>
         </div>
         <div id="seccion-03">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-03'" id="seccion-03-titulo"
-                     class="titulo"/>
-            </div>
+
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-03'" id="seccion-03-imagen-main" class="imagen-main">
@@ -131,10 +134,6 @@
             </div>
         </div>
         <div id="seccion-04">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-04'" id="seccion-04-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-04'" id="seccion-04-imagen-main" class="imagen-main">
@@ -156,10 +155,6 @@
             </div>
         </div>
         <div id="seccion-05">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-05'" id="seccion-05-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-05'" id="seccion-05-imagen-main" class="imagen-main">
@@ -185,10 +180,6 @@
             </div>
         </div>
         <div id="seccion-06">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-06'" id="seccion-06-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-06'" id="seccion-06-imagen-main" class="imagen-main">
@@ -211,10 +202,6 @@
             </div>
         </div>
         <div id="seccion-07">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-07'" id="seccion-07-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-07'" id="seccion-07-imagen-main" class="imagen-main">
@@ -237,10 +224,6 @@
             </div>
         </div>
         <div id="seccion-08">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-08'" id="seccion-08-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-08'" id="seccion-08-imagen-main" class="imagen-main">
@@ -265,10 +248,6 @@
             </div>
         </div>
         <div id="seccion-09">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-09'" id="seccion-09-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-09'" id="seccion-09-imagen-main" class="imagen-main">
@@ -292,10 +271,6 @@
             </div>
         </div>
         <div id="seccion-10">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-10'" id="seccion-10-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-10'" id="seccion-10-imagen-main" class="imagen-main">
@@ -318,10 +293,6 @@
             </div>
         </div>
         <div id="seccion-11">
-            <div class="upper-container">
-                <img src="img/logo_seccion.png" ng-if="mainCtrl.seccion == 'seccion-11'" id="seccion-11-titulo"
-                     class="titulo"/>
-            </div>
             <div class="bottom-container">
                 <div class="left-container">
                     <div ng-if="mainCtrl.seccion == 'seccion-11'" id="seccion-11-imagen-main" class="imagen-main">
