@@ -46,7 +46,8 @@ function MainController($scope) {
         factor = 9;
     }
     for (var i = 0; i < containers.length; i++) {
-        containers[i].style.marginTop = (mainContainer[0].clientHeight / factor) + 'px';
+        containers[i].style.marginTop = '0px';
+        //containers[i].style.marginTop = (mainContainer[0].clientHeight / factor) + 'px';
     }
 
 
