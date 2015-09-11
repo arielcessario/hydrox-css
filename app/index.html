@@ -45,6 +45,10 @@
                 ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
 
         </a>
+
+        <a href="" id="button-centro" ng-click="mainCtrl.hideText = !mainCtrl.hideText" class="hi-icon">
+        </a>
+
         <!--<div id="menu-mobile-spacer"></div>-->
         <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"
                 ng-mouseover="mainCtrl.openThumbs = false;" class="hi-icon"></button>
@@ -95,7 +99,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" >
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-02'" id="seccion-02-sub-titulo" class="sub-titulo">
                         ZAPATILLA DE
                         NEOPRENE DE 3MM
@@ -118,7 +122,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-03'" id="seccion-03-sub-titulo" class="sub-titulo">
                         BOTA LINUX NEOPRENE DE 4MM
                     </div>
@@ -140,7 +144,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-04'" id="seccion-04-sub-titulo" class="sub-titulo">
                         Medias estanca neoprene de 3mm
                     </div>
@@ -161,7 +165,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" >
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-05'" id="seccion-05-sub-titulo" class="sub-titulo">
                         Jardinero de neoprene de 3m:
                     </div>
@@ -186,7 +190,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-06'" id="seccion-06-sub-titulo" class="sub-titulo">
                         Pantalon de neoprene
                         de 3 mm:
@@ -208,7 +212,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-07'" id="seccion-07-sub-titulo" class="sub-titulo">
                         Calza de neoprene de 3mm:
                     </div>
@@ -230,7 +234,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-08'" id="seccion-08-sub-titulo" class="sub-titulo">
                         Remera neoprene
                         y mangas de Lycra:
@@ -254,7 +258,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-09'" id="seccion-09-sub-titulo" class="sub-titulo">
                         Remera Lycra:
                     </div>
@@ -277,7 +281,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-10'" id="seccion-10-sub-titulo" class="sub-titulo">
                         Barbijo neoprene 3mm:
                     </div>
@@ -299,7 +303,7 @@
                         <img ng-src="img/{{mainCtrl.img}}" alt="" width="">
                     </div>
                 </div>
-                <div class="right-container">
+                <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-11'" id="seccion-11-sub-titulo" class="sub-titulo">
                         Miton 3mm:
                     </div>

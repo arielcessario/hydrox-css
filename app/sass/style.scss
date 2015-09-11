@@ -69,6 +69,7 @@ body {
   }
 
   #button-derecha,
+  #button-centro,
   #button-izquierda {
 
     position: fixed;
@@ -106,6 +107,19 @@ body {
     //}
   }
 
+  #button-centro{
+    right: calc(50% - 60px);
+    background-color: blue;
+    @media (min-width: 700px) {
+      visibility: collapse;
+      display: none;
+    }
+  }
+
+}
+
+.text-hidden{
+  opacity: 0;
 }
 
 #group1 {

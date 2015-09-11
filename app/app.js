@@ -19,6 +19,7 @@ function MainController($scope) {
     vm.ypos = 0;
     vm.openMobile = false;
     vm.openThumbs = false;
+    vm.hideText = false;
     vm.scrollTo = scrollTo;
     vm.scrollToMobile = scrollToMobile;
     vm.thumbs = [];
@@ -140,7 +141,7 @@ function MainController($scope) {
 
         if ((mainContainer[0].scrollLeft > 800 && mainContainer[0].scrollLeft < 1800) && vm.seccion != 'seccion-02') {
             //console.log('entra');
-
+            vm.hideText = false;
             vm.openThumbs = false;
             vm.seccion = 'seccion-02';
             vm.img = 'zapa_neoprene_01.gif';
@@ -156,6 +157,7 @@ function MainController($scope) {
 
         if ((mainContainer[0].scrollLeft > 1800 && mainContainer[0].scrollLeft < 2800) && vm.seccion != 'seccion-03') {
             vm.openThumbs = false;
+            vm.hideText = false;
             vm.seccion = 'seccion-03';
             vm.img = 'bota_01.gif';
             //$scope.$apply();
@@ -169,6 +171,7 @@ function MainController($scope) {
 
         if ((mainContainer[0].scrollLeft > 2800 && mainContainer[0].scrollLeft < 3800) && vm.seccion != 'seccion-04') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-04';
             vm.img = 'medias_neoprene_01.gif';
@@ -182,6 +185,7 @@ function MainController($scope) {
 
         if ((mainContainer[0].scrollLeft > 3800 && mainContainer[0].scrollLeft < 4800) && vm.seccion != 'seccion-05') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-05';
             vm.img = 'jardinero_01.gif';
@@ -195,6 +199,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 4800 && mainContainer[0].scrollLeft < 5800) && vm.seccion != 'seccion-06') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-06';
             vm.img = 'pantalon_neoprene_01.gif';
@@ -209,6 +214,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 5800 && mainContainer[0].scrollLeft < 6800) && vm.seccion != 'seccion-07') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-07';
             vm.img = 'calza_04.gif';
@@ -222,6 +228,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 6800 && mainContainer[0].scrollLeft < 7800) && vm.seccion != 'seccion-08') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-08';
             vm.img = 'remera_neoprene_02.gif';
@@ -233,6 +240,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 7800 && mainContainer[0].scrollLeft < 8800) && vm.seccion != 'seccion-09') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-09';
             vm.img = 'remera_lycra_01.gif';
@@ -247,6 +255,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 8800 && mainContainer[0].scrollLeft < 9800) && vm.seccion != 'seccion-10') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-10';
             vm.img = 'barbijo.gif';
@@ -255,6 +264,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 9800 && mainContainer[0].scrollLeft < 10800) && vm.seccion != 'seccion-11') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-11';
             vm.img = 'milton_01.gif';
@@ -266,6 +276,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 10800 && mainContainer[0].scrollLeft < 11800) && vm.seccion != 'seccion-12') {
             vm.openThumbs = false;
+            vm.hideText = false;
             //console.log('entra');
             vm.seccion = 'seccion-12';
             vm.img = 'milton_01t.gif';
@@ -273,6 +284,7 @@ function MainController($scope) {
         }
         if ((mainContainer[0].scrollLeft > 11800 && mainContainer[0].scrollLeft < 12800) && vm.seccion != 'seccion-13') {
             //console.log('entra');
+            vm.hideText = false;
             vm.seccion = 'seccion-13';
             vm.img = 'zapa_neoprene_01.gif';
             //$scope.$apply();
