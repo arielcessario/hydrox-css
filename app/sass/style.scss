@@ -120,6 +120,24 @@ body {
 
 .text-hidden{
   opacity: 0;
+  -webkit-animation: view-leave .4s;
+  -o-animation: view-leave .4s;
+  animation: view-leave .4s;
+}
+.text-hidden-remove{
+  opacity: 1;
+  -webkit-animation: view-enter .4s;
+  -o-animation: view-enter .4s;
+  animation: view-enter .4s;
+}
+
+@keyframes view-leave {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 #group1 {
