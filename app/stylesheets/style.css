@@ -300,33 +300,53 @@ body {
 }
 
 /* line 272, ../sass/style.scss */
-.left-container,
 .right-container,
 .bottom-container {
   position: static;
   z-index: 100;
+  max-height: 100%;
 }
 
-/* line 279, ../sass/style.scss */
+/* line 278, ../sass/style.scss */
+.left-container {
+  position: static;
+  z-index: 100;
+}
+
+/* line 283, ../sass/style.scss */
 .left-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* line 287, ../sass/style.scss */
+.left-container div {
+  max-height: 100%;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+/* line 293, ../sass/style.scss */
+.left-container img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 @media (max-width: 700px) and (min-width: 400px) {
-  /* line 283, ../sass/style.scss */
+  /* line 293, ../sass/style.scss */
   .left-container img {
     max-width: 400px;
   }
 }
 @media (max-width: 399px) {
-  /* line 283, ../sass/style.scss */
+  /* line 293, ../sass/style.scss */
   .left-container img {
     max-width: 360px;
   }
 }
 
-/* line 294, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 .right-container {
   display: flex;
   justify-content: space-around;
@@ -336,16 +356,16 @@ body {
   min-height: 300px;
 }
 @media (max-width: 700px) {
-  /* line 294, ../sass/style.scss */
+  /* line 311, ../sass/style.scss */
   .right-container {
     position: absolute;
     width: 360px;
     max-width: 360px;
-    margin-left: -360px;
+    margin-left: -180px;
   }
 }
 
-/* line 310, ../sass/style.scss */
+/* line 327, ../sass/style.scss */
 .upper-container {
   position: fixed;
   top: 0;
@@ -356,13 +376,13 @@ body {
   width: 100%;
 }
 
-/* line 321, ../sass/style.scss */
+/* line 338, ../sass/style.scss */
 .bottom-container {
   display: flex;
   flex-direction: row;
 }
 
-/* line 330, ../sass/style.scss */
+/* line 347, ../sass/style.scss */
 .titulo {
   font-family: 'Bebas Regular', sans-serif;
   color: white;
@@ -372,7 +392,7 @@ body {
   position: static;
 }
 
-/* line 342, ../sass/style.scss */
+/* line 359, ../sass/style.scss */
 .sub-titulo {
   font-family: 'Bebas Regular', sans-serif;
   color: white;
@@ -382,7 +402,7 @@ body {
   position: static;
 }
 
-/* line 356, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 .detalle {
   margin-top: 30px;
   min-height: 150px;
@@ -393,17 +413,17 @@ body {
   position: static;
 }
 
-/* line 369, ../sass/style.scss */
+/* line 386, ../sass/style.scss */
 .imagen-main {
   position: static;
 }
 
-/* line 377, ../sass/style.scss */
+/* line 394, ../sass/style.scss */
 .thumbs {
   pointer-events: all;
 }
 
-/* line 385, ../sass/style.scss */
+/* line 402, ../sass/style.scss */
 #seccion-02-imagen-main.ng-enter,
 #seccion-03-imagen-main.ng-enter,
 #seccion-04-imagen-main.ng-enter,
@@ -423,7 +443,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 405, ../sass/style.scss */
+/* line 422, ../sass/style.scss */
 #seccion-02-titulo.ng-enter,
 #seccion-03-titulo.ng-enter,
 #seccion-04-titulo.ng-enter,
@@ -443,7 +463,7 @@ body {
   animation: titulo-enter 0.8s !important;
 }
 
-/* line 425, ../sass/style.scss */
+/* line 442, ../sass/style.scss */
 #seccion-02-sub-titulo.ng-enter,
 #seccion-03-sub-titulo.ng-enter,
 #seccion-04-sub-titulo.ng-enter,
@@ -465,7 +485,7 @@ body {
   animation: titulo-enter 0.9s ease-in;
 }
 
-/* line 444, ../sass/style.scss */
+/* line 461, ../sass/style.scss */
 #seccion-02-detalle.ng-enter,
 #seccion-03-detalle.ng-enter,
 #seccion-04-detalle.ng-enter,
@@ -485,7 +505,7 @@ body {
   animation: titulo-enter 1s !important;
 }
 
-/* line 463, ../sass/style.scss */
+/* line 480, ../sass/style.scss */
 #seccion-02-thumbs.ng-enter,
 #seccion-03-thumbs.ng-enter,
 #seccion-04-thumbs.ng-enter,
@@ -547,7 +567,7 @@ body {
     -ms-transform: translate(0px, 0px);
   }
 }
-/* line 537, ../sass/style.scss */
+/* line 554, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -617,7 +637,7 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 618, ../sass/style.scss */
+/* line 635, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -654,7 +674,7 @@ body {
     opacity: 1;
   }
 }
-/* line 677, ../sass/style.scss */
+/* line 694, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,
@@ -672,8 +692,9 @@ body {
   margin-left: 200px;
   min-width: 800px;
   max-width: 800px;
-  height: 100%;
+  max-height: 90%;
   color: white;
+  margin-top: 130px;
   text-shadow: 2px 2px 4px black;
 }
 
@@ -683,7 +704,7 @@ body {
   font-weight: normal;
   src: local("Bebas Regular"), url("BebasNeue Regular.otf") format("woff");
 }
-/* line 716, ../sass/style.scss */
+/* line 735, ../sass/style.scss */
 .hi-icon-effect-8 .hi-icon {
   background: rgba(255, 255, 255, 0.1);
   -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
@@ -691,7 +712,7 @@ body {
   transition: transform ease-out 0.1s, background 0.2s;
 }
 
-/* line 723, ../sass/style.scss */
+/* line 742, ../sass/style.scss */
 .hi-icon-effect-8 .hi-icon:after {
   top: 0;
   left: 0;
@@ -705,7 +726,7 @@ body {
   transform: scale(0.9);
 }
 
-/* line 736, ../sass/style.scss */
+/* line 755, ../sass/style.scss */
 .hi-icon-effect-8 .hi-icon:hover {
   background: rgba(255, 255, 255, 0.05);
   -webkit-transform: scale(0.93);
@@ -715,7 +736,7 @@ body {
   color: #fff;
 }
 
-/* line 745, ../sass/style.scss */
+/* line 764, ../sass/style.scss */
 .hi-icon-effect-8 .hi-icon:hover:after {
   -webkit-animation: sonarEffect 1.3s ease-out 75ms;
   -moz-animation: sonarEffect 1.3s ease-out 75ms;

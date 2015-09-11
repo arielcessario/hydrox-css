@@ -30,6 +30,26 @@ function MainController($scope) {
     var mainContainer = angular.element(document.querySelector('#main-container'));
 
 
+    //console.log((angular.element(document.querySelector('#seccion-05')))[0].style.height);
+
+    var containers = angular.element(document.querySelectorAll('.left-container'));
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].style.height = (mainContainer[0].clientHeight - (mainContainer[0].clientHeight / 3)) + 'px';
+        containers[i].style.maxHeight = (mainContainer[0].clientHeight - (mainContainer[0].clientHeight / 3)) + 'px';
+        containers[i].style.maxWidth = (mainContainer[0].clientWidth / 2) + 'px';
+        containers[i].style.width = (mainContainer[0].clientWidth / 2) + 'px';
+    }
+
+    containers = angular.element(document.querySelectorAll('.bottom-container'));
+    var factor = 12;
+    if(mainContainer[0].clientHeight < 700){
+        factor = 9;
+    }
+    for (var i = 0; i < containers.length; i++) {
+        containers[i].style.marginTop = (mainContainer[0].clientHeight / factor) + 'px';
+    }
+
+
     var pos_origin = 0;
 
     function scrollToMobile(pos) {
@@ -112,7 +132,7 @@ function MainController($scope) {
 
         if (mainContainer[0].scrollLeft > 800) {
             vm.header = true;
-        }else{
+        } else {
             vm.header = false;
         }
 
@@ -124,10 +144,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-02';
             vm.img = 'zapa_neoprene_01.gif';
             vm.thumbs = [
-                {big:'zapa_neoprene_01.gif', small:'zapa_neoprene_01t.png'},
-                {big:'Zapa_neoprene_02.gif', small:'Zapa_neoprene_02t.png'}
+                {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png'},
+                {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png'}
             ];
-            if ((mainContainer[0].scrollLeft > 1000) && (mainContainer[0].scrollLeft< 1600)){
+            if ((mainContainer[0].scrollLeft > 1000) && (mainContainer[0].scrollLeft < 1600)) {
 
             }
 
@@ -139,9 +159,9 @@ function MainController($scope) {
             vm.img = 'bota_01.gif';
             //$scope.$apply();
             vm.thumbs = [
-                {big:'bota_01.gif', small:'bota_01t.png'},
-                {big:'bota_02.gif', small:'bota_02t.png'},
-                {big:'bota_03.gif', small:'bota_03t.png'}
+                {big: 'bota_01.gif', small: 'bota_01t.png'},
+                {big: 'bota_02.gif', small: 'bota_02t.png'},
+                {big: 'bota_03.gif', small: 'bota_03t.png'}
             ];
         }
 
@@ -152,8 +172,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-04';
             vm.img = 'medias_neoprene_01.gif';
             vm.thumbs = [
-                {big:'medias_neoprene_01.gif', small:'medias_neoprene_01t.png'},
-                {big:'medias_neoprene_02.gif', small:'medias_neoprene_02t.png'}
+                {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png'},
+                {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png'}
             ];
             //$scope.$apply();
         }
@@ -165,10 +185,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-05';
             vm.img = 'jardinero_01.gif';
             vm.thumbs = [
-                {big:'jardinero_01.gif', small:'jardinero_01t.png'},
-                {big:'jardinero_02.gif', small:'jardinero_02t.png'},
-                {big:'jardinero_03.gif', small:'jardinero_03t.png'},
-                {big:'jardinero_04.gif', small:'jardinero_04t.png'}
+                {big: 'jardinero_01.gif', small: 'jardinero_01t.png'},
+                {big: 'jardinero_02.gif', small: 'jardinero_02t.png'},
+                {big: 'jardinero_03.gif', small: 'jardinero_03t.png'},
+                {big: 'jardinero_04.gif', small: 'jardinero_04t.png'}
             ];
             //$scope.$apply();
         }
@@ -178,11 +198,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-06';
             vm.img = 'pantalon_neoprene_01.gif';
             vm.thumbs = [
-                {big:'pantalon_neoprene_01.gif', small:'pantalon_neoprene_01t.png'},
-                {big:'pantalon_neoprene_02.gif', small:'pantalon_neoprene_02t.png'},
-                {big:'pantalon_neoprene_03.gif', small:'pantalon_neoprene_03t.png'},
-                {big:'pantalon_neoprene_04.gif', small:'pantalon_neoprene_04t.png'},
-                {big:'pantalon_neoprene_05.gif', small:'pantalon_neoprene_05t.png'}
+                {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png'},
+                {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png'},
+                {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png'},
+                {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png'},
+                {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png'}
             ];
             //$scope.$apply();
         }
@@ -192,10 +212,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-07';
             vm.img = 'calza_04.gif';
             vm.thumbs = [
-                {big:'calza_01.gif', small:'calza_01t.png'},
-                {big:'calza_02.gif', small:'calza_02t.png'},
-                {big:'calza_03.gif', small:'calza_03t.png'},
-                {big:'calza_04.gif', small:'calza_04t.png'}
+                {big: 'calza_01.gif', small: 'calza_01t.png'},
+                {big: 'calza_02.gif', small: 'calza_02t.png'},
+                {big: 'calza_03.gif', small: 'calza_03t.png'},
+                {big: 'calza_04.gif', small: 'calza_04t.png'}
             ];
             //$scope.$apply();
         }
@@ -205,8 +225,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-08';
             vm.img = 'remera_neoprene_02.gif';
             vm.thumbs = [
-                {big:'remera_neoprene_01.gif', small:'remera_neoprene_01t.png'},
-                {big:'remera_neoprene_02.gif', small:'remera_neoprene_02t.png'}
+                {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png'},
+                {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png'}
             ];
             //$scope.$apply();
         }
@@ -216,11 +236,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-09';
             vm.img = 'remera_lycra_01.gif';
             vm.thumbs = [
-                {big:'remera_lycra_01.gif', small:'remera_lycra_01t.png'},
-                {big:'remera_lycra_02.gif', small:'remera_lycra_02t.png'},
-                {big:'remera_lycra_03.gif', small:'remera_lycra_03t.png'},
-                {big:'remera_lycra_04.gif', small:'remera_lycra_04t.png'},
-                {big:'remera_lycra_05.gif', small:'remera_lycra_05t.png'}
+                {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png'},
+                {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png'},
+                {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png'},
+                {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png'},
+                {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png'}
             ];
             //$scope.$apply();
         }
@@ -238,8 +258,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-11';
             vm.img = 'milton_01.gif';
             vm.thumbs = [
-                {big:'milton_01t.gif', small:'milton_01t.png'},
-                {big:'milton_02t.gif', small:'milton_02t.png'}
+                {big: 'milton_01t.gif', small: 'milton_01t.png'},
+                {big: 'milton_02t.gif', small: 'milton_02t.png'}
             ];
             //$scope.$apply();
         }
