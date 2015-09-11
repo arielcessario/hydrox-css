@@ -80,11 +80,11 @@ body {
 
 /* line 42, ../sass/style.scss */
 #menu #menu-mobile-buttons {
-  right: 40px;
+  right: 75px;
 }
 /* line 45, ../sass/style.scss */
 #menu #menu-thumbs-buttons {
-  left: 40px;
+  left: 75px;
 }
 /* line 50, ../sass/style.scss */
 #menu #menu-mobile-buttons,
@@ -93,7 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 50px;
-  bottom: 90px;
+  bottom: 110px;
   align-items: center;
   z-index: 400;
 }
@@ -123,12 +123,10 @@ body {
 }
 /* line 85, ../sass/style.scss */
 #menu #button-derecha {
-  background-color: red;
   right: 30px;
 }
 /* line 94, ../sass/style.scss */
 #menu #button-izquierda {
-  background-color: red;
   left: 30px;
 }
 
