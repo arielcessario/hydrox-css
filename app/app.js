@@ -23,8 +23,52 @@ function MainController($scope) {
     vm.scrollTo = scrollTo;
     vm.scrollToMobile = scrollToMobile;
     vm.thumbs = [];
-    vm.selectImage = function (img) {
-        vm.img = img;
+
+    vm.img02 = 'zapa_neoprene_01.gif';
+    vm.img03 = 'bota_01.gif';
+    vm.img04 = 'medias_neoprene_01.gif';
+    vm.img05 = 'jardinero_01.gif';
+    vm.img06 = 'pantalon_neoprene_01.gif';
+    vm.img07 = 'calza_04.gif';
+    vm.img08 = 'remera_neoprene_02.gif';
+    vm.img09 = 'remera_lycra_01.gif';
+    vm.img10 = 'barbijo.gif';
+    vm.img11 = 'milton_01.gif';
+
+
+    vm.selectImage = function (big, img) {
+        switch (img){
+            case 'img02':
+                vm.img02 = big;
+                break;
+            case 'img03':
+                vm.img03 = big;
+                break;
+            case 'img04':
+                vm.img04 = big;
+                break;
+            case 'img05':
+                vm.img05 = big;
+                break;
+            case 'img06':
+                vm.img06 = big;
+                break;
+            case 'img07':
+                vm.img07 = big;
+                break;
+            case 'img08':
+                vm.img08 = big;
+                break;
+            case 'img09':
+                vm.img09 = big;
+                break;
+            case 'img10':
+                vm.img10 = big;
+                break;
+            case 'img11':
+                vm.img11 = big;
+                break;
+        }
     };
 
 
@@ -36,6 +80,7 @@ function MainController($scope) {
 
 
     vm.isMobile = window.mobilecheck();
+    console.log(vm.isMobile);
 
 
     var mainContainer = angular.element(document.querySelector('#main-container'));
@@ -156,8 +201,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-02';
             vm.img = 'zapa_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png'},
-                {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png'}
+                {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png', img:'img02'},
+                {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png', img:'img02'}
             ];
             if ((mainContainer[0].scrollLeft > 1000) && (mainContainer[0].scrollLeft < 1600)) {
 
@@ -172,9 +217,9 @@ function MainController($scope) {
             vm.img = 'bota_01.gif';
             //$scope.$apply();
             vm.thumbs = [
-                {big: 'bota_01.gif', small: 'bota_01t.png'},
-                {big: 'bota_02.gif', small: 'bota_02t.png'},
-                {big: 'bota_03.gif', small: 'bota_03t.png'}
+                {big: 'bota_01.gif', small: 'bota_01t.png', img:'img03'},
+                {big: 'bota_02.gif', small: 'bota_02t.png', img:'img03'},
+                {big: 'bota_03.gif', small: 'bota_03t.png', img:'img03'}
             ];
         }
 
@@ -186,8 +231,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-04';
             vm.img = 'medias_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png'},
-                {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png'}
+                {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png', img:'img04'},
+                {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png', img:'img04'}
             ];
             //$scope.$apply();
         }
@@ -200,10 +245,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-05';
             vm.img = 'jardinero_01.gif';
             vm.thumbs = [
-                {big: 'jardinero_01.gif', small: 'jardinero_01t.png'},
-                {big: 'jardinero_02.gif', small: 'jardinero_02t.png'},
-                {big: 'jardinero_03.gif', small: 'jardinero_03t.png'},
-                {big: 'jardinero_04.gif', small: 'jardinero_04t.png'}
+                {big: 'jardinero_01.gif', small: 'jardinero_01t.png', img:'img05'},
+                {big: 'jardinero_02.gif', small: 'jardinero_02t.png', img:'img05'},
+                {big: 'jardinero_03.gif', small: 'jardinero_03t.png', img:'img05'},
+                {big: 'jardinero_04.gif', small: 'jardinero_04t.png', img:'img05'}
             ];
             //$scope.$apply();
         }
@@ -214,11 +259,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-06';
             vm.img = 'pantalon_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png'},
-                {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png'},
-                {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png'},
-                {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png'},
-                {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png'}
+                {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png', img:'img06'},
+                {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png', img:'img06'},
+                {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png', img:'img06'},
+                {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png', img:'img06'},
+                {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png', img:'img06'}
             ];
             //$scope.$apply();
         }
@@ -229,10 +274,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-07';
             vm.img = 'calza_04.gif';
             vm.thumbs = [
-                {big: 'calza_01.gif', small: 'calza_01t.png'},
-                {big: 'calza_02.gif', small: 'calza_02t.png'},
-                {big: 'calza_03.gif', small: 'calza_03t.png'},
-                {big: 'calza_04.gif', small: 'calza_04t.png'}
+                {big: 'calza_01.gif', small: 'calza_01t.png', img:'img07'},
+                {big: 'calza_02.gif', small: 'calza_02t.png', img:'img07'},
+                {big: 'calza_03.gif', small: 'calza_03t.png', img:'img07'},
+                {big: 'calza_04.gif', small: 'calza_04t.png', img:'img07'}
             ];
             //$scope.$apply();
         }
@@ -243,8 +288,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-08';
             vm.img = 'remera_neoprene_02.gif';
             vm.thumbs = [
-                {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png'},
-                {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png'}
+                {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png', img:'img08'},
+                {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png', img:'img08'}
             ];
             //$scope.$apply();
         }
@@ -255,11 +300,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-09';
             vm.img = 'remera_lycra_01.gif';
             vm.thumbs = [
-                {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png'},
-                {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png'},
-                {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png'},
-                {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png'},
-                {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png'}
+                {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png', img:'img09'},
+                {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png', img:'img09'},
+                {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png', img:'img09'},
+                {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png', img:'img09'},
+                {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png', img:'img09'}
             ];
             //$scope.$apply();
         }
@@ -279,26 +324,26 @@ function MainController($scope) {
             vm.seccion = 'seccion-11';
             vm.img = 'milton_01.gif';
             vm.thumbs = [
-                {big: 'milton_01t.gif', small: 'milton_01t.png'},
-                {big: 'milton_02t.gif', small: 'milton_02t.png'}
+                {big: 'milton_01t.gif', small: 'milton_01t.png', img:'img11'},
+                {big: 'milton_02t.gif', small: 'milton_02t.png', img:'img11'}
             ];
             //$scope.$apply();
         }
-        if ((mainContainer[0].scrollLeft > 10800 && mainContainer[0].scrollLeft < 11800) && vm.seccion != 'seccion-12') {
-            vm.openThumbs = false;
-            vm.hideText = false;
-            //console.log('entra');
-            vm.seccion = 'seccion-12';
-            vm.img = 'milton_01t.gif';
-            //$scope.$apply();
-        }
-        if ((mainContainer[0].scrollLeft > 11800 && mainContainer[0].scrollLeft < 12800) && vm.seccion != 'seccion-13') {
-            //console.log('entra');
-            vm.hideText = false;
-            vm.seccion = 'seccion-13';
-            vm.img = 'zapa_neoprene_01.gif';
-            //$scope.$apply();
-        }
+        //if ((mainContainer[0].scrollLeft > 10800 && mainContainer[0].scrollLeft < 11800) && vm.seccion != 'seccion-12') {
+        //    vm.openThumbs = false;
+        //    vm.hideText = false;
+        //    //console.log('entra');
+        //    vm.seccion = 'seccion-12';
+        //    vm.img = 'milton_01t.gif';
+        //    //$scope.$apply();
+        //}
+        //if ((mainContainer[0].scrollLeft > 11800 && mainContainer[0].scrollLeft < 12800) && vm.seccion != 'seccion-13') {
+        //    //console.log('entra');
+        //    vm.hideText = false;
+        //    vm.seccion = 'seccion-13';
+        //    vm.img = 'zapa_neoprene_01.gif';
+        //    //$scope.$apply();
+        //}
 
         //showPosition();
         //

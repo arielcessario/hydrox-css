@@ -479,29 +479,8 @@ body {
   -o-animation: titulo-enter 0.8s !important;
   animation: titulo-enter 0.8s !important;
 }
-@media (max-width: 700px) {
-  /* line 441, ../sass/style.scss */
-  #seccion-02-imagen-main.ng-enter,
-  #seccion-03-imagen-main.ng-enter,
-  #seccion-04-imagen-main.ng-enter,
-  #seccion-05-imagen-main.ng-enter,
-  #seccion-06-imagen-main.ng-enter,
-  #seccion-07-imagen-main.ng-enter,
-  #seccion-08-imagen-main.ng-enter,
-  #seccion-09-imagen-main.ng-enter,
-  #seccion-10-imagen-main.ng-enter,
-  #seccion-11-imagen-main.ng-enter,
-  #seccion-12-imagen-main.ng-enter,
-  #seccion-13-imagen-main.ng-enter {
-    -webkit-animation: view-enter 0.2s !important;
-    -moz-animation: view-enter 0.2s !important;
-    -ms-animation: view-enter 0.2s !important;
-    -o-animation: view-enter 0.2s !important;
-    animation: view-enter 0.2s !important;
-  }
-}
 
-/* line 468, ../sass/style.scss */
+/* line 462, ../sass/style.scss */
 #seccion-02-titulo.ng-enter,
 #seccion-03-titulo.ng-enter,
 #seccion-04-titulo.ng-enter,
@@ -520,29 +499,8 @@ body {
   -o-animation: titulo-enter 0.8s !important;
   animation: titulo-enter 0.8s !important;
 }
-@media (max-width: 700px) {
-  /* line 468, ../sass/style.scss */
-  #seccion-02-titulo.ng-enter,
-  #seccion-03-titulo.ng-enter,
-  #seccion-04-titulo.ng-enter,
-  #seccion-05-titulo.ng-enter,
-  #seccion-06-titulo.ng-enter,
-  #seccion-07-titulo.ng-enter,
-  #seccion-08-titulo.ng-enter,
-  #seccion-09-titulo.ng-enter,
-  #seccion-10-titulo.ng-enter,
-  #seccion-11-titulo.ng-enter,
-  #seccion-12-titulo.ng-enter,
-  #seccion-13-titulo.ng-enter {
-    -webkit-animation: view-enter 0.2s !important;
-    -moz-animation: view-enter 0.2s !important;
-    -ms-animation: view-enter 0.2s !important;
-    -o-animation: view-enter 0.2s !important;
-    animation: view-enter 0.2s !important;
-  }
-}
 
-/* line 495, ../sass/style.scss */
+/* line 482, ../sass/style.scss */
 #seccion-02-sub-titulo.ng-enter,
 #seccion-03-sub-titulo.ng-enter,
 #seccion-04-sub-titulo.ng-enter,
@@ -563,29 +521,8 @@ body {
   /* Opera */
   animation: titulo-enter 0.9s ease-in;
 }
-@media (max-width: 700px) {
-  /* line 495, ../sass/style.scss */
-  #seccion-02-sub-titulo.ng-enter,
-  #seccion-03-sub-titulo.ng-enter,
-  #seccion-04-sub-titulo.ng-enter,
-  #seccion-05-sub-titulo.ng-enter,
-  #seccion-06-sub-titulo.ng-enter,
-  #seccion-07-sub-titulo.ng-enter,
-  #seccion-08-sub-titulo.ng-enter,
-  #seccion-09-sub-titulo.ng-enter,
-  #seccion-10-sub-titulo.ng-enter,
-  #seccion-11-sub-titulo.ng-enter,
-  #seccion-12-sub-titulo.ng-enter,
-  #seccion-13-sub-titulo.ng-enter {
-    -webkit-animation: view-enter 0.2s !important;
-    -moz-animation: view-enter 0.2s !important;
-    -ms-animation: view-enter 0.2s !important;
-    -o-animation: view-enter 0.2s !important;
-    animation: view-enter 0.2s !important;
-  }
-}
 
-/* line 521, ../sass/style.scss */
+/* line 501, ../sass/style.scss */
 #seccion-02-detalle.ng-enter,
 #seccion-03-detalle.ng-enter,
 #seccion-04-detalle.ng-enter,
@@ -604,29 +541,8 @@ body {
   -o-animation: titulo-enter 1s !important;
   animation: titulo-enter 1s !important;
 }
-@media (max-width: 700px) {
-  /* line 521, ../sass/style.scss */
-  #seccion-02-detalle.ng-enter,
-  #seccion-03-detalle.ng-enter,
-  #seccion-04-detalle.ng-enter,
-  #seccion-05-detalle.ng-enter,
-  #seccion-06-detalle.ng-enter,
-  #seccion-07-detalle.ng-enter,
-  #seccion-08-detalle.ng-enter,
-  #seccion-09-detalle.ng-enter,
-  #seccion-10-detalle.ng-enter,
-  #seccion-11-detalle.ng-enter,
-  #seccion-12-detalle.ng-enter,
-  #seccion-13-detalle.ng-enter {
-    -webkit-animation: view-enter 0.2s !important;
-    -moz-animation: view-enter 0.2s !important;
-    -ms-animation: view-enter 0.2s !important;
-    -o-animation: view-enter 0.2s !important;
-    animation: view-enter 0.2s !important;
-  }
-}
 
-/* line 548, ../sass/style.scss */
+/* line 520, ../sass/style.scss */
 #seccion-02-thumbs.ng-enter,
 #seccion-03-thumbs.ng-enter,
 #seccion-04-thumbs.ng-enter,
@@ -644,27 +560,6 @@ body {
   -ms-animation: titulo-enter 1.1s !important;
   -o-animation: titulo-enter 1.1s !important;
   animation: titulo-enter 1.1s !important;
-}
-@media (max-width: 700px) {
-  /* line 548, ../sass/style.scss */
-  #seccion-02-thumbs.ng-enter,
-  #seccion-03-thumbs.ng-enter,
-  #seccion-04-thumbs.ng-enter,
-  #seccion-05-thumbs.ng-enter,
-  #seccion-06-thumbs.ng-enter,
-  #seccion-07-thumbs.ng-enter,
-  #seccion-08-thumbs.ng-enter,
-  #seccion-09-thumbs.ng-enter,
-  #seccion-10-thumbs.ng-enter,
-  #seccion-11-thumbs.ng-enter,
-  #seccion-12-thumbs.ng-enter,
-  #seccion-13-thumbs.ng-enter {
-    -webkit-animation: view-enter 0.2s !important;
-    -moz-animation: view-enter 0.2s !important;
-    -ms-animation: view-enter 0.2s !important;
-    -o-animation: view-enter 0.2s !important;
-    animation: view-enter 0.2s !important;
-  }
 }
 
 @-webkit-keyframes titulo-enter {
@@ -709,7 +604,7 @@ body {
     -ms-transform: translate(0px, 0px);
   }
 }
-/* line 629, ../sass/style.scss */
+/* line 594, ../sass/style.scss */
 #seccion-02-titulo.ng-leave,
 #seccion-02-sub-titulo.ng-leave,
 #seccion-02-imagen-main.ng-leave,
@@ -758,57 +653,6 @@ body {
   -o-animation: titulo-leave 0.4s !important;
   animation: titulo-leave 0.4s !important;
 }
-@media (max-width: 700px) {
-  /* line 629, ../sass/style.scss */
-  #seccion-02-titulo.ng-leave,
-  #seccion-02-sub-titulo.ng-leave,
-  #seccion-02-imagen-main.ng-leave,
-  #seccion-03-titulo.ng-leave,
-  #seccion-03-sub-titulo.ng-leave,
-  #seccion-03-imagen-main.ng-leave
-  #seccion-04-titulo.ng-leave,
-  #seccion-04-sub-titulo.ng-leave,
-  #seccion-04-imagen-main.ng-leave
-  #seccion-05-titulo.ng-leave,
-  #seccion-05-sub-titulo.ng-leave,
-  #seccion-05-imagen-main.ng-leave
-  #seccion-06-titulo.ng-leave,
-  #seccion-06-sub-titulo.ng-leave,
-  #seccion-06-imagen-main.ng-leave
-  #seccion-07-titulo.ng-leave,
-  #seccion-07-sub-titulo.ng-leave,
-  #seccion-07-imagen-main.ng-leave
-  #seccion-08-titulo.ng-leave,
-  #seccion-08-sub-titulo.ng-leave,
-  #seccion-08-imagen-main.ng-leave
-  #seccion-09-titulo.ng-leave,
-  #seccion-09-sub-titulo.ng-leave,
-  #seccion-09-imagen-main.ng-leave
-  #seccion-10-titulo.ng-leave,
-  #seccion-10-sub-titulo.ng-leave,
-  #seccion-10-imagen-main.ng-leave
-  #seccion-11-titulo.ng-leave,
-  #seccion-11-sub-titulo.ng-leave,
-  #seccion-11-imagen-main.ng-leave
-  #seccion-12-titulo.ng-leave,
-  #seccion-12-sub-titulo.ng-leave,
-  #seccion-12-imagen-main.ng-leave
-  #seccion-13-titulo.ng-leave,
-  #seccion-13-sub-titulo.ng-leave,
-  #seccion-14-imagen-main.ng-leave
-  #seccion-15-titulo.ng-leave,
-  #seccion-15-sub-titulo.ng-leave,
-  #seccion-15-imagen-main.ng-leave,
-  #seccion-16-titulo.ng-leave,
-  #seccion-16-sub-titulo.ng-leave,
-  #seccion-16-imagen-main.ng-leave {
-    -webkit-animation: view-leave 0.2s !important;
-    -moz-animation: view-leave 0.2s !important;
-    -ms-animation: view-leave 0.2s !important;
-    -o-animation: view-leave 0.2s !important;
-    animation: view-leave 0.2s !important;
-  }
-}
 
 @-webkit-keyframes titulo-leave {
   0% {
@@ -830,7 +674,7 @@ body {
     transform: translate(-1000px, 0px);
   }
 }
-/* line 717, ../sass/style.scss */
+/* line 675, ../sass/style.scss */
 #seccion-02.ng-enter,
 #seccion-03.ng-enter,
 #seccion-04.ng-enter,
@@ -867,7 +711,7 @@ body {
     opacity: 1;
   }
 }
-/* line 776, ../sass/style.scss */
+/* line 734, ../sass/style.scss */
 #seccion-01,
 #seccion-02,
 #seccion-03,
@@ -891,14 +735,14 @@ body {
   text-shadow: 2px 2px 4px black;
 }
 
-/* line 803, ../sass/style.scss */
+/* line 761, ../sass/style.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 809, ../sass/style.scss */
+/* line 767, ../sass/style.scss */
 .hi-icon {
   display: inline-block;
   font-size: 0px;
@@ -917,7 +761,7 @@ body {
   transition: transform ease-out 0.1s, background 0.2s;
 }
 
-/* line 829, ../sass/style.scss */
+/* line 787, ../sass/style.scss */
 .hi-icon:after {
   content: "\e00f";
   top: 0;
@@ -941,7 +785,7 @@ body {
   border-radius: 80px;
 }
 
-/* line 854, ../sass/style.scss */
+/* line 812, ../sass/style.scss */
 .hi-icon:hover {
   background: rgba(255, 255, 255, 0.05);
   -webkit-transform: scale(0.93);
@@ -951,7 +795,7 @@ body {
   color: #fff;
 }
 
-/* line 863, ../sass/style.scss */
+/* line 821, ../sass/style.scss */
 .hi-icon:hover:after {
   z-index: 400;
   content: "";
