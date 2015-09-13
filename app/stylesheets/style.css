@@ -78,7 +78,7 @@ body {
   padding: 0;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 #menu #menu-mobile-buttons {
   right: 75px;
 }
@@ -100,17 +100,17 @@ body {
 /* line 60, ../sass/style.scss */
 #menu #menu-mobile-buttons button,
 #menu #menu-thumbs-buttons button {
-  margin: 5px;
-  height: 40px;
-  width: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-}
-/* line 68, ../sass/style.scss */
-#menu #menu-mobile-buttons button img,
-#menu #menu-thumbs-buttons button img {
-  margin: 50px;
+  margin: 2px;
+  padding: 2px;
+  max-height: 60px;
+  width: 80px;
+  font-weight: lighter;
+  font-size: 10px;
+  color: white;
+  background-color: black;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
 }
 /* line 75, ../sass/style.scss */
 #menu #button-derecha,
