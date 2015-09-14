@@ -16,7 +16,7 @@
   max-height: 90%;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
   -webkit-perspective: 300px;
   perspective: 300px;
