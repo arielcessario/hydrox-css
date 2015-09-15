@@ -37,7 +37,7 @@ function MainController($scope) {
 
 
     vm.selectImage = function (big, img) {
-        switch (img){
+        switch (img) {
             case 'img02':
                 vm.img02 = big;
                 break;
@@ -72,9 +72,11 @@ function MainController($scope) {
     };
 
 
-    window.mobilecheck = function() {
+    window.mobilecheck = function () {
         var check = false;
-        (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+        (function (a) {
+            if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)))check = true
+        })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
     };
 
@@ -98,7 +100,7 @@ function MainController($scope) {
 
     containers = angular.element(document.querySelectorAll('.bottom-container'));
     var factor = 12;
-    if(mainContainer[0].clientHeight < 700){
+    if (mainContainer[0].clientHeight < 700) {
         factor = 9;
     }
     for (var i = 0; i < containers.length; i++) {
@@ -113,10 +115,10 @@ function MainController($scope) {
 
 
         vm.openMobile = false;
-        if(vm.isMobile){
+        if (vm.isMobile) {
 
-            scrollTo(pos + 550);
-        }else{
+            scrollTo(pos + 600);
+        } else {
 
             scrollTo(pos + (550 - (window.innerWidth / 2)));
         }
@@ -127,12 +129,12 @@ function MainController($scope) {
 
         //var cantidad = pos;
         var timer = 0;
-        var speed = 100;
+        var speed = 70;
         vm.header = false;
 
         var is_end = false;
         var pos_actual = document.getElementById('main-container').scrollLeft;
-        var pos_next = pos_actual + (pos / speed);
+        var pos_next = Math.round(pos_actual + (pos / speed));
 
 
         if (pos_origin == 0) {
@@ -142,30 +144,40 @@ function MainController($scope) {
         if ((pos_actual < pos && pos_next > pos) ||
             (pos_actual > pos && pos_next < pos)) {
 
+            console.log('pos ' + pos_actual);
+            console.log('pos ' + pos);
+
+
             is_end = true;
             pos_origin = 0;
         }
 
+        console.log(is_end);
 
         //for(var i = 0; i<cantidad/8; i++){
         if (document.getElementById('main-container').scrollLeft != pos) {
             setTimeout(function () {
                 //console.log(document.getElementById('parallax').scrollTop);
 
-                if (pos < document.getElementById('main-container').scrollLeft) {
-
-                    document.getElementById('main-container').scrollLeft -= pos_origin / speed;
-
+                if (is_end) {
+                    document.getElementById('main-container').scrollLeft = pos;
                 } else {
-                    document.getElementById('main-container').scrollLeft += pos / speed;
+                    if (pos < document.getElementById('main-container').scrollLeft) {
 
+                        document.getElementById('main-container').scrollLeft -= Math.round(pos_origin / speed);
+
+                    } else {
+                        document.getElementById('main-container').scrollLeft += Math.round(pos / speed);
+
+                    }
                 }
+
                 //console.log(document.getElementById('parallax').scrollTop);
                 //timer += 1;
                 if (!is_end) {
                     vm.scrollTo(pos);
                 }
-            }, 10);
+            }, 1);
 
         }
     }
@@ -207,8 +219,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-02';
             vm.img = 'zapa_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png', img:'img02'},
-                {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png', img:'img02'}
+                {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png', img: 'img02'},
+                {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png', img: 'img02'}
             ];
             if ((mainContainer[0].scrollLeft > 1000) && (mainContainer[0].scrollLeft < 1600)) {
 
@@ -223,9 +235,9 @@ function MainController($scope) {
             vm.img = 'bota_01.gif';
             //$scope.$apply();
             vm.thumbs = [
-                {big: 'bota_01.gif', small: 'bota_01t.png', img:'img03'},
-                {big: 'bota_02.gif', small: 'bota_02t.png', img:'img03'},
-                {big: 'bota_03.gif', small: 'bota_03t.png', img:'img03'}
+                {big: 'bota_01.gif', small: 'bota_01t.png', img: 'img03'},
+                {big: 'bota_02.gif', small: 'bota_02t.png', img: 'img03'},
+                {big: 'bota_03.gif', small: 'bota_03t.png', img: 'img03'}
             ];
         }
 
@@ -237,8 +249,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-04';
             vm.img = 'medias_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png', img:'img04'},
-                {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png', img:'img04'}
+                {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png', img: 'img04'},
+                {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png', img: 'img04'}
             ];
             //$scope.$apply();
         }
@@ -251,10 +263,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-05';
             vm.img = 'jardinero_01.gif';
             vm.thumbs = [
-                {big: 'jardinero_01.gif', small: 'jardinero_01t.png', img:'img05'},
-                {big: 'jardinero_02.gif', small: 'jardinero_02t.png', img:'img05'},
-                {big: 'jardinero_03.gif', small: 'jardinero_03t.png', img:'img05'},
-                {big: 'jardinero_04.gif', small: 'jardinero_04t.png', img:'img05'}
+                {big: 'jardinero_01.gif', small: 'jardinero_01t.png', img: 'img05'},
+                {big: 'jardinero_02.gif', small: 'jardinero_02t.png', img: 'img05'},
+                {big: 'jardinero_03.gif', small: 'jardinero_03t.png', img: 'img05'},
+                {big: 'jardinero_04.gif', small: 'jardinero_04t.png', img: 'img05'}
             ];
             //$scope.$apply();
         }
@@ -265,11 +277,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-06';
             vm.img = 'pantalon_neoprene_01.gif';
             vm.thumbs = [
-                {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png', img:'img06'},
-                {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png', img:'img06'},
-                {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png', img:'img06'},
-                {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png', img:'img06'},
-                {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png', img:'img06'}
+                {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png', img: 'img06'},
+                {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png', img: 'img06'},
+                {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png', img: 'img06'},
+                {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png', img: 'img06'},
+                {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png', img: 'img06'}
             ];
             //$scope.$apply();
         }
@@ -280,10 +292,10 @@ function MainController($scope) {
             vm.seccion = 'seccion-07';
             vm.img = 'calza_04.gif';
             vm.thumbs = [
-                {big: 'calza_01.gif', small: 'calza_01t.png', img:'img07'},
-                {big: 'calza_02.gif', small: 'calza_02t.png', img:'img07'},
-                {big: 'calza_03.gif', small: 'calza_03t.png', img:'img07'},
-                {big: 'calza_04.gif', small: 'calza_04t.png', img:'img07'}
+                {big: 'calza_01.gif', small: 'calza_01t.png', img: 'img07'},
+                {big: 'calza_02.gif', small: 'calza_02t.png', img: 'img07'},
+                {big: 'calza_03.gif', small: 'calza_03t.png', img: 'img07'},
+                {big: 'calza_04.gif', small: 'calza_04t.png', img: 'img07'}
             ];
             //$scope.$apply();
         }
@@ -294,8 +306,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-08';
             vm.img = 'remera_neoprene_02.gif';
             vm.thumbs = [
-                {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png', img:'img08'},
-                {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png', img:'img08'}
+                {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png', img: 'img08'},
+                {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png', img: 'img08'}
             ];
             //$scope.$apply();
         }
@@ -306,11 +318,11 @@ function MainController($scope) {
             vm.seccion = 'seccion-09';
             vm.img = 'remera_lycra_01.gif';
             vm.thumbs = [
-                {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png', img:'img09'},
-                {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png', img:'img09'},
-                {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png', img:'img09'},
-                {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png', img:'img09'},
-                {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png', img:'img09'}
+                {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png', img: 'img09'},
+                {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png', img: 'img09'},
+                {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png', img: 'img09'},
+                {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png', img: 'img09'},
+                {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png', img: 'img09'}
             ];
             //$scope.$apply();
         }
@@ -330,8 +342,8 @@ function MainController($scope) {
             vm.seccion = 'seccion-11';
             vm.img = 'milton_01.gif';
             vm.thumbs = [
-                {big: 'milton_01t.gif', small: 'milton_01t.png', img:'img11'},
-                {big: 'milton_02t.gif', small: 'milton_02t.png', img:'img11'}
+                {big: 'milton_01t.gif', small: 'milton_01t.png', img: 'img11'},
+                {big: 'milton_02t.gif', small: 'milton_02t.png', img: 'img11'}
             ];
             //$scope.$apply();
         }
