@@ -80,7 +80,7 @@ function MainController($scope) {
 
 
     vm.isMobile = window.mobilecheck();
-    console.log(vm.isMobile);
+    //console.log(vm.isMobile);
 
 
     var mainContainer = angular.element(document.querySelector('#main-container'));
@@ -113,7 +113,13 @@ function MainController($scope) {
 
 
         vm.openMobile = false;
-        scrollTo(pos + (550 - (window.innerWidth / 2)));
+        if(vm.isMobile){
+
+            scrollTo(pos + 550);
+        }else{
+
+            scrollTo(pos + (550 - (window.innerWidth / 2)));
+        }
 
     }
 
@@ -121,12 +127,12 @@ function MainController($scope) {
 
         //var cantidad = pos;
         var timer = 0;
-        var speed = 20;
+        var speed = 100;
         vm.header = false;
 
         var is_end = false;
         var pos_actual = document.getElementById('main-container').scrollLeft;
-        var pos_next = pos_actual + (pos / 25);
+        var pos_next = pos_actual + (pos / speed);
 
 
         if (pos_origin == 0) {
@@ -148,10 +154,10 @@ function MainController($scope) {
 
                 if (pos < document.getElementById('main-container').scrollLeft) {
 
-                    document.getElementById('main-container').scrollLeft -= pos_origin / 25;
+                    document.getElementById('main-container').scrollLeft -= pos_origin / speed;
 
                 } else {
-                    document.getElementById('main-container').scrollLeft += pos / 25;
+                    document.getElementById('main-container').scrollLeft += pos / speed;
 
                 }
                 //console.log(document.getElementById('parallax').scrollTop);
