@@ -38,6 +38,7 @@
         <img ng-repeat="thumb in mainCtrl.thumbs" ng-click="mainCtrl.selectImage(thumb.big, thumb.img); mainCtrl.openThumbs = false;"
              ng-src="{{'img/'+thumb.small}}"
              alt="{{thumb.big}}"
+             class="menu-thumb-button"
              width="75">
     </div>
     <div id="menu-mobile">
