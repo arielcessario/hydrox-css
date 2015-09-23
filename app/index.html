@@ -29,8 +29,8 @@
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4100);mainCtrl.openMobile = false;">Jardinero</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5100);mainCtrl.openMobile = false;">Pantalón</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6100);mainCtrl.openMobile = false;">Calza</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7100);mainCtrl.openMobile = false;">Remera Neo</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8100);mainCtrl.openMobile = false;">Remera Lycra</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7100);mainCtrl.openMobile = false;">R.Neoprene</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8100);mainCtrl.openMobile = false;">R.Lycra</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9100);mainCtrl.openMobile = false;">Barbijo</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10100);mainCtrl.openMobile = false;">Miton</button>
     </div>
@@ -88,8 +88,13 @@
 
     <div id="secciones" ng-mouseover="mainCtrl.openThumbs = false; mainCtrl.openMobile = false;">
         <div id="seccion-01">
-
-
+            <div class="contenedor-inicio">
+                <div class="contenedor-logo-inicio">
+                <img class="hydrox-inicio" src="img/hydrox.png">
+                <img class="x-inicio" src="img/x.png">
+                <img class="foot-inicio" src="img/foot.png">
+                </div>
+            </div>
         </div>
 
         <div id="seccion-02">
@@ -102,8 +107,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-sub-titulo" class="sub-titulo">
-                        ZAPATILLA DE
-                        NEOPRENE DE 3MM
+                        ZAPATILLA DE <br>
+                        NEOPRENE DE 3MM <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-detalle" class="detalle">
                         Suela de caucho TR Antideslizante <br>
@@ -125,7 +130,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-sub-titulo" class="sub-titulo">
-                        BOTA LINUX NEOPRENE DE 4MM
+                        BOTA LINUX <br>
+                        NEOPRENE DE 4MM <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-detalle" class="detalle">
                         Puño elástico de 2mm <br>
@@ -147,7 +153,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-sub-titulo" class="sub-titulo">
-                        Medias estanca neoprene de 3mm
+                        Medias estanca <br>
+                        neoprene de 3mm <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-detalle" class="detalle">
                         Costuras entancas <br>
@@ -168,7 +175,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-sub-titulo" class="sub-titulo">
-                        Jardinero de neoprene de 3m:
+                        Jardinero de neoprene <br>
+                        de 3m: <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-detalle" class="detalle">
                         Costuras estancas. <br>
@@ -193,8 +201,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-sub-titulo" class="sub-titulo">
-                        Pantalon de neoprene
-                        de 3 mm:
+                        Pantalon de neoprene <br>
+                        de 3 mm: <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-detalle" class="detalle">
                         Suela de caucho TR Antideslizante <br>
@@ -215,7 +223,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-sub-titulo" class="sub-titulo">
-                        Calza de neoprene de 3mm:
+                        Calza de neoprene <br>
+                        de 3mm: <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-detalle" class="detalle">
                         Ribeteados con lycra <br>
@@ -237,8 +246,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-sub-titulo" class="sub-titulo">
-                        Remera neoprene
-                        y mangas de Lycra:
+                        Remera neoprene <br>
+                        y mangas de Lycra: <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-detalle" class="detalle">
                         Cuerpo de neoprene 1,5 mm <br>
@@ -284,7 +293,8 @@
                 </div>
                 <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                     <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-sub-titulo" class="sub-titulo">
-                        Barbijo neoprene 3mm:
+                        Barbijo neoprene <br>
+                        3mm: <br>
                     </div>
                     <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-detalle" class="detalle">
                         Micropolar antipeeling <br>

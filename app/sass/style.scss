@@ -70,18 +70,25 @@ body {
     z-index: 400;
     padding-bottom: 20px;
     button {
-    margin: 5px;
+    margin: 2px;
     padding: 2px;
     max-height: 60px;
-    width: 80px;
-    font-weight: lighter;
-    font-size: 10px;
+    width: 85px;
+    font-weight: bold;
+    font-size: 13px;
     color: white;
-    background-color: black;
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      border-radius: 50px;
-     }
+    background-color: rgba(0,0,0,0.5);
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+       }
+  }
+
+  #menu-mobile-buttons button:hover,
+  #menu-mobile-buttons button:active {
+    zoom:120%;
+    background-color: #ff3e17;
+    box-shadow: 2px 2px 1px black;
   }
 
   #button-derecha,
@@ -123,7 +130,7 @@ body {
   }
 
   #button-centro{
-    background: url("../img/logo_ojo.png") 50% 50% no-repeat;
+    background: url("../img/logo_ojo.svg") 50% 50% no-repeat;
     right: calc(50% - 60px);
     //background-color: blue;
     @media (min-width: 700px) {
@@ -436,8 +443,9 @@ body {
   position: static;
   margin: 10px;
   @media (max-width: 600px){
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 45px;
+    max-width: 360px;
+    line-height: 46px;
     text-align: center;
 
   }
@@ -459,12 +467,48 @@ body {
   color: white;
   position: static;
   @media (max-width: 600px){
-    font-size: 25px;
+    font-size: 26px;
     line-height: 27px;
-    margin-top: 0px;
+    margin-top: 5px;
     text-align: center;
   }
 }
+
+.contenedor-inicio{
+  //margin-top: 100px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+
+}
+
+.contenedor-logo-inicio{
+ display: flex;
+  width: 550px;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+.hydrox-inicio{
+  order: 1;
+  width: 312px;
+  height: 54px;
+}
+.x-inicio{
+  order: 1;
+  width: 189px;
+  height: 142px;
+}
+
+.foot-inicio{
+  margin-top: -40px;
+  order: 2;
+  width: 301px;
+  height: 71px;
+}
+
 
 .imagen-main {
   //position: absolute;
@@ -836,12 +880,18 @@ body {
   max-width: 800px;
   max-height: 90%;
   color: white;
-  margin-top: 130px;
+  margin-top: 230px;
   text-shadow: 2px 2px 4px black;
 
   @media (max-width: 700px) {
     //margin-left: 200px;
+    margin-top: 80px;
   }
+  @media (min-width: 800px){
+    zoom: 150%;
+
+  }
+
 }
 
 *, *:after, *:before {
