@@ -190,6 +190,9 @@ body {
   flex-direction: row;
   max-width: 11000px;
 
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
   @media (min-width: 700px) {
     height: 100%;
     //max-width: 100%;

@@ -56,10 +56,11 @@
 .parallax__layer--fore {
   -webkit-transform: translateZ(90px) scale(0.7);
   transform: translateZ(90px) scale(0.7);
-  z-index: 1;
+  z-index: 100;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
 }
 
-/* line 55, ../sass/parallax.scss */
+/* line 56, ../sass/parallax.scss */
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -67,7 +68,7 @@
   background: url("../img/burbujas.svg") 50% 50% repeat;
 }
 
-/* line 62, ../sass/parallax.scss */
+/* line 63, ../sass/parallax.scss */
 .parallax__layer--back {
   -webkit-transform: translateZ(-300px) scale(2);
   transform: translateZ(-300px) scale(2);
@@ -80,7 +81,7 @@
   filter: blur(5px);
 }
 
-/* line 75, ../sass/parallax.scss */
+/* line 76, ../sass/parallax.scss */
 .parallax__layer--deep {
   -webkit-transform: translateZ(-600px) scale(3);
   transform: translateZ(-600px) scale(3);
