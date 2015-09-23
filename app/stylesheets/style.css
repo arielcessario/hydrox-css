@@ -1004,33 +1004,15 @@ body {
     margin-top: 80px;
   }
 }
-@media (min-width: 800px) {
-  /* line 864, ../sass/style.scss */
-  #seccion-01,
-  #seccion-02,
-  #seccion-03,
-  #seccion-04,
-  #seccion-05,
-  #seccion-06,
-  #seccion-07,
-  #seccion-08,
-  #seccion-09,
-  #seccion-10,
-  #seccion-11,
-  #seccion-12,
-  #seccion-13 {
-    zoom: 150%;
-  }
-}
 
-/* line 897, ../sass/style.scss */
+/* line 892, ../sass/style.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 903, ../sass/style.scss */
+/* line 898, ../sass/style.scss */
 .hi-icon {
   display: inline-block;
   font-size: 0px;
@@ -1049,7 +1031,7 @@ body {
   transition: transform ease-out 0.1s, background 0.2s;
 }
 
-/* line 923, ../sass/style.scss */
+/* line 918, ../sass/style.scss */
 .hi-icon:after {
   content: "\e00f";
   top: 0;
@@ -1073,7 +1055,7 @@ body {
   border-radius: 80px;
 }
 
-/* line 948, ../sass/style.scss */
+/* line 943, ../sass/style.scss */
 .hi-icon:hover {
   background: rgba(255, 255, 255, 0.05);
   -webkit-transform: scale(0.93);
@@ -1083,7 +1065,7 @@ body {
   color: #fff;
 }
 
-/* line 957, ../sass/style.scss */
+/* line 952, ../sass/style.scss */
 .hi-icon:hover:after {
   z-index: 400;
   content: "";
