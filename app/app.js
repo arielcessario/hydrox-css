@@ -102,9 +102,9 @@ function MainController($scope) {
         secciones[i].style.minWidth = (mainWidth) + 'px';
 
         if (vm.isMobile) {
-            if(i!=0){
+            if (i != 0) {
                 secciones[i].style.marginLeft = '250px';
-            }else{
+            } else {
                 secciones[i].style.marginLeft = '10px';
             }
         }
@@ -113,10 +113,22 @@ function MainController($scope) {
 
     var containers = angular.element(document.querySelectorAll('.left-container'));
     for (var i = 0; i < containers.length; i++) {
-        containers[i].style.height = (mainHeight - (mainHeight / 3)) + 'px';
-        containers[i].style.maxHeight = (mainHeight - (mainHeight / 3)) + 'px';
-        containers[i].style.maxWidth = (mainWidth / 2) + 'px';
-        containers[i].style.width = (mainWidth / 2) + 'px';
+
+        if(mainHeight>mainWidth){
+            containers[i].style.height = (mainHeight - (mainHeight / 3)) + 'px';
+            containers[i].style.maxHeight = (mainHeight - (mainHeight / 3)) + 'px';
+            containers[i].style.maxWidth = (mainHeight - (mainHeight / 3)) + 'px';
+            containers[i].style.width = (mainHeight - (mainHeight / 3)) + 'px';
+
+        }else{
+            containers[i].style.height = (mainWidth / 2.2) + 'px';
+            containers[i].style.maxHeight = (mainWidth / 2.2) + 'px';
+            containers[i].style.maxWidth = (mainWidth / 2.2) + 'px';
+            containers[i].style.width = (mainWidth / 2.2) + 'px';
+        }
+
+
+
     }
 
     containers = angular.element(document.querySelectorAll('.bottom-container'));
@@ -126,6 +138,7 @@ function MainController($scope) {
     }
     for (var i = 0; i < containers.length; i++) {
         containers[i].style.marginTop = '0px';
+        containers[i].style.maxWidth = (mainWidth / 0.7) + 'px';
         //containers[i].style.marginTop = (mainContainer[0].clientHeight / factor) + 'px';
     }
 
@@ -139,14 +152,10 @@ function MainController($scope) {
 
         vm.openMobile = false;
         if (vm.isMobile) {
-
-            //scrollTo(window.innerWidth * (id + 4));
-            scrollTo(pos + (250 * (id-1)) + (mainWidth / 1.1) + 10);
+            scrollTo(pos + (250 * (id - 1)) + (mainWidth / 1.1) + 10);
         } else {
-
             scrollTo(pos);
         }
-
     }
 
     function scrollTo(pos) {
