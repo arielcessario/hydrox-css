@@ -100,6 +100,14 @@ function MainController($scope) {
         secciones[i].style.width = (mainWidth) + 'px';
         secciones[i].style.maxWidth = (mainWidth) + 'px';
         secciones[i].style.minWidth = (mainWidth) + 'px';
+
+        if (vm.isMobile) {
+            if(i!=0){
+                secciones[i].style.marginLeft = '250px';
+            }else{
+                secciones[i].style.marginLeft = '10px';
+            }
+        }
     }
 
 
@@ -124,16 +132,19 @@ function MainController($scope) {
 
     var pos_origin = 0;
 
-    function scrollToMobile(pos) {
+    function scrollToMobile(id) {
+
+        var pos = (id) * mainWidth;
 
 
         vm.openMobile = false;
         if (vm.isMobile) {
 
-            scrollTo(pos + 600);
+            //scrollTo(window.innerWidth * (id + 4));
+            scrollTo(pos + (250 * (id-1)) + (mainWidth / 1.1) + 10);
         } else {
 
-            scrollTo(pos + (550 - (window.innerWidth / 2)));
+            scrollTo(pos);
         }
 
     }

@@ -23,16 +23,16 @@
 
 <div id="menu">
     <div id="menu-mobile-buttons" ng-if="mainCtrl.openMobile">
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1100);mainCtrl.openMobile = false;">Zapatillas</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2100);mainCtrl.openMobile = false;">Bota</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(3100);mainCtrl.openMobile = false;">Medias</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4100);mainCtrl.openMobile = false;">Jardinero</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5100);mainCtrl.openMobile = false;">Pantalón</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6100);mainCtrl.openMobile = false;">Calza</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7100);mainCtrl.openMobile = false;">R.Neoprene</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8100);mainCtrl.openMobile = false;">R.Lycra</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9100);mainCtrl.openMobile = false;">Barbijo</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10100);mainCtrl.openMobile = false;">Miton</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1);mainCtrl.openMobile = false;">Zapatillas</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2);mainCtrl.openMobile = false;">Bota</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(3);mainCtrl.openMobile = false;">Medias</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4);mainCtrl.openMobile = false;">Jardinero</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5);mainCtrl.openMobile = false;">Pantalón</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6);mainCtrl.openMobile = false;">Calza</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7);mainCtrl.openMobile = false;">R.Neoprene</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8);mainCtrl.openMobile = false;">R.Lycra</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9);mainCtrl.openMobile = false;">Barbijo</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10);mainCtrl.openMobile = false;">Miton</button>
     </div>
     <div id="menu-thumbs-buttons" ng-if="mainCtrl.openThumbs">
         <img ng-repeat="thumb in mainCtrl.thumbs" ng-click="mainCtrl.selectImage(thumb.big, thumb.img); mainCtrl.openThumbs = false;"
