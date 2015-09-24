@@ -90,9 +90,19 @@ function MainController($scope) {
     var mainWidth = mainContainer[0].clientWidth;
     var mainHeight = mainContainer[0].clientHeight;
     var seccionPrincipal = angular.element(document.querySelector('#secciones'));
+    var group1 = angular.element(document.querySelector('#group1'));
+    var backgroundLayer = angular.element(document.querySelector('#background-layer'));
 
     seccionPrincipal[0].style.maxWidth = (mainWidth * 11) + 'px';
     seccionPrincipal[0].style.width = (mainWidth * 11) + 'px';
+
+    if(vm.isMobile){
+        group1[0].style.minWidth = (mainWidth * 18) + 'px';
+        backgroundLayer[0].style.minWidth = (mainWidth * 18) + 'px';
+    }else{
+        group1[0].style.minWidth = (mainWidth * 11) + 'px';
+        backgroundLayer[0].style.minWidth = (mainWidth * 11) + 'px';
+    }
 
     //console.log((angular.element(document.querySelector('#seccion-05')))[0].style.height);
     var secciones = angular.element(document.querySelectorAll('.seccion'));

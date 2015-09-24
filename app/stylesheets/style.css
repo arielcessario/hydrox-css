@@ -190,11 +190,6 @@ body {
     opacity: 0;
   }
 }
-/* line 166, ../sass/style.scss */
-#group1 {
-  min-width: 11000px;
-}
-
 /* line 184, ../sass/style.scss */
 #secciones {
   position: absolute;
