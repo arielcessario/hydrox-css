@@ -18,7 +18,6 @@ body {
   height: 0em;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +53,7 @@ body {
 
   }
 
-  .menu-thumb-button{
+  .menu-thumb-button {
     margin-bottom: 10px;
   }
 
@@ -70,23 +69,23 @@ body {
     z-index: 400;
     padding-bottom: 20px;
     button {
-    margin: 2px;
-    padding: 2px;
-    max-height: 60px;
-    width: 85px;
-    font-weight: bold;
-    font-size: 13px;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
+      margin: 2px;
+      padding: 2px;
+      max-height: 60px;
+      width: 85px;
+      font-weight: bold;
+      font-size: 13px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
       -webkit-border-radius: 15px;
       -moz-border-radius: 15px;
       border-radius: 15px;
-       }
+    }
   }
 
   #menu-mobile-buttons button:hover,
   #menu-mobile-buttons button:active {
-    zoom:120%;
+    zoom: 120%;
     background-color: #ff3e17;
     box-shadow: 2px 2px 1px black;
   }
@@ -129,7 +128,7 @@ body {
     //}
   }
 
-  #button-centro{
+  #button-centro {
     background: url("../img/logo_ojo.svg") 50% 50% no-repeat;
     right: calc(50% - 60px);
     //background-color: blue;
@@ -141,13 +140,14 @@ body {
 
 }
 
-.text-hidden{
+.text-hidden {
   opacity: 0;
   -webkit-animation: view-leave .4s;
   -o-animation: view-leave .4s;
   animation: view-leave .4s;
 }
-.text-hidden-remove{
+
+.text-hidden-remove {
   opacity: 1;
   -webkit-animation: view-enter .4s;
   -o-animation: view-enter .4s;
@@ -155,10 +155,10 @@ body {
 }
 
 @keyframes view-leave {
-  0%{
+  0% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }
@@ -189,7 +189,6 @@ body {
   display: flex;
   flex-direction: row;
   max-width: 11000px;
-
 
   @media (min-width: 700px) {
     height: 100%;
@@ -396,10 +395,10 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  img{
+  img {
     max-height: 150px;
-    @media (max-width: 600px){
-      max-height:70px;
+    @media (max-width: 600px) {
+      max-height: 70px;
 
     }
   }
@@ -443,7 +442,7 @@ body {
   text-transform: uppercase;
   position: static;
   margin: 10px;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 45px;
     max-width: 360px;
     line-height: 46px;
@@ -467,7 +466,7 @@ body {
   font-variant: small-caps;
   color: white;
   position: static;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     font-size: 26px;
     line-height: 27px;
     margin-top: 5px;
@@ -475,7 +474,7 @@ body {
   }
 }
 
-.contenedor-inicio{
+.contenedor-inicio {
   //margin-top: 100px;
   display: flex;
   height: 100%;
@@ -484,32 +483,33 @@ body {
 
 }
 
-.contenedor-logo-inicio{
- display: flex;
+.contenedor-logo-inicio {
+  display: flex;
   width: 550px;
   margin: auto;
   flex-wrap: wrap;
   align-items: center;
 
 }
-.hydrox-inicio{
+
+.hydrox-inicio {
   order: 1;
   width: 312px;
   height: 54px;
 }
-.x-inicio{
+
+.x-inicio {
   order: 1;
   width: 189px;
   height: 142px;
 }
 
-.foot-inicio{
+.foot-inicio {
   margin-top: -40px;
   order: 2;
   width: 301px;
   height: 71px;
 }
-
 
 .imagen-main {
   //position: absolute;
@@ -872,9 +872,7 @@ body {
 #seccion-08,
 #seccion-09,
 #seccion-10,
-#seccion-11,
-#seccion-12,
-#seccion-13 {
+#seccion-11 {
   width: 100%;
   //margin-left: 200px;
   min-width: 800px;
@@ -887,6 +885,98 @@ body {
   @media (max-width: 700px) {
     //margin-left: 200px;
     margin-top: 80px;
+  }
+}
+
+#seccion-12 {
+  width: 100%;
+  //margin-left: 200px;
+  min-width: 800px;
+  max-width: 800px;
+  max-height: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+
+  @media (max-width: 700px) {
+    //margin-left: 200px;
+    //margin-top: 80px;
+  }
+
+  #form {
+    width: 360px;
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow-x: auto;
+
+    select{
+      color: black;
+      width: 100%;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+    }
+
+    option{
+      color: black;
+    }
+
+    .button-activar{
+      height: 20px;
+      width: 20px;
+      background-color: red;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+    }
+
+    .button-activar-activado{
+
+      background-color: green;
+    }
+    #contacto, #nuevo-usuario, #ingreso, #catalogo{
+      margin-top: 230px;
+      max-width: 90%;
+      @media (max-width: 700px) {
+        margin-top: 80px;
+      }
+
+      .form-titulo{
+        font-size: 30px;
+        font-weight: 400;
+      }
+
+      .form-input{
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0px 10px 0px;
+        input{
+          width: 100%;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+          color: black;
+        }
+
+      }
+
+      .form-textarea{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px 5px 0px;
+        textarea{
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          border-radius: 10px;
+          color: black;
+        }
+      }
+    }
   }
 }
 
@@ -908,7 +998,6 @@ body {
   position: relative;
   z-index: 1;
   color: #fff;
-
 
   background: rgba(255, 255, 255, 0.1);
   -webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;

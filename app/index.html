@@ -23,19 +23,26 @@
 
 <div id="menu">
     <div id="menu-mobile-buttons" ng-if="mainCtrl.openMobile">
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1);mainCtrl.openMobile = false;">Zapatillas</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1);mainCtrl.openMobile = false;">Zapatillas
+        </button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2);mainCtrl.openMobile = false;">Bota</button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(3);mainCtrl.openMobile = false;">Medias</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4);mainCtrl.openMobile = false;">Jardinero</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5);mainCtrl.openMobile = false;">Pantalón</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(4);mainCtrl.openMobile = false;">Jardinero
+        </button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(5);mainCtrl.openMobile = false;">Pantalón
+        </button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(6);mainCtrl.openMobile = false;">Calza</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7);mainCtrl.openMobile = false;">R.Neoprene</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8);mainCtrl.openMobile = false;">R.Lycra</button>
-        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9);mainCtrl.openMobile = false;">Barbijo</button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(7);mainCtrl.openMobile = false;">R.Neoprene
+        </button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(8);mainCtrl.openMobile = false;">R.Lycra
+        </button>
+        <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(9);mainCtrl.openMobile = false;">Barbijo
+        </button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10);mainCtrl.openMobile = false;">Miton</button>
     </div>
     <div id="menu-thumbs-buttons" ng-if="mainCtrl.openThumbs">
-        <img ng-repeat="thumb in mainCtrl.thumbs" ng-click="mainCtrl.selectImage(thumb.big, thumb.img); mainCtrl.openThumbs = false;"
+        <img ng-repeat="thumb in mainCtrl.thumbs"
+             ng-click="mainCtrl.selectImage(thumb.big, thumb.img); mainCtrl.openThumbs = false;"
              ng-src="{{'img/'+thumb.small}}"
              alt="{{thumb.big}}"
              class="menu-thumb-button"
@@ -43,7 +50,7 @@
     </div>
     <div id="menu-mobile">
         <a href="" id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
-                ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
+           ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
 
         </a>
 
@@ -78,9 +85,9 @@
     <div id="group1" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
         </div>
-        <div class="parallax__layer parallax__layer--fore" style="margin-left: -2900px;" >
+        <div class="parallax__layer parallax__layer--fore" style="margin-left: -2900px;">
         </div>
-        <div class="parallax__layer parallax__layer--fore2" style="margin-left: -2900px;" >
+        <div class="parallax__layer parallax__layer--fore2" style="margin-left: -2900px;">
         </div>
 
         <div id="secciones" ng-mouseover="mainCtrl.openThumbs = false; mainCtrl.openMobile = false;">
@@ -98,16 +105,19 @@
 
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-imagen-main" class="imagen-main">
-                            <img ng-src="img/{{mainCtrl.img02}}" alt="" >
+                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-imagen-main"
+                             class="imagen-main">
+                            <img ng-src="img/{{mainCtrl.img02}}" alt="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-sub-titulo"
+                             class="sub-titulo">
                             ZAPATILLA DE <br>
                             NEOPRENE DE 3MM <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-detalle"
+                             class="detalle">
                             Suela de caucho TR Antideslizante <br>
                             Gráfica de Refuerzo <br>
                             Ribeteada con Lycra <br>
@@ -121,16 +131,19 @@
 
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img03}}" alt="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-sub-titulo"
+                             class="sub-titulo">
                             BOTA LINUX <br>
                             NEOPRENE DE 4MM <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-detalle"
+                             class="detalle">
                             Puño elástico de 2mm <br>
                             Suela caucho TR antidezlizante <br>
                             Gráfica de refuerzo en zona de contacto <br>
@@ -144,16 +157,19 @@
             <div id="seccion-04" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img04}}" alt="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-sub-titulo"
+                             class="sub-titulo">
                             Medias estanca <br>
                             neoprene de 3mm <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-detalle"
+                             class="detalle">
                             Costuras entancas <br>
                             Estampado en suela antideslizante <br>
                             Ribeteado con lycra <br>
@@ -166,16 +182,19 @@
             <div id="seccion-05" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-imagen-main" class="imagen-main">
-                            <img ng-src="img/{{mainCtrl.img05}}" alt="" >
+                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-imagen-main"
+                             class="imagen-main">
+                            <img ng-src="img/{{mainCtrl.img05}}" alt="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-sub-titulo"
+                             class="sub-titulo">
                             Jardinero de neoprene <br>
                             de 3m: <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-detalle"
+                             class="detalle">
                             Costuras estancas. <br>
                             Asiento Antideslizante. <br>
                             Rodillera reforzada. <br>
@@ -192,16 +211,19 @@
             <div id="seccion-06" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img06}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-sub-titulo"
+                             class="sub-titulo">
                             Pantalon de neoprene <br>
                             de 3 mm: <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-detalle"
+                             class="detalle">
                             Suela de caucho TR Antideslizante <br>
                             Gráfica de Refuerzo <br>
                             Ribeteada con Lycra <br>
@@ -214,16 +236,19 @@
             <div id="seccion-07" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img07}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-sub-titulo"
+                             class="sub-titulo">
                             Calza de neoprene <br>
                             de 3mm: <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-detalle"
+                             class="detalle">
                             Ribeteados con lycra <br>
                             Costuras estancas <br>
                             Asiento Antideslizante <br>
@@ -237,16 +262,19 @@
             <div id="seccion-08" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img08}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-sub-titulo"
+                             class="sub-titulo">
                             Remera neoprene <br>
                             y mangas de Lycra: <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-08' || mainCtrl.isMobile" id="seccion-08-detalle"
+                             class="detalle">
                             Cuerpo de neoprene 1,5 mm <br>
                             mangas de lycra Guilford <br>
                             Ribeteados con Lycra <br>
@@ -261,15 +289,18 @@
             <div id="seccion-09" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img09}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-sub-titulo"
+                             class="sub-titulo">
                             Remera Lycra:
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-09' || mainCtrl.isMobile" id="seccion-09-detalle"
+                             class="detalle">
                             Costuras Planas y elasticas <br>
                             Ribeteados con Lycra <br>
                             Lycra para mallas Guilford <br>
@@ -284,16 +315,19 @@
             <div id="seccion-10" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img10}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-sub-titulo"
+                             class="sub-titulo">
                             Barbijo neoprene <br>
                             3mm: <br>
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-detalle"
+                             class="detalle">
                             Micropolar antipeeling <br>
                             Ribeteado con lycra <br>
                             Velcro de regulacion en la nuca <br>
@@ -307,15 +341,18 @@
             <div id="seccion-11" class="seccion">
                 <div class="bottom-container">
                     <div class="left-container">
-                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-imagen-main" class="imagen-main">
+                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-imagen-main"
+                             class="imagen-main">
                             <img ng-src="img/{{mainCtrl.img11}}" alt="" width="">
                         </div>
                     </div>
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
-                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-sub-titulo" class="sub-titulo">
+                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-sub-titulo"
+                             class="sub-titulo">
                             Miton 3mm:
                         </div>
-                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-detalle" class="detalle">
+                        <div ng-if="mainCtrl.seccion == 'seccion-11' || mainCtrl.isMobile" id="seccion-11-detalle"
+                             class="detalle">
                             Ribeteado con lycra <br>
                             Velcro de regulación <br>
                             Estampa en superficia superior <br>
@@ -325,7 +362,131 @@
                     </div>
                 </div>
             </div>
+            <div id="seccion-12" class="seccion">
 
+                <div id="form">
+                    <div id="contacto" ng-if="mainCtrl.admin == 'contacto'">
+                        <div class="form-titulo">CONTÁCTENOS</div>
+                        <div class="form-input">
+
+                            <span>NOMBRE</span>
+                            <input type="text" ng-model="mainCtrl.contactoNombre">
+                        </div>
+                        <div class="form-input">
+
+                            <span>TELEFONO</span>
+                            <input type="text" ng-model="mainCtrl.contactoTelefono">
+                        </div>
+                        <div class="form-input">
+                            <span>MAIL</span>
+                            <input type="text" ng-model="mainCtrl.contactoMail">
+                        </div>
+                        <div class="form-textarea">
+                            <span>CONSULTA</span>
+                            <textarea type="text" ng-model="mainCtrl.contactoMensaje"></textarea>
+                        </div>
+                        <div class="button-bar">
+                            <button ng-click="mainCtrl.sendMail();">OK</button>
+                            <span ng-if="mainCtrl.enviado">Mensaje enviado con éxito</span>
+                            <span ng-if="mainCtrl.contactoError">Error al enviar el mensaje, por favor escriba a </span>
+                        </div>
+                    </div>
+                    <div id="nuevo-usuario" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'nuevo'">
+                        <div class="form-titulo">NUEVO USUARIO</div>
+                        <div class="nuevo-usuario-inputs">
+                            <div class="form-input"><span>Nombre</span>
+                                <input type="text" id="nombre" ng-model="mainCtrl.usuario.nombre">
+                            </div>
+                            <div class="form-input"><span>MAIL</span>
+                                <input type="email" id="email" ng-model="mainCtrl.usuario.mail">
+                            </div>
+                            <div class="form-input"><span>CONTRASEÑA</span>
+                                <input type="password" id="password" ng-model="mainCtrl.usuario.password">
+                            </div>
+
+                        </div>
+                        <div class="nuevo-usuario-button-bar">
+                            <button ng-click="mainCtrl.saveUsuario();">GUARDAR</button>
+                            <button ng-click="">CANCELAR</button>
+                        </div>
+                    </div>
+
+                    <div id="ingreso" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'login'">
+                        <div class="form-input">
+                            <span>MAIL</span>
+                            <input id="mail" type="email" ng-model="mainCtrl.mail"
+                                   ng-keypress="mainCtrl.loginPrev($event);">
+                        </div>
+                        <div class="form-input">
+                            <span>CONTRASEÑA</span>
+                            <input id="password" type="password" ng-model="mainCtrl.password"
+                                   ng-keypress="mainCtrl.loginPrev($event);">
+                        </div>
+                        <div class="administracion-button-bar">
+                            <button ng-click="mainCtrl.login();">OK</button>
+                            <button ng-click="mainCtrl.nuevoUsuario();">NUEVO USUARIO</button>
+                            <button ng-click="mainCtrl.recuperarPassword();">RECUPERAR CONTRASEÑA</button>
+                        </div>
+
+                    </div>
+
+                    <div id="catalogo" ng-if="mainCtrl.logged != undefined && mainCtrl.admin == 'logged'">
+
+                        <div class="form-titulo">DESCARGA DE FOTOGRAFIAS</div>
+                        <div class="admin-inputs">
+                            <select name="" id="fotos"
+                                    ng-model="mainCtrl.fotoDownload"
+                                    ng-options="foto.texto for foto in mainCtrl.fotosDownload"></select>
+                        </div>
+                        <button ng-click="mainCtrl.downloadURI('foto');">BAJAR</button>
+
+                        <div class="form-titulo">DESCARGA DE MATERIAL</div>
+                        <div class="admin-inputs">
+                            <select name="" id="catalogos"
+                                    ng-model="mainCtrl.catalogoDownload"
+                                    ng-options="catalogo.texto for catalogo in mainCtrl.catalogosDownload"></select>
+                        </div>
+                        <button ng-click="mainCtrl.downloadURI('catalogo');">BAJAR</button>
+
+                        <div class="form-titulo">MODIFICAR DATOS PERSONALES</div>
+                        <div class="admin-inputs">
+                            <div class="form-input"><span>NOMBRE</span>
+                                <input type="text" id="nombre" ng-model="mainCtrl.usuario.nombre">
+                            </div>
+                            <div class="form-input"><span>MAIL</span>
+                                <input type="email" id="email" ng-model="mainCtrl.usuario.mail">
+                            </div>
+                            <div class="form-input"><span>CONTRASEÑA</span>
+                                <input type="password" id="password" ng-model="mainCtrl.usuario.password">
+                            </div>
+
+                        </div>
+                        <div class="nuevo-usuario-button-bar">
+                            <button ng-click="mainCtrl.updateUsuario();">GUARDAR</button>
+                            <button ng-click="">CANCELAR</button>
+                        </div>
+
+                    </div>
+
+                    <div id="clientes-listado" ng-if="mainCtrl.logged.data.rol == 1">
+
+                        <table>
+                            <tr ng-repeat="usuario in mainCtrl.usuarios">
+                                <td>{{usuario.mail}}</td>
+                                <td>
+                                    <button ng-class="{'button-activar-activado':usuario.status == 1}"
+                                            class="button-activar" ng-click="mainCtrl.activarUsuario(usuario);">
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <button ng-click="mainCtrl.logout();" ng-if="mainCtrl.logged != undefined">SALIR</button>
+                </div>
+
+
+            </div>
 
         </div>
 
@@ -341,9 +502,14 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-cookies.js"></script>
+<script src="https://cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
+<script src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+<script src="utils/utils.js"></script>
+<script src="login.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -3,16 +3,28 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ngCookies',
+    'acUtils',
+    'angular-storage',
+    'angular-jwt',
+    'login.login'
 ]).
-    config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view1'});
-    }])
+    config(['$routeProvider', 'jwtInterceptorProvider', '$httpProvider',
+        function ($routeProvider, jwtInterceptorProvider, $httpProvider) {
+            //$routeProvider.otherwise({redirectTo: '/view1'});
+
+            jwtInterceptorProvider.tokenGetter = function (store) {
+                return store.get('jwt');
+            };
+            $httpProvider.interceptors.push('jwtInterceptor');
+        }])
+
     .controller('MainController', MainController);
 
 
-MainController.$inject = ['$scope'];
-function MainController($scope) {
+MainController.$inject = ['$scope', '$timeout', '$http', 'store', 'LoginService', 'AcUtilsService', '$location', 'jwtHelper'];
+function MainController($scope, $timeout, $http, store, LoginService, AcUtilsService, $location, jwtHelper) {
     var vm = this;
 
     vm.seccion = 'seccion-01';
@@ -22,6 +34,7 @@ function MainController($scope) {
     vm.hideText = false;
     vm.scrollTo = scrollTo;
     vm.scrollToMobile = scrollToMobile;
+    vm.sendMail = sendMail;
     vm.thumbs = [];
 
     vm.img02 = 'zapa_neoprene_01.gif';
@@ -34,6 +47,290 @@ function MainController($scope) {
     vm.img09 = 'remera_lycra_01.gif';
     vm.img10 = 'barbijo.gif';
     vm.img11 = 'milton_01.gif';
+
+    vm.contactoNombre = '';
+    vm.contactoTelefono = '';
+    vm.contactoMail = '';
+    vm.contactoMensaje = '';
+    vm.enviado = false;
+    vm.contactoError = false;
+
+    vm.fotoDownload = '';
+    vm.fotosDownload = [
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'}
+    ];
+
+    vm.catalogoDownload = '';
+    vm.catalogosDownload = [
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
+        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'}
+    ];
+
+
+    vm.usuario = {
+        nombre: '',
+        mail: '',
+        password: ''
+    };
+
+    vm.saveUsuario = saveUsuario;
+    vm.login = login;
+    vm.nuevoUsuario = nuevoUsuario;
+    vm.recuperarPassword = recuperarPassword;
+    vm.mail = '';
+    vm.password = '';
+    vm.loginPrev = loginPrev;
+    vm.activarUsuario = activarUsuario;
+    vm.logout = logout;
+    vm.downloadURI = downloadURI;
+    vm.updateUsuario = updateUsuario;
+    vm.usuarios = [];
+    vm.logged = undefined;
+    vm.admin = 'logged';
+
+    function downloadURI(origen) {
+        var name = '';
+        var uri = '';
+        if(origen == 'foto'){
+            uri = './img/' + vm.fotoDownload.link;
+            name = vm.fotoDownload.texto;
+        }else {
+            uri = './img/' + vm.catalogoDownload.link;
+            name = vm.catalogoDownload.texto;
+        }
+
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        link.click();
+    }
+
+    if (store.get('jwt')) {
+        vm.logged = jwtHelper.decodeToken(store.get('jwt'));
+
+        vm.usuario.nombre = vm.logged.data.nombre;
+        vm.usuario.mail = vm.logged.data.userName;
+        vm.usuario.cliente_id = vm.logged.data.userId;
+
+
+        if (jwtHelper.decodeToken(store.get('jwt')).data.rol == 1) {
+            LoginService.getClientes(function (data) {
+                vm.usuarios = data;
+            })
+        }
+    }
+
+
+    function logout() {
+        store.remove('jwt');
+        vm.isLogin = true;
+    }
+
+
+    function activarUsuario(cliente) {
+        console.log(cliente);
+
+        cliente.status = (cliente.status == 0) ? 1 : 0;
+
+        LoginService.updateCliente(cliente, function (data) {
+            console.log(data);
+        })
+    }
+
+    function updateUsuario() {
+        var conErrores = false;
+
+        if (vm.usuario.cliente_id == -1) {
+            AcUtilsService.validations('nombre', 'Esta opción es solo para modificación, debe seleccionar un usuario');
+            conErrores = true;
+            return;
+        }
+
+        if (vm.usuario.nombre.trim().length == 0) {
+            AcUtilsService.validations('nombre', 'El nombre es obligatorio');
+            conErrores = true;
+        }
+
+
+        if (!AcUtilsService.validateEmail(vm.usuario.mail)) {
+            AcUtilsService.validations('mail', 'El mail es incorrecto');
+            conErrores = true;
+        }
+
+        if (conErrores) {
+            return;
+        }
+
+        LoginService.updateCliente(vm.usuario, function (data) {
+
+        });
+    }
+
+
+    function saveUsuario() {
+
+        var conErrores = false;
+
+
+        if (vm.usuario.nombre.trim().length == 0) {
+            AcUtilsService.validations('nombre', 'El nombre es obligatorio');
+            conErrores = true;
+        }
+
+        if (vm.usuario.password.trim().length == 0) {
+            AcUtilsService.validations('password', 'El password es obligatorio');
+            conErrores = true;
+        }
+
+        if (!AcUtilsService.validateEmail(vm.usuario.mail)) {
+            AcUtilsService.validations('email', 'El mail es incorrecto');
+            conErrores = true;
+        }
+
+
+        vm.usuario.nombre = vm.usuario.mail;
+        vm.usuario.telefono = vm.usuario.mail;
+        vm.usuario.direccion = vm.usuario.mail;
+        if (conErrores) {
+            return;
+        }
+        LoginService.existeCliente(vm.usuario.mail, function (data) {
+
+            if (data == 'true') {
+                AcUtilsService.validations('email', 'El usuario ya existe');
+            } else {
+                LoginService.create(vm.usuario, function (data) {
+                    if (data == 'true') {
+                        LoginService.login(vm.usuario.mail, vm.usuario.password, function (data) {
+                            if (data != -1) {
+                                store.set('jwt', data);
+                                $location.path('/');
+                            } else {
+                            }
+                        });
+
+                    }
+                });
+            }
+        });
+
+
+    }
+
+
+    function loginPrev(event) {
+        if (event.keyCode == 13) {
+            login();
+        }
+    }
+
+    if (store.get('jwt')) {
+        $location.path('/administracion');
+    }
+
+
+    function recuperarPassword() {
+        if (!AcUtilsService.validateEmail(vm.mail)) {
+            AcUtilsService.validations('mail', 'El mail es incorrecto');
+            return;
+        }
+        LoginService.forgotPassword(vm.mail, function (data) {
+            console.log(data);
+        });
+    }
+
+    function nuevoUsuario() {
+        vm.isLogin = false;
+        vm.isNuevoUsuario = true;
+    }
+
+    function login() {
+        var conErrores = false;
+
+
+        if (vm.password.trim().length == 0) {
+            AcUtilsService.validations('password', 'El password es obligatorio');
+            conErrores = true;
+        }
+
+        if (!AcUtilsService.validateEmail(vm.mail)) {
+            AcUtilsService.validations('mail', 'El mail es incorrecto');
+            conErrores = true;
+        }
+
+        if (conErrores) {
+            return;
+        }
+
+        LoginService.login(vm.mail, vm.password, function (data) {
+
+            console.log(data);
+            if (data != -1) {
+                //LoginState.isLogged = true;
+                store.set('jwt', data);
+                if (jwtHelper.decodeToken(store.get('jwt')).data.rol == 1) {
+                    console.log('entra');
+                    LoginService.getClientes(function (data) {
+                        vm.usuarios = data;
+                    })
+                } else {
+                    vm.usuarios = [];
+                }
+            } else {
+                //LoginState.isLogged = false;
+                AcUtilsService.validations('password', 'Mail o password incorrectos');
+            }
+        });
+    }
+
+
+    function sendMail() {
+
+        //console.log(vm.mail);
+        return $http.post('./contact.php',
+            {
+                'email': vm.contactoMail,
+                'nombre': vm.contactoNombre,
+                'mensaje': vm.contactoMensaje,
+                'asunto': vm.contactoTelefono
+            })
+            .success(
+            function (data) {
+                vm.enviado = true;
+                $timeout(hideMessage, 3000);
+                function hideMessage() {
+                    vm.enviado = false;
+                }
+
+                vm.contactoNombre = '';
+                vm.contactoTelefono = '';
+                vm.contactoMail = '';
+                vm.contactoMensaje = '';
+            })
+            .error(function (data) {
+
+                vm.contactoError = true;
+                $timeout(hideMessage, 3000);
+                function hideMessage() {
+                    vm.contactoError = false;
+                }
+            });
+    }
 
 
     vm.selectImage = function (big, img) {
@@ -92,16 +389,19 @@ function MainController($scope) {
     var seccionPrincipal = angular.element(document.querySelector('#secciones'));
     var group1 = angular.element(document.querySelector('#group1'));
     var backgroundLayer = angular.element(document.querySelector('#background-layer'));
+    var form = angular.element(document.querySelector('#form'));
 
-    seccionPrincipal[0].style.maxWidth = (mainWidth * 11) + 'px';
-    seccionPrincipal[0].style.width = (mainWidth * 11) + 'px';
+    seccionPrincipal[0].style.maxWidth = (mainWidth * 12) + 'px';
+    seccionPrincipal[0].style.width = (mainWidth * 12) + 'px';
+    form[0].style.height = mainHeight + 'px';
+    form[0].style.height = mainHeight + 'px';
 
-    if(vm.isMobile){
-        group1[0].style.minWidth = (mainWidth * 18) + 'px';
-        backgroundLayer[0].style.minWidth = (mainWidth * 18) + 'px';
-    }else{
-        group1[0].style.minWidth = (mainWidth * 11) + 'px';
-        backgroundLayer[0].style.minWidth = (mainWidth * 11) + 'px';
+    if (vm.isMobile) {
+        group1[0].style.minWidth = (mainWidth * 19) + 'px';
+        backgroundLayer[0].style.minWidth = (mainWidth * 19) + 'px';
+    } else {
+        group1[0].style.minWidth = (mainWidth * 12) + 'px';
+        backgroundLayer[0].style.minWidth = (mainWidth * 12) + 'px';
     }
 
     //console.log((angular.element(document.querySelector('#seccion-05')))[0].style.height);
@@ -514,6 +814,17 @@ function MainController($scope) {
                     {big: 'milton_01t.gif', small: 'milton_01t.png', img: 'img11'},
                     {big: 'milton_02t.gif', small: 'milton_02t.png', img: 'img11'}
                 ];
+                //$scope.$apply();
+            }
+            if ((mainContainer[0].scrollLeft > ((mainWidth * 11) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 12) - 200)) && vm.seccion != 'seccion-11') {
+                vm.openThumbs = false;
+                vm.hideText = false;
+                vm.thumbs = [];
+
+                if (!store.get('jwt')) {
+                    vm.isDescargas = false;
+                    vm.isLogin = true;
+                }
                 //$scope.$apply();
             }
         }

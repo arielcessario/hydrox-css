@@ -47,10 +47,11 @@
 }
 
 .parallax__layer--fore {
-  -webkit-transform: translateZ(90px) scale(.5);
-  transform: translateZ(90px) scale(.5);
+  -webkit-transform: translateZ(90px) scale(.7);
+  transform: translateZ(90px) scale(.7);
   z-index: 100;
   background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
 
@@ -59,6 +60,7 @@
   transform: translateZ(180px) scale(.4);
   z-index: 100;
   background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
 .parallax__layer--base {
