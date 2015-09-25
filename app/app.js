@@ -101,7 +101,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.updateUsuario = updateUsuario;
     vm.usuarios = [];
     vm.logged = undefined;
-    vm.admin = 'logged';
+    vm.admin = 'contacto';
 
     function downloadURI(origen) {
         var name = '';
