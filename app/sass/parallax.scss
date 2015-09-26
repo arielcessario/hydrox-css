@@ -47,10 +47,11 @@
 }
 
 .parallax__layer--fore {
-  -webkit-transform: translateZ(90px) scale(.5);
-  transform: translateZ(90px) scale(.5);
+  -webkit-transform: translateZ(90px) scale(.7);
+  transform: translateZ(90px) scale(.7);
   z-index: 100;
   background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
 
@@ -59,6 +60,7 @@
   transform: translateZ(180px) scale(.4);
   z-index: 100;
   background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
 .parallax__layer--base {
@@ -86,7 +88,7 @@
   transform: translateZ(-600px) scale(3);
   z-index: 2;
   //background: linear-gradient(to right, red 100px, blue);
-  width: 12000px;
+  //width: 100%;
   //margin-left: 1000px;
   background: white url("../img/degradado.png") 50% 50% repeat;
   //border-style:none;
