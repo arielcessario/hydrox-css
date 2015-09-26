@@ -940,29 +940,37 @@ body {
       background-color: green;
     }
     #contacto, #nuevo-usuario, #ingreso, #catalogo{
-      margin-top: 230px;
+      margin-top: 150px;
       max-width: 90%;
       @media (max-width: 700px) {
         margin-top: 80px;
       }
 
       .form-titulo{
-        font-size: 30px;
-        font-weight: 400;
-      }
+        font-family: 'Bebas Regular', sans-serif;
+        font-size: 60px;
+        font-weight: bolder;
+            }
 
       .form-input{
         display: flex;
         flex-direction: row;
         margin: 10px 0px 10px 0px;
         input{
+          height: 25px;
           width: 100%;
+          margin-top: 5px;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
           border-radius: 10px;
           color: black;
         }
-
+        span{
+          font-family: 'Bebas Regular', sans-serif;
+          font-size: 25px;
+          font-weight: bold;
+          margin-right: 5px;
+          }
       }
 
       .form-textarea{
@@ -971,9 +979,15 @@ body {
         margin: 10px 0px 5px 0px;
         textarea{
           -webkit-border-radius: 10px;
+          min-height: 150px;
           -moz-border-radius: 10px;
           border-radius: 10px;
           color: black;
+        }
+        span{
+          font-family: 'Bebas Regular', sans-serif;
+          font-size: 25px;
+          font-weight: bold;
         }
       }
     }
