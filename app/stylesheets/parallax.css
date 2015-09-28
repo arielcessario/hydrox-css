@@ -57,18 +57,20 @@
   -webkit-transform: translateZ(90px) scale(0.7);
   transform: translateZ(90px) scale(0.7);
   z-index: 100;
-  background: url("../img/burbujas4.png") 50% 50% repeat;
+  background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
-/* line 57, ../sass/parallax.scss */
+/* line 58, ../sass/parallax.scss */
 .parallax__layer--fore2 {
   -webkit-transform: translateZ(180px) scale(0.4);
   transform: translateZ(180px) scale(0.4);
   z-index: 100;
-  background: url("../img/burbujas3.png") 50% 50% repeat;
+  background: url("../img/burbujas4.png") 50% 50% repeat;
+  pointer-events: none;
 }
 
-/* line 64, ../sass/parallax.scss */
+/* line 66, ../sass/parallax.scss */
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -76,7 +78,7 @@
   background: url("../img/burbujas.svg") 50% 50% repeat;
 }
 
-/* line 71, ../sass/parallax.scss */
+/* line 73, ../sass/parallax.scss */
 .parallax__layer--back {
   -webkit-transform: translateZ(-300px) scale(2);
   transform: translateZ(-300px) scale(2);
@@ -89,11 +91,10 @@
   filter: blur(5px);
 }
 
-/* line 84, ../sass/parallax.scss */
+/* line 86, ../sass/parallax.scss */
 .parallax__layer--deep {
   -webkit-transform: translateZ(-600px) scale(3);
   transform: translateZ(-600px) scale(3);
   z-index: 2;
-  width: 12000px;
   background: white url("../img/degradado.png") 50% 50% repeat;
 }

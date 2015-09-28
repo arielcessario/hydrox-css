@@ -378,6 +378,7 @@ body {
     //margin-left: -180px;
   }
   display: flex;
+  margin-top: 50px;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
@@ -434,17 +435,18 @@ body {
   //left: 70%;
   font-family: 'Bebas Regular', sans-serif;
   color: white;
-  line-height: 50px;
+  line-height: 85px;
   text-align: left;
-  width: 360px;
-  font-size: 55px;
+  width: 600px;
+  margin-left: 20px;
+  font-size: 80px;
   font-weight: bolder;
   text-transform: uppercase;
   position: static;
-  margin: 10px;
   @media (max-width: 600px) {
     font-size: 45px;
     max-width: 360px;
+    margin: auto;
     line-height: 46px;
     text-align: center;
 
@@ -457,12 +459,12 @@ body {
   //top: 45%;
   //left: 70%;
   text-align: left;
-  width: 360px;
-  line-height: 30px;
-  margin: 10px;
+  width: 600px;
+  line-height: 52px;
+  margin: 20px;
   min-height: 150px;
   font-family: 'Bebas Regular', sans-serif;
-  font-size: 26px;
+  font-size: 50px;
   font-variant: small-caps;
   color: white;
   position: static;
@@ -470,6 +472,7 @@ body {
     font-size: 26px;
     line-height: 27px;
     margin-top: 5px;
+    width: 360px;
     text-align: center;
   }
 }
@@ -875,11 +878,10 @@ body {
 #seccion-11 {
   width: 100%;
   //margin-left: 200px;
-  min-width: 800px;
-  max-width: 800px;
-  max-height: 90%;
+  min-width: 700px;
+  max-width: 700px;
   color: white;
-  margin-top: 230px;
+  margin-top: 200px;
   text-shadow: 2px 2px 4px black;
 
   @media (max-width: 700px) {
