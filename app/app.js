@@ -566,7 +566,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
         vm.ypos = mainContainer[0].scrollLeft;
 
-        if (mainContainer[0].scrollLeft > 800) {
+        if (mainContainer[0].scrollLeft > ((mainWidth * 1) - 200)) {
             vm.header = true;
         } else {
             vm.header = false;
