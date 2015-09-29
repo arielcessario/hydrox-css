@@ -332,7 +332,7 @@ body {
 
 .right-container,
 .bottom-container {
-  position: static;
+  position: absolute;
   z-index: 100;
   max-height: 100%;
 }
@@ -506,7 +506,7 @@ body {
   order: 1;
   width: 312px;
   height: 54px;
-  @media(max-width: 500){
+  @media(max-width: 500px){
     margin-bottom: 20px;
   }
 
@@ -516,7 +516,7 @@ body {
   order: 1;
   width: 189px;
   height: 142px;
-  @media(max-width: 500){
+  @media(max-width: 500px){
     margin-bottom: 20px;
   }
 }
@@ -526,7 +526,7 @@ body {
   order: 2;
   width: 301px;
   height: 71px;
-  @media(max-width: 500){
+  @media(max-width: 500px){
   margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -899,8 +899,10 @@ body {
   min-width: 700px;
   max-width: 700px;
   color: white;
-  margin-top: 100px;
+  //margin-top: 100px;
   text-shadow: 2px 2px 4px black;
+
+  position: relative;
 
   @media (max-width: 700px) {
     //margin-left: 200px;

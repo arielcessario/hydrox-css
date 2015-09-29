@@ -391,6 +391,10 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     var backgroundLayer = angular.element(document.querySelector('#background-layer'));
     var form = angular.element(document.querySelector('#form'));
 
+    console.log(mainHeight);
+    console.log(mainWidth);
+
+
     seccionPrincipal[0].style.maxWidth = (mainWidth * 12) + 'px';
     seccionPrincipal[0].style.width = (mainWidth * 12) + 'px';
     form[0].style.height = mainHeight + 'px';
@@ -410,6 +414,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         secciones[i].style.width = (mainWidth) + 'px';
         secciones[i].style.maxWidth = (mainWidth) + 'px';
         secciones[i].style.minWidth = (mainWidth) + 'px';
+        secciones[i].style.maxHeight = '50%';
 
         if (vm.isMobile) {
             if (i != 0) {

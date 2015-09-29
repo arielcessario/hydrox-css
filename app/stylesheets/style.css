@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -350,7 +350,7 @@ body {
 /* line 333, ../sass/style.scss */
 .right-container,
 .bottom-container {
-  position: static;
+  position: absolute;
   z-index: 100;
   max-height: 100%;
 }
@@ -528,7 +528,7 @@ body {
   width: 312px;
   height: 54px;
 }
-@media (max-width: 500) {
+@media (max-width: 500px) {
   /* line 505, ../sass/style.scss */
   .hydrox-inicio {
     margin-bottom: 20px;
@@ -541,7 +541,7 @@ body {
   width: 189px;
   height: 142px;
 }
-@media (max-width: 500) {
+@media (max-width: 500px) {
   /* line 515, ../sass/style.scss */
   .x-inicio {
     margin-bottom: 20px;
@@ -555,7 +555,7 @@ body {
   width: 301px;
   height: 71px;
 }
-@media (max-width: 500) {
+@media (max-width: 500px) {
   /* line 524, ../sass/style.scss */
   .foot-inicio {
     margin-top: 20px;
@@ -996,8 +996,8 @@ body {
   min-width: 700px;
   max-width: 700px;
   color: white;
-  margin-top: 100px;
   text-shadow: 2px 2px 4px black;
+  position: relative;
 }
 @media (max-width: 700px) {
   /* line 886, ../sass/style.scss */
@@ -1016,7 +1016,7 @@ body {
   }
 }
 
-/* line 911, ../sass/style.scss */
+/* line 913, ../sass/style.scss */
 #seccion-12 {
   width: 100%;
   min-width: 800px;
@@ -1025,7 +1025,7 @@ body {
   color: white;
   text-shadow: 2px 2px 4px black;
 }
-/* line 925, ../sass/style.scss */
+/* line 927, ../sass/style.scss */
 #seccion-12 #form {
   width: 360px;
   height: 90%;
@@ -1036,7 +1036,7 @@ body {
   align-items: center;
   overflow-x: auto;
 }
-/* line 937, ../sass/style.scss */
+/* line 939, ../sass/style.scss */
 #seccion-12 #form select {
   color: black;
   width: 100%;
@@ -1044,11 +1044,11 @@ body {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 945, ../sass/style.scss */
+/* line 947, ../sass/style.scss */
 #seccion-12 #form option {
   color: black;
 }
-/* line 949, ../sass/style.scss */
+/* line 951, ../sass/style.scss */
 #seccion-12 #form .button-activar {
   height: 20px;
   width: 20px;
@@ -1057,34 +1057,34 @@ body {
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
-/* line 958, ../sass/style.scss */
+/* line 960, ../sass/style.scss */
 #seccion-12 #form .button-activar-activado {
   background-color: green;
 }
-/* line 962, ../sass/style.scss */
+/* line 964, ../sass/style.scss */
 #seccion-12 #form #contacto, #seccion-12 #form #nuevo-usuario, #seccion-12 #form #ingreso, #seccion-12 #form #catalogo {
   margin-top: 150px;
   max-width: 90%;
 }
 @media (max-width: 700px) {
-  /* line 962, ../sass/style.scss */
+  /* line 964, ../sass/style.scss */
   #seccion-12 #form #contacto, #seccion-12 #form #nuevo-usuario, #seccion-12 #form #ingreso, #seccion-12 #form #catalogo {
     margin-top: 80px;
   }
 }
-/* line 969, ../sass/style.scss */
+/* line 971, ../sass/style.scss */
 #seccion-12 #form #contacto .form-titulo, #seccion-12 #form #nuevo-usuario .form-titulo, #seccion-12 #form #ingreso .form-titulo, #seccion-12 #form #catalogo .form-titulo {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 60px;
   font-weight: bolder;
 }
-/* line 975, ../sass/style.scss */
+/* line 977, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input, #seccion-12 #form #nuevo-usuario .form-input, #seccion-12 #form #ingreso .form-input, #seccion-12 #form #catalogo .form-input {
   display: flex;
   flex-direction: row;
   margin: 10px 0px 10px 0px;
 }
-/* line 979, ../sass/style.scss */
+/* line 981, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input input, #seccion-12 #form #nuevo-usuario .form-input input, #seccion-12 #form #ingreso .form-input input, #seccion-12 #form #catalogo .form-input input {
   height: 25px;
   width: 100%;
@@ -1094,20 +1094,20 @@ body {
   border-radius: 10px;
   color: black;
 }
-/* line 988, ../sass/style.scss */
+/* line 990, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input span, #seccion-12 #form #nuevo-usuario .form-input span, #seccion-12 #form #ingreso .form-input span, #seccion-12 #form #catalogo .form-input span {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 25px;
   font-weight: bold;
   margin-right: 5px;
 }
-/* line 996, ../sass/style.scss */
+/* line 998, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea, #seccion-12 #form #nuevo-usuario .form-textarea, #seccion-12 #form #ingreso .form-textarea, #seccion-12 #form #catalogo .form-textarea {
   display: flex;
   flex-direction: column;
   margin: 10px 0px 5px 0px;
 }
-/* line 1000, ../sass/style.scss */
+/* line 1002, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea textarea, #seccion-12 #form #nuevo-usuario .form-textarea textarea, #seccion-12 #form #ingreso .form-textarea textarea, #seccion-12 #form #catalogo .form-textarea textarea {
   -webkit-border-radius: 10px;
   min-height: 150px;
@@ -1115,21 +1115,21 @@ body {
   border-radius: 10px;
   color: black;
 }
-/* line 1007, ../sass/style.scss */
+/* line 1009, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea span, #seccion-12 #form #nuevo-usuario .form-textarea span, #seccion-12 #form #ingreso .form-textarea span, #seccion-12 #form #catalogo .form-textarea span {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
 
-/* line 1017, ../sass/style.scss */
+/* line 1019, ../sass/style.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 1023, ../sass/style.scss */
+/* line 1025, ../sass/style.scss */
 .hi-icon {
   display: inline-block;
   font-size: 0px;
@@ -1148,7 +1148,7 @@ body {
   transition: transform ease-out 0.1s, background 0.2s;
 }
 
-/* line 1042, ../sass/style.scss */
+/* line 1044, ../sass/style.scss */
 .hi-icon:after {
   content: "\e00f";
   top: 0;
@@ -1172,7 +1172,7 @@ body {
   border-radius: 80px;
 }
 
-/* line 1067, ../sass/style.scss */
+/* line 1069, ../sass/style.scss */
 .hi-icon:hover {
   background: rgba(255, 255, 255, 0.05);
   -webkit-transform: scale(0.93);
@@ -1182,7 +1182,7 @@ body {
   color: #fff;
 }
 
-/* line 1076, ../sass/style.scss */
+/* line 1078, ../sass/style.scss */
 .hi-icon:hover:after {
   z-index: 400;
   content: "";
