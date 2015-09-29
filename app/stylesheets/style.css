@@ -397,7 +397,6 @@ body {
 /* line 373, ../sass/style.scss */
 .right-container {
   display: flex;
-  margin-top: 100px;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
