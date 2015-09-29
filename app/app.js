@@ -414,7 +414,13 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         secciones[i].style.width = (mainWidth) + 'px';
         secciones[i].style.maxWidth = (mainWidth) + 'px';
         secciones[i].style.minWidth = (mainWidth) + 'px';
-        secciones[i].style.maxHeight = (mainHeight/1.8) + 'px';
+        if(vm.isMobile){
+
+            secciones[i].style.maxHeight = (mainHeight/2.5) + 'px';
+        }else{
+
+            secciones[i].style.maxHeight = (mainHeight/1.8) + 'px';
+        }
 
         if (vm.isMobile) {
             if (i != 0) {
