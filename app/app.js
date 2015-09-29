@@ -57,28 +57,28 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
     vm.fotoDownload = '';
     vm.fotosDownload = [
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'}
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'}
     ];
 
     vm.catalogoDownload = '';
     vm.catalogosDownload = [
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'},
-        {texto:'ZAPATILLA DE NEOPRENE 3MM', link:'zapa_neoprene_01.gif'}
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
+        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'}
     ];
 
 
@@ -106,10 +106,10 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function downloadURI(origen) {
         var name = '';
         var uri = '';
-        if(origen == 'foto'){
+        if (origen == 'foto') {
             uri = './img/' + vm.fotoDownload.link;
             name = vm.fotoDownload.texto;
-        }else {
+        } else {
             uri = './img/' + vm.catalogoDownload.link;
             name = vm.catalogoDownload.texto;
         }
@@ -414,13 +414,19 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         secciones[i].style.width = (mainWidth) + 'px';
         secciones[i].style.maxWidth = (mainWidth) + 'px';
         secciones[i].style.minWidth = (mainWidth) + 'px';
-        if(vm.isMobile){
 
-            secciones[i].style.maxHeight = (mainHeight/2.5) + 'px';
-        }else{
+        if (i != 11) {
 
-            secciones[i].style.maxHeight = (mainHeight/1.8) + 'px';
+            if (vm.isMobile) {
+
+                secciones[i].style.maxHeight = (mainHeight / 2.5) + 'px';
+            } else {
+
+                secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
+            }
+
         }
+
 
         if (vm.isMobile) {
             if (i != 0) {
