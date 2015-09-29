@@ -430,7 +430,7 @@ body {
 @media (max-width: 600px) {
   /* line 399, ../sass/style.scss */
   .upper-container img {
-    max-height: 70px;
+    max-height: 50px;
   }
 }
 
