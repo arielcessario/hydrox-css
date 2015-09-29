@@ -378,7 +378,7 @@ body {
     //margin-left: -180px;
   }
   display: flex;
-  margin-top: 50px;
+  margin-top: 100px;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
@@ -435,18 +435,17 @@ body {
   //left: 70%;
   font-family: 'Bebas Regular', sans-serif;
   color: white;
-  line-height: 85px;
+  line-height: 60px;
   text-align: left;
   width: 600px;
-  margin-left: 20px;
-  font-size: 80px;
+  font-size: 62px;
   font-weight: bolder;
   text-transform: uppercase;
   position: static;
   @media (max-width: 600px) {
     font-size: 45px;
     max-width: 360px;
-    margin: auto;
+    margin-top: 5px;
     line-height: 46px;
     text-align: center;
 
@@ -460,11 +459,11 @@ body {
   //left: 70%;
   text-align: left;
   width: 600px;
-  line-height: 52px;
+  line-height: 37px;
   margin: 20px;
   min-height: 150px;
   font-family: 'Bebas Regular', sans-serif;
-  font-size: 50px;
+  font-size: 35px;
   font-variant: small-caps;
   color: white;
   position: static;
@@ -492,19 +491,34 @@ body {
   margin: auto;
   flex-wrap: wrap;
   align-items: center;
-
+  @media(max-width: 700px){
+  margin-top: 100px;
+    max-width: 360px;
+    text-align: center;
+  }
 }
+
+
+
+
 
 .hydrox-inicio {
   order: 1;
   width: 312px;
   height: 54px;
+  @media(max-width: 500){
+    margin-bottom: 20px;
+  }
+
 }
 
 .x-inicio {
   order: 1;
   width: 189px;
   height: 142px;
+  @media(max-width: 500){
+    margin-bottom: 20px;
+  }
 }
 
 .foot-inicio {
@@ -512,6 +526,10 @@ body {
   order: 2;
   width: 301px;
   height: 71px;
+  @media(max-width: 500){
+  margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .imagen-main {
@@ -881,12 +899,12 @@ body {
   min-width: 700px;
   max-width: 700px;
   color: white;
-  margin-top: 200px;
+  margin-top: 100px;
   text-shadow: 2px 2px 4px black;
 
   @media (max-width: 700px) {
     //margin-left: 200px;
-    margin-top: 80px;
+    margin-top: 5px;
   }
 }
 
