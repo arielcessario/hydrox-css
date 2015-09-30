@@ -386,9 +386,9 @@
                             <textarea type="text" ng-model="mainCtrl.contactoMensaje"></textarea>
                         </div>
                         <div class="button-bar">
-                            <button ng-click="mainCtrl.sendMail();">OK</button>
-                            <span ng-if="mainCtrl.enviado">Mensaje enviado con éxito</span>
-                            <span ng-if="mainCtrl.contactoError">Error al enviar el mensaje, por favor escriba a </span>
+                            <button id="boton-ok" ng-click="mainCtrl.sendMail();"></button>
+                            <span id="mensaje-ok" ng-if="mainCtrl.enviado">Mensaje enviado con éxito</span>
+                            <span id="mensaje-error" ng-if="mainCtrl.contactoError">Error al enviar el mensaje, por favor escriba a </span>
                         </div>
                     </div>
                     <div id="nuevo-usuario" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'nuevo'">
