@@ -419,11 +419,15 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
             if (vm.isMobile) {
 
+
                 secciones[i].style.maxHeight = (mainHeight / 2.5) + 'px';
             } else {
 
                 secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
-                secciones[i].style.marginTop = '-100px';
+                if(mainWidth > 1400){
+
+                    secciones[i].style.marginTop = '-100px';
+                }
             }
 
         }
