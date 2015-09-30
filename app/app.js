@@ -423,6 +423,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             } else {
 
                 secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
+                secciones[i].style.marginTop = '-100px';
             }
 
         }
