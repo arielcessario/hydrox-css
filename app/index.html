@@ -399,6 +399,7 @@
                             <span id="mensaje-ok" ng-if="mainCtrl.enviado">Mensaje enviado con éxito</span>
                             <span id="mensaje-error" ng-if="mainCtrl.contactoError">Error al enviar el mensaje, por favor escriba a </span>
                         </div>
+                        <div ng-if="mainCtrl.isMobile" style="height: 300px;"></div>
                     </div>
                     <div id="nuevo-usuario" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'nuevo'">
                         <div class="form-titulo">NUEVO USUARIO</div>

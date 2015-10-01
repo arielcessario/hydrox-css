@@ -420,6 +420,9 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     var containers = angular.element(document.querySelectorAll('.left-container'));
     var containersRight = angular.element(document.querySelectorAll('.right-container'));
 
+    // Margen que se agrega para que las secciones ocupen un poco mas de espacio, en especial en celu
+    var margen = 200;
+
     drawScreen();
     //window.addEventListener('load', drawScreen);
     window.addEventListener('resize', drawScreen);
@@ -427,7 +430,11 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function drawScreen() {
 
 
-        var multiplicador = (mainWidth * 13) + 200;
+        if (vm.isMobile) {
+            margen = 250;
+        }
+
+        var multiplicador = (mainWidth * 13) + margen;
         // Son 12 secciones - 10 de fotos - 1 presentación - 1 contacto
         // Las hago de 1.5 de ancho cada sección para tener espacio para recorrer cuando estén fijos productos
         seccionPrincipal[0].style.maxWidth = multiplicador + 'px';
@@ -444,7 +451,11 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         group1[0].style.minWidth = multiplicador + 'px';
 
         // tamaño del layer mas al fondo
-        backgroundLayer[0].style.minWidth = (mainWidth * 12) + 'px';
+        if (vm.isMobile) {
+            backgroundLayer[0].style.minWidth = ((mainWidth * 12) + (margen * 14)) + 'px';
+        } else {
+            backgroundLayer[0].style.minWidth = (mainWidth * 12) + 'px';
+        }
 
         // agrego marge a las capas de adelante
         fore[0].style.marginLeft = (mainWidth * -11) + 'px';
@@ -453,13 +464,35 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
         // Doy el estilo a las secciones
         for (var i = 0; i < secciones.length; i++) {
-            secciones[i].style.width = (mainWidth) + 'px';
-            secciones[i].style.maxWidth = (mainWidth) + 'px';
-            secciones[i].style.minWidth = (mainWidth) + 'px';
+
+            if (vm.isMobile) {
+                if (i != 0) {
+                    secciones[i].style.width = (mainWidth + margen) + 'px';
+                    secciones[i].style.maxWidth = (mainWidth + margen) + 'px';
+                    secciones[i].style.minWidth = (mainWidth + margen) + 'px';
+                } else {
+                    secciones[i].style.width = (mainWidth) + 'px';
+                    secciones[i].style.maxWidth = (mainWidth) + 'px';
+                    secciones[i].style.minWidth = (mainWidth) + 'px';
+                    secciones[i].style.marginRight = (mainWidth + margen) + 'px';
+                }
+            } else {
+                secciones[i].style.width = (mainWidth) + 'px';
+                secciones[i].style.maxWidth = (mainWidth) + 'px';
+                secciones[i].style.minWidth = (mainWidth) + 'px';
+            }
 
             if (vm.isMobile) {
                 // Acá adentro las cosas para celu
                 secciones[i].style.position = 'relative';
+                if (i != 0) {
+                    secciones[i].style.marginTop = (-1 * (mainWidth / 1.5)) + 'px';
+                }
+
+                // Deja fija a la sección de contacto.
+                if (i == secciones.length - 1) {
+                    secciones[i].style.marginTop = '0px';
+                }
             } else {
 
                 // Fija a las secciones para que se puedan mostrar en la pantalla, pero solo cuando no es movil
@@ -467,7 +500,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
                 // Agrega margen a todo menos al formulario final
                 if (i < secciones.length - 1) {
-                    secciones[i].style.marginTop = '150px';
+                    secciones[i].style.marginTop = (mainWidth / 8) + 'px';
                 } else {
                     // Todo lo que está acá solo aplica al formulario final
                 }
@@ -498,98 +531,62 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     }
 
 
-    //
-    //if (vm.isMobile) {
-    //    group1[0].style.minWidth = (mainWidth * 19) + 'px';
-    //    backgroundLayer[0].style.minWidth = (mainWidth * 19) + 'px';
-    //} else {
-    //    group1[0].style.minWidth = (mainWidth * 12) + 'px';
-    //    backgroundLayer[0].style.minWidth = (mainWidth * 12) + 'px';
-    //}
-    //
-    ////console.log((angular.element(document.querySelector('#seccion-05')))[0].style.height);
-    //var secciones = angular.element(document.querySelectorAll('.seccion'));
-    //for (var i = 0; i < secciones.length; i++) {
-    //    secciones[i].style.width = (mainWidth) + 'px';
-    //    secciones[i].style.maxWidth = (mainWidth) + 'px';
-    //    secciones[i].style.minWidth = (mainWidth) + 'px';
-    //    //secciones[i].style.marginLeft = (mainWidth / 8) + 'px';
-    //
-    //
-    //    if (i != 11) {
-    //
-    //        if (vm.isMobile) {
-    //
-    //
-    //            secciones[i].style.maxHeight = (mainHeight / 2.5) + 'px';
-    //        } else {
-    //
-    //            secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
-    //            if (mainWidth > 1400) {
-    //
-    //                secciones[i].style.marginTop = '-100px';
-    //            }
-    //        }
-    //
-    //    }
-    //
-    //
-    //    if (vm.isMobile) {
-    //        if (i != 0) {
-    //            secciones[i].style.marginLeft = '250px';
-    //        } else {
-    //            secciones[i].style.marginLeft = '10px';
-    //        }
-    //    }
-    //}
-    //
-    //
-    //var containers = angular.element(document.querySelectorAll('.left-container'));
-    //var containersRight = angular.element(document.querySelectorAll('.right-container'));
-    //for (var i = 0; i < containers.length; i++) {
-    //
-    //    if (mainHeight > mainWidth) {
-    //        containers[i].style.height = (mainWidth / 1.1) + 'px';
-    //        containers[i].style.maxHeight = (mainWidth / 1.1) + 'px';
-    //        containers[i].style.maxWidth = (mainWidth / 1.1) + 'px';
-    //        containers[i].style.width = (mainWidth / 1.1) + 'px';
-    //        containersRight[i].style.marginLeft = (-1 * (mainWidth)) + 'px';
-    //
-    //    } else {
-    //        containers[i].style.height = (mainWidth / 2.2) + 'px';
-    //        containers[i].style.maxHeight = (mainWidth / 2.2) + 'px';
-    //        containers[i].style.maxWidth = (mainWidth / 2.2) + 'px';
-    //        containers[i].style.width = (mainWidth / 2.2) + 'px';
-    //    }
-    //
-    //
-    //}
-    //
-    //containers = angular.element(document.querySelectorAll('.bottom-container'));
-    //var factor = 12;
-    //if (mainHeight < 700) {
-    //    factor = 9;
-    //}
-    //for (var i = 0; i < containers.length; i++) {
-    //    containers[i].style.marginTop = '0px';
-    //    containers[i].style.maxWidth = (mainWidth / 0.7) + 'px';
-    //    //containers[i].style.marginTop = (mainContainer[0].clientHeight / factor) + 'px';
-    //}
-
-
     var pos_origin = 0;
 
     function scrollToMobile(id) {
 
         var pos = (id) * mainWidth;
 
+        if(vm.isMobile){
 
-        vm.openMobile = false;
-        if (vm.isMobile) {
-            scrollTo(pos + (250 * (id - 1)) + (mainWidth / 1.1) + 10);
-        } else {
-            scrollTo(pos);
+            console.log((mainWidth + margen) * (id + 1));
+            scrollTo(((mainWidth + margen) * (id)) + ((mainWidth + margen)/1.9));
+            //switch (id){
+            //    case 1:
+            //        scrollTo(950);
+            //        break;
+            //    case 2:
+            //        scrollTo(950);
+            //        break;
+            //    case 3:
+            //        scrollTo(950);
+            //        break;
+            //    case 4:
+            //        scrollTo(950);
+            //        break;
+            //    case 5:
+            //        scrollTo(950);
+            //        break;
+            //    case 6:
+            //        scrollTo(950);
+            //        break;
+            //    case 7:
+            //        scrollTo(950);
+            //        break;
+            //    case 8:
+            //        scrollTo(950);
+            //        break;
+            //    case 9:
+            //        scrollTo(950);
+            //        break;
+            //    case 10:
+            //        scrollTo(950);
+            //        break;
+            //    case 11:
+            //        scrollTo(950);
+            //        break;
+            //}
+
+        }else{
+
+            vm.openMobile = false;
+            //if (vm.isMobile) {
+            //    scrollTo(pos + (250 * (id - 1)) + (mainWidth / 1.1) + 10);
+            //} else {
+                scrollTo(pos);
+            //}
         }
+
     }
 
     function scrollTo(pos) {
@@ -619,7 +616,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             pos_origin = 0;
         }
 
-        console.log(is_end);
+        //console.log(is_end);
 
         //for(var i = 0; i<cantidad/8; i++){
         if (document.getElementById('main-container').scrollLeft != pos) {
@@ -643,6 +640,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                 //timer += 1;
                 if (!is_end) {
                     vm.scrollTo(pos);
+                }else{
+                    console.log(pos);
                 }
             }, 1);
 
@@ -712,6 +711,10 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             if ((mainContainer[0].scrollLeft > ((mainWidth * 10) + (-240) + (250 * 10)) && mainContainer[0].scrollLeft < ((mainWidth * 11) + (-240) + (250 * 11))) && vm.seccion != 'seccion-11') {
                 selectScreen(11);
             }
+            if ((mainContainer[0].scrollLeft > ((mainWidth * 11) + (-240) + (250 * 11)) && mainContainer[0].scrollLeft < ((mainWidth * 12) + (-240) + (250 * 12))) && vm.seccion != 'seccion-12') {
+                console.log('entr');
+                selectScreen(12);
+            }
         } else {
 
             for (var i = 1; i < secciones.length; i++) {
@@ -755,7 +758,6 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                 selectScreen(11);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 11) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 12) - 200)) && vm.seccion != 'seccion-12') {
-
                 selectScreen(12);
             }
         }
