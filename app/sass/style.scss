@@ -113,27 +113,27 @@ body {
     //background-color: red;
     background: url("../img/logo_secciones.svg") 50% 50% no-repeat;
     right: 30px;
-    @media (max-width: 400px){
+    @media (max-width: 700px){
       right: 5px;
 
     }
   }
 
   #button-izquierda {
-      background: url("../img/logo_thumb.svg") 50% 50% no-repeat;
-      //background-color: red;
-      left: 30px;
-      @media (max-width: 400px){
-        left: 5px;
+    background: url("../img/logo_thumb.svg") 50% 50% no-repeat;
+    //background-color: red;
+    left: 30px;
+    @media (max-width: 700px){
+      left: 5px;
 
-      }
     }
+  }
   #button-contacto {
     background: url("../img/icono-contacto.png") 50% 50% no-repeat;
     //backgr
     //ound-color: red;
     left: 120px;
-    @media (max-width: 400px){
+    @media (max-width: 700px){
       left: 150px;
 
     }
@@ -158,7 +158,12 @@ body {
 
   #button-centro {
     background: url("../img/logo_ojo.svg") 50% 50% no-repeat;
-    left:70px;
+    left: 70px;
+    //background-color: blue;
+    @media (min-width: 700px) {
+      visibility: collapse;
+      display: none;
+    }
   }
 
 }
