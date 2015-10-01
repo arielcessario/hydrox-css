@@ -414,6 +414,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         secciones[i].style.width = (mainWidth) + 'px';
         secciones[i].style.maxWidth = (mainWidth) + 'px';
         secciones[i].style.minWidth = (mainWidth) + 'px';
+        secciones[i].style.marginLeft = (mainWidth / 8) + 'px';
+
 
         if (i != 11) {
 
@@ -424,7 +426,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             } else {
 
                 secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
-                if(mainWidth > 1400){
+                if (mainWidth > 1400) {
 
                     secciones[i].style.marginTop = '-100px';
                 }
