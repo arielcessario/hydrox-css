@@ -113,7 +113,7 @@ body {
     //background-color: red;
     background: url("../img/logo_secciones.svg") 50% 50% no-repeat;
     right: 30px;
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       right: 5px;
 
     }
@@ -123,7 +123,7 @@ body {
     background: url("../img/logo_thumb.svg") 50% 50% no-repeat;
     //background-color: red;
     left: 30px;
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       left: 5px;
 
     }
@@ -133,7 +133,7 @@ body {
     //backgr
     //ound-color: red;
     left: 120px;
-    @media (max-width: 700px){
+    @media (max-width: 700px) {
       left: 150px;
 
     }
@@ -149,7 +149,7 @@ body {
     }
   }
 
-  #mensaje-error span{
+  #mensaje-error span {
     color: red;
     font-family: 'Bebas Regular', sans-serif;
     font-size: 30px;
@@ -519,22 +519,18 @@ body {
   margin: auto;
   flex-wrap: wrap;
   align-items: center;
-  @media(max-width: 700px){
-  margin-top: 100px;
+  @media(max-width: 700px) {
+    margin-top: 100px;
     max-width: 360px;
     text-align: center;
   }
 }
 
-
-
-
-
 .hydrox-inicio {
   order: 1;
   width: 312px;
   height: 54px;
-  @media(max-width: 500px){
+  @media(max-width: 500px) {
     margin-bottom: 20px;
   }
 
@@ -544,7 +540,7 @@ body {
   order: 1;
   width: 189px;
   height: 142px;
-  @media(max-width: 500px){
+  @media(max-width: 500px) {
     margin-bottom: 20px;
   }
 }
@@ -554,8 +550,8 @@ body {
   order: 2;
   width: 301px;
   height: 71px;
-  @media(max-width: 500px){
-  margin-top: 20px;
+  @media(max-width: 500px) {
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 }
@@ -930,8 +926,6 @@ body {
   //margin-top: 100px;
   text-shadow: 2px 2px 4px black;
 
-  position: fixed;
-
   @media (max-width: 700px) {
     //margin-left: 200px;
     margin-top: 5px;
@@ -962,10 +956,10 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    opacity: 0;
     overflow-x: auto;
 
-    select{
+    select {
       color: black;
       width: 100%;
       -webkit-border-radius: 10px;
@@ -973,11 +967,11 @@ body {
       border-radius: 10px;
     }
 
-    option{
+    option {
       color: black;
     }
 
-    .button-activar{
+    .button-activar {
       height: 20px;
       width: 20px;
       background-color: red;
@@ -986,19 +980,18 @@ body {
       border-radius: 20px;
     }
 
-    .button-activar-activado{
+    .button-activar-activado {
 
       background-color: green;
     }
-    #contacto, #nuevo-usuario, #ingreso, #catalogo{
+    #contacto, #nuevo-usuario, #ingreso, #catalogo {
       margin-top: 120px;
       max-width: 90%;
       @media (max-width: 700px) {
         margin-top: 80px;
       }
 
-
-      #boton-ok{
+      #boton-ok {
         background: transparent url("../img/boton-ok.png") 50% 50% repeat;
         width: 40px;
         height: 40px;
@@ -1007,17 +1000,17 @@ body {
 
       }
 
-      .form-titulo{
+      .form-titulo {
         font-family: 'Bebas Regular', sans-serif;
         font-size: 60px;
         font-weight: bolder;
-            }
+      }
 
-      .form-input{
+      .form-input {
         display: flex;
         flex-direction: row;
         margin: 10px 0px 10px 0px;
-        input{
+        input {
           height: 25px;
           width: 100%;
           margin-top: 5px;
@@ -1026,32 +1019,63 @@ body {
           border-radius: 10px;
           color: black;
         }
-        span{
+        span {
           font-family: 'Bebas Regular', sans-serif;
           font-size: 25px;
           font-weight: bold;
           margin-right: 5px;
-          }
+        }
       }
 
-      .form-textarea{
+      .form-textarea {
         display: flex;
         flex-direction: column;
         margin: 10px 0px 5px 0px;
-        textarea{
+        textarea {
           -webkit-border-radius: 10px;
           min-height: 150px;
           -moz-border-radius: 10px;
           border-radius: 10px;
           color: black;
         }
-        span{
+        span {
           font-family: 'Bebas Regular', sans-serif;
           font-size: 25px;
           font-weight: bold;
         }
       }
     }
+  }
+}
+
+.form-visible-remove {
+  -webkit-animation: form-hide .8s;
+  -o-animation: form-hide .8s;
+  animation: form-hide .8s;
+}
+
+
+.form-visible {
+  -webkit-animation: form-show .8s;
+  -o-animation: form-show .8s;
+  animation: form-show .8s;
+  opacity: 1 !important;
+}
+
+@keyframes form-show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1 !important;
+  }
+}
+@keyframes form-hide {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
 

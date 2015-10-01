@@ -416,6 +416,10 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     // Todas las secciones - seccion-01, seccion-02, etc
     var secciones = angular.element(document.querySelectorAll('.seccion'));
 
+    // Contenedores de imagen y texto
+    var containers = angular.element(document.querySelectorAll('.left-container'));
+    var containersRight = angular.element(document.querySelectorAll('.right-container'));
+
     drawScreen();
     //window.addEventListener('load', drawScreen);
     window.addEventListener('resize', drawScreen);
@@ -423,15 +427,17 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function drawScreen() {
 
 
-        var multiplicador = (mainWidth * 12) + 200;
+        var multiplicador = (mainWidth * 13) + 200;
         // Son 12 secciones - 10 de fotos - 1 presentación - 1 contacto
         // Las hago de 1.5 de ancho cada sección para tener espacio para recorrer cuando estén fijos productos
         seccionPrincipal[0].style.maxWidth = multiplicador + 'px';
         seccionPrincipal[0].style.width = multiplicador + 'px';
 
         // Hace que el formulario sea del alto de la pantalla.
-        form[0].style.height = mainHeight + 'px';
-        form[0].style.height = mainHeight + 'px';
+        if (form[0] != undefined) {
+            form[0].style.height = mainHeight + 'px';
+            form[0].style.height = mainHeight + 'px';
+        }
 
 
         // Tamaño del grupo parallax
@@ -445,41 +451,48 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         fore2[0].style.marginLeft = (mainWidth * -14) + 'px';
 
 
+        // Doy el estilo a las secciones
         for (var i = 0; i < secciones.length; i++) {
             secciones[i].style.width = (mainWidth) + 'px';
             secciones[i].style.maxWidth = (mainWidth) + 'px';
             secciones[i].style.minWidth = (mainWidth) + 'px';
-            //secciones[i].style.left = (mainWidth * i) + 'px';
+
+            if (vm.isMobile) {
+                // Acá adentro las cosas para celu
+                secciones[i].style.position = 'relative';
+            } else {
+
+                // Fija a las secciones para que se puedan mostrar en la pantalla, pero solo cuando no es movil
+                secciones[i].style.position = 'fixed';
+
+                // Agrega margen a todo menos al formulario final
+                if (i < secciones.length - 1) {
+                    secciones[i].style.marginTop = '150px';
+                } else {
+                    // Todo lo que está acá solo aplica al formulario final
+                }
+            }
+        }
 
 
-            //secciones[i].style.marginLeft = (mainWidth / 8) + 'px';
+        // Estilo al contenedor de imagen y de texto
+        for (var i = 0; i < containers.length; i++) {
+
+            if (mainHeight > mainWidth) {
+                containers[i].style.height = (mainWidth / 1.1) + 'px';
+                containers[i].style.maxHeight = (mainWidth / 1.1) + 'px';
+                containers[i].style.maxWidth = (mainWidth / 1.1) + 'px';
+                containers[i].style.width = (mainWidth / 1.1) + 'px';
+                containersRight[i].style.marginLeft = (-1 * (mainWidth)) + 'px';
+
+            } else {
+                containers[i].style.height = (mainWidth / 2.2) + 'px';
+                containers[i].style.maxHeight = (mainWidth / 2.2) + 'px';
+                containers[i].style.maxWidth = (mainWidth / 2.2) + 'px';
+                containers[i].style.width = (mainWidth / 2.2) + 'px';
+            }
 
 
-            //if (i != 11) {
-            //
-            //    if (vm.isMobile) {
-            //
-            //
-            //        secciones[i].style.maxHeight = (mainHeight / 2.5) + 'px';
-            //    } else {
-            //
-            //        secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
-            //        if (mainWidth > 1400) {
-            //
-            //            secciones[i].style.marginTop = '-100px';
-            //        }
-            //    }
-            //
-            //}
-            //
-            //
-            //if (vm.isMobile) {
-            //    if (i != 0) {
-            //        secciones[i].style.marginLeft = '250px';
-            //    } else {
-            //        secciones[i].style.marginLeft = '10px';
-            //    }
-            //}
         }
 
     }
@@ -598,8 +611,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         if ((pos_actual < pos && pos_next > pos) ||
             (pos_actual > pos && pos_next < pos)) {
 
-            console.log('pos ' + pos_actual);
-            console.log('pos ' + pos);
+            //console.log('pos ' + pos_actual);
+            //console.log('pos ' + pos);
 
 
             is_end = true;
@@ -654,142 +667,59 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
         //animate();
         //requestAnimationFrame(animate);
-        console.log(mainContainer[0].scrollLeft);
+        //console.log(mainContainer[0].scrollLeft);
 
 
         vm.ypos = mainContainer[0].scrollLeft;
 
         if (mainContainer[0].scrollLeft > ((mainWidth * 1) - 200)) {
+
             vm.header = true;
         } else {
+            vm.seccion = '';
             vm.header = false;
         }
 
 
         if (vm.isMobile) {
+            if ((mainContainer[0].scrollLeft > ((mainWidth * 1) + (-240) + (250 * 2)) && mainContainer[0].scrollLeft < ((mainWidth * 2) + (-240) + (250 * 2))) && vm.seccion != 'seccion-02') {
+                selectScreen(2);
+            }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 2) + (-240) + (250 * 2)) && mainContainer[0].scrollLeft < ((mainWidth * 3) + (-240) + (250 * 3))) && vm.seccion != 'seccion-03') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                vm.seccion = 'seccion-03';
-                vm.img = 'bota_01.gif';
-                //$scope.$apply();
-                vm.thumbs = [
-                    {big: 'bota_01.gif', small: 'bota_01t.png', img: 'img03'},
-                    {big: 'bota_02.gif', small: 'bota_02t.png', img: 'img03'},
-                    {big: 'bota_03.gif', small: 'bota_03t.png', img: 'img03'}
-                ];
+                selectScreen(3);
             }
-
-
             if ((mainContainer[0].scrollLeft > ((mainWidth * 3) + (-240) + (250 * 3)) && mainContainer[0].scrollLeft < ((mainWidth * 4) + (-240) + (250 * 4))) && vm.seccion != 'seccion-04') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-04';
-                vm.img = 'medias_neoprene_01.gif';
-                vm.thumbs = [
-                    {big: 'medias_neoprene_01.gif', small: 'medias_neoprene_01t.png', img: 'img04'},
-                    {big: 'medias_neoprene_02.gif', small: 'medias_neoprene_02t.png', img: 'img04'}
-                ];
-                //$scope.$apply();
+                selectScreen(4);
             }
-
-
             if ((mainContainer[0].scrollLeft > ((mainWidth * 4) + (-240) + (250 * 4)) && mainContainer[0].scrollLeft < ((mainWidth * 5) + (-240) + (250 * 5))) && vm.seccion != 'seccion-05') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-05';
-                vm.img = 'jardinero_01.gif';
-                vm.thumbs = [
-                    {big: 'jardinero_01.gif', small: 'jardinero_01t.png', img: 'img05'},
-                    {big: 'jardinero_02.gif', small: 'jardinero_02t.png', img: 'img05'},
-                    {big: 'jardinero_03.gif', small: 'jardinero_03t.png', img: 'img05'},
-                    {big: 'jardinero_04.gif', small: 'jardinero_04t.png', img: 'img05'}
-                ];
-                //$scope.$apply();
+                selectScreen(5);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 5) + (-240) + (250 * 5)) && mainContainer[0].scrollLeft < ((mainWidth * 6) + (-240) + (250 * 6))) && vm.seccion != 'seccion-06') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-06';
-                vm.img = 'pantalon_neoprene_01.gif';
-                vm.thumbs = [
-                    {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png', img: 'img06'},
-                    {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png', img: 'img06'},
-                    {big: 'pantalon_neoprene_03.gif', small: 'pantalon_neoprene_03t.png', img: 'img06'},
-                    {big: 'pantalon_neoprene_04.gif', small: 'pantalon_neoprene_04t.png', img: 'img06'},
-                    {big: 'pantalon_neoprene_05.gif', small: 'pantalon_neoprene_05t.png', img: 'img06'}
-                ];
-                //$scope.$apply();
+                selectScreen(6);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 6) + (-240) + (250 * 6)) && mainContainer[0].scrollLeft < ((mainWidth * 7) + (-240) + (250 * 7))) && vm.seccion != 'seccion-07') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-07';
-                vm.img = 'calza_04.gif';
-                vm.thumbs = [
-                    {big: 'calza_01.gif', small: 'calza_01t.png', img: 'img07'},
-                    {big: 'calza_02.gif', small: 'calza_02t.png', img: 'img07'},
-                    {big: 'calza_03.gif', small: 'calza_03t.png', img: 'img07'},
-                    {big: 'calza_04.gif', small: 'calza_04t.png', img: 'img07'}
-                ];
-                //$scope.$apply();
+                selectScreen(7);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 7) + (-240) + (250 * 7)) && mainContainer[0].scrollLeft < ((mainWidth * 8) + (-240) + (250 * 8))) && vm.seccion != 'seccion-08') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-08';
-                vm.img = 'remera_neoprene_02.gif';
-                vm.thumbs = [
-                    {big: 'remera_neoprene_01.gif', small: 'remera_neoprene_01t.png', img: 'img08'},
-                    {big: 'remera_neoprene_02.gif', small: 'remera_neoprene_02t.png', img: 'img08'}
-                ];
-                //$scope.$apply();
+                selectScreen(8);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 8) + (-240) + (250 * 8)) && mainContainer[0].scrollLeft < ((mainWidth * 9) + (-240) + (250 * 9))) && vm.seccion != 'seccion-09') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-09';
-                vm.img = 'remera_lycra_01.gif';
-                vm.thumbs = [
-                    {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png', img: 'img09'},
-                    {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png', img: 'img09'},
-                    {big: 'remera_lycra_03.gif', small: 'remera_lycra_03t.png', img: 'img09'},
-                    {big: 'remera_lycra_04.gif', small: 'remera_lycra_04t.png', img: 'img09'},
-                    {big: 'remera_lycra_05.gif', small: 'remera_lycra_05t.png', img: 'img09'}
-                ];
-                //$scope.$apply();
+                selectScreen(9);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 9) + (-240) + (250 * 9)) && mainContainer[0].scrollLeft < ((mainWidth * 10) + (-240) + (250 * 10))) && vm.seccion != 'seccion-10') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-10';
-                vm.img = 'barbijo.gif';
-                vm.thumbs = [];
-                //$scope.$apply();
+                selectScreen(10);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 10) + (-240) + (250 * 10)) && mainContainer[0].scrollLeft < ((mainWidth * 11) + (-240) + (250 * 11))) && vm.seccion != 'seccion-11') {
-                vm.openThumbs = false;
-                vm.hideText = false;
-                //console.log('entra');
-                vm.seccion = 'seccion-11';
-                vm.img = 'milton_01.gif';
-                vm.thumbs = [
-                    {big: 'milton_01t.gif', small: 'milton_01t.png', img: 'img11'},
-                    {big: 'milton_02t.gif', small: 'milton_02t.png', img: 'img11'}
-                ];
-                //$scope.$apply();
+                selectScreen(11);
             }
         } else {
 
-            for(var i = 1; i<secciones.length; i++){
-                secciones[i].style.left = mainContainer[0].scrollLeft + 'px';
+            for (var i = 1; i < secciones.length; i++) {
+                if (i < secciones.length - 1) {
+                    secciones[i].style.left = (mainContainer[0].scrollLeft + (mainWidth * 0.1)) + 'px';
+                } else {
+                    secciones[i].style.left = (mainContainer[0].scrollLeft) + 'px';
+                }
             }
 
             $scope.$apply();
@@ -824,7 +754,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             if ((mainContainer[0].scrollLeft > ((mainWidth * 10) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 11) - 200)) && vm.seccion != 'seccion-11') {
                 selectScreen(11);
             }
-            if ((mainContainer[0].scrollLeft > ((mainWidth * 11) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 12) - 200)) && vm.seccion != 'seccion-11') {
+            if ((mainContainer[0].scrollLeft > ((mainWidth * 11) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 12) - 200)) && vm.seccion != 'seccion-12') {
+
                 selectScreen(12);
             }
         }
@@ -836,10 +767,6 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
                     break;
                 case 2:
-
-
-
-
                     vm.hideText = false;
                     vm.openThumbs = false;
                     vm.seccion = 'seccion-02';
@@ -960,6 +887,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     vm.openThumbs = false;
                     vm.hideText = false;
                     vm.thumbs = [];
+                    vm.seccion = 'seccion-12';
 
                     if (!store.get('jwt')) {
                         vm.isDescargas = false;
