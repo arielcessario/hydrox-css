@@ -537,54 +537,17 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
         var pos = (id) * mainWidth;
 
-        if(vm.isMobile){
+        if (vm.isMobile) {
 
             console.log((mainWidth + margen) * (id + 1));
-            scrollTo(((mainWidth + margen) * (id)) + ((mainWidth + margen)/1.9));
-            //switch (id){
-            //    case 1:
-            //        scrollTo(950);
-            //        break;
-            //    case 2:
-            //        scrollTo(950);
-            //        break;
-            //    case 3:
-            //        scrollTo(950);
-            //        break;
-            //    case 4:
-            //        scrollTo(950);
-            //        break;
-            //    case 5:
-            //        scrollTo(950);
-            //        break;
-            //    case 6:
-            //        scrollTo(950);
-            //        break;
-            //    case 7:
-            //        scrollTo(950);
-            //        break;
-            //    case 8:
-            //        scrollTo(950);
-            //        break;
-            //    case 9:
-            //        scrollTo(950);
-            //        break;
-            //    case 10:
-            //        scrollTo(950);
-            //        break;
-            //    case 11:
-            //        scrollTo(950);
-            //        break;
-            //}
+            scrollTo(((mainWidth + margen) * (id)) + ((mainWidth + margen) / 1.9));
 
-        }else{
+
+        } else {
 
             vm.openMobile = false;
-            //if (vm.isMobile) {
-            //    scrollTo(pos + (250 * (id - 1)) + (mainWidth / 1.1) + 10);
-            //} else {
-                scrollTo(pos);
-            //}
+
+            scrollTo(pos);
         }
 
     }
@@ -640,7 +603,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                 //timer += 1;
                 if (!is_end) {
                     vm.scrollTo(pos);
-                }else{
+                } else {
                     console.log(pos);
                 }
             }, 1);
