@@ -119,15 +119,24 @@ body {
   }
 
   #button-izquierda {
-    background: url("../img/logo_thumb.svg") 50% 50% no-repeat;
-    //background-color: red;
-    left: 30px;
+      background: url("../img/logo_thumb.svg") 50% 50% no-repeat;
+      //background-color: red;
+      left: 30px;
+      //@media (min-width: 700px) {
+      //  visibility: collapse;
+      //  display: none;
+      //}
+    }
+  #button-contacto {
+    background: url("../img/icono-contacto.png") 50% 50% no-repeat;
+    //backgr
+    //ound-color: red;
+    left: 120px;
     //@media (min-width: 700px) {
     //  visibility: collapse;
     //  display: none;
     //}
   }
-
 
   #mensaje-ok {
     span {
