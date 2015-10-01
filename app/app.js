@@ -404,8 +404,17 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     // Sección del fondo, la que tiene la imagen de los poligonos
     var backgroundLayer = angular.element(document.querySelector('#background-layer'));
 
+    // Sección del que está adelante de los productos - fore
+    var fore = angular.element(document.querySelector('#layer-fore'));
+
+    // Sección del que está mas adelante de todo - fore2
+    var fore2 = angular.element(document.querySelector('#layer-fore2'));
+
     // Div final, el que tiene el formulario de contacto y todo lo demás.
     var form = angular.element(document.querySelector('#form'));
+
+    // Todas las secciones - seccion-01, seccion-02, etc
+    var secciones = angular.element(document.querySelectorAll('.seccion'));
 
     drawScreen();
     //window.addEventListener('load', drawScreen);
@@ -415,14 +424,14 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
 
         var multiplicador = (mainWidth * 12) + 200;
-        //// Son 12 secciones - 10 de fotos - 1 presentación - 1 contacto
-        //// Las hago de 1.5 de ancho cada sección para tener espacio para recorrer cuando estén fijos productos
-        //seccionPrincipal[0].style.maxWidth = multiplicador + 'px';
-        //seccionPrincipal[0].style.width = multiplicador + 'px';
+        // Son 12 secciones - 10 de fotos - 1 presentación - 1 contacto
+        // Las hago de 1.5 de ancho cada sección para tener espacio para recorrer cuando estén fijos productos
+        seccionPrincipal[0].style.maxWidth = multiplicador + 'px';
+        seccionPrincipal[0].style.width = multiplicador + 'px';
 
-        //// Hace que el formulario sea del alto de la pantalla.
-        //form[0].style.height = mainHeight + 'px';
-        //form[0].style.height = mainHeight + 'px';
+        // Hace que el formulario sea del alto de la pantalla.
+        form[0].style.height = mainHeight + 'px';
+        form[0].style.height = mainHeight + 'px';
 
 
         // Tamaño del grupo parallax
@@ -431,6 +440,47 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         // tamaño del layer mas al fondo
         backgroundLayer[0].style.minWidth = (mainWidth * 12) + 'px';
 
+        // agrego marge a las capas de adelante
+        fore[0].style.marginLeft = (mainWidth * -11) + 'px';
+        fore2[0].style.marginLeft = (mainWidth * -14) + 'px';
+
+
+        for (var i = 0; i < secciones.length; i++) {
+            secciones[i].style.width = (mainWidth) + 'px';
+            secciones[i].style.maxWidth = (mainWidth) + 'px';
+            secciones[i].style.minWidth = (mainWidth) + 'px';
+            //secciones[i].style.left = (mainWidth * i) + 'px';
+
+
+            //secciones[i].style.marginLeft = (mainWidth / 8) + 'px';
+
+
+            //if (i != 11) {
+            //
+            //    if (vm.isMobile) {
+            //
+            //
+            //        secciones[i].style.maxHeight = (mainHeight / 2.5) + 'px';
+            //    } else {
+            //
+            //        secciones[i].style.maxHeight = (mainHeight / 1.8) + 'px';
+            //        if (mainWidth > 1400) {
+            //
+            //            secciones[i].style.marginTop = '-100px';
+            //        }
+            //    }
+            //
+            //}
+            //
+            //
+            //if (vm.isMobile) {
+            //    if (i != 0) {
+            //        secciones[i].style.marginLeft = '250px';
+            //    } else {
+            //        secciones[i].style.marginLeft = '10px';
+            //    }
+            //}
+        }
 
     }
 
@@ -738,42 +788,44 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             }
         } else {
 
-            if ((mainContainer[0].scrollLeft > ((mainWidth * 1) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 2) - 200)) && vm.seccion != 'seccion-02') {
-                selectScreen(2);
-
+            for(var i = 1; i<secciones.length; i++){
+                secciones[i].style.left = mainContainer[0].scrollLeft + 'px';
             }
 
+            $scope.$apply();
+
+            if ((mainContainer[0].scrollLeft > ((mainWidth * 1) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 2) - 200)) && vm.seccion != 'seccion-02') {
+                selectScreen(2);
+            }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 2) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 3) - 200)) && vm.seccion != 'seccion-03') {
                 selectScreen(3);
             }
-
             if ((mainContainer[0].scrollLeft > ((mainWidth * 3) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 4) - 200)) && vm.seccion != 'seccion-04') {
-
+                selectScreen(4);
             }
-
             if ((mainContainer[0].scrollLeft > ((mainWidth * 4) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 5) - 200)) && vm.seccion != 'seccion-05') {
-
+                selectScreen(5);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 5) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 6) - 200)) && vm.seccion != 'seccion-06') {
-
+                selectScreen(6);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 6) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 7) - 200)) && vm.seccion != 'seccion-07') {
-
+                selectScreen(7);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 7) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 8) - 200)) && vm.seccion != 'seccion-08') {
-
+                selectScreen(8);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 8) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 9) - 200)) && vm.seccion != 'seccion-09') {
-
+                selectScreen(9);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 9) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 10) - 200)) && vm.seccion != 'seccion-10') {
-
+                selectScreen(10);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 10) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 11) - 200)) && vm.seccion != 'seccion-11') {
-
+                selectScreen(11);
             }
             if ((mainContainer[0].scrollLeft > ((mainWidth * 11) - 200) && mainContainer[0].scrollLeft < ((mainWidth * 12) - 200)) && vm.seccion != 'seccion-11') {
-
+                selectScreen(12);
             }
         }
 
@@ -784,6 +836,10 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
                     break;
                 case 2:
+
+
+
+
                     vm.hideText = false;
                     vm.openThumbs = false;
                     vm.seccion = 'seccion-02';
