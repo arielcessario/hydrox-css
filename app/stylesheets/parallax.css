@@ -54,34 +54,9 @@
 .parallax__layer--fore {
   -webkit-transform: translateZ(90px) scale(0.7);
   transform: translateZ(90px) scale(0.7);
-  z-index: 100;
-  background: url("../img/fore.png") 50% 50% repeat;
+  z-index: 50;
+  background: url("../img/burbujas.svg") 50% 50% repeat;
   pointer-events: none;
-}
-
-/* line 58, ../sass/parallax.scss */
-.parallax__layer--fore2 {
-  -webkit-transform: translateZ(180px) scale(0.4);
-  transform: translateZ(180px) scale(0.4);
-  z-index: 100;
-  background: url("../img/fore2.png") 50% 50% repeat;
-  pointer-events: none;
-}
-
-/* line 66, ../sass/parallax.scss */
-.parallax__layer--base {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  z-index: 4;
-  background: url("../img/base.png") 50% 50% repeat;
-}
-
-/* line 75, ../sass/parallax.scss */
-.parallax__layer--back {
-  -webkit-transform: translateZ(-300px) scale(2);
-  transform: translateZ(-300px) scale(2);
-  z-index: 3;
-  background: url("../img/back.png") 50% 50% repeat;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
@@ -89,7 +64,37 @@
   filter: blur(5px);
 }
 
-/* line 89, ../sass/parallax.scss */
+/* line 64, ../sass/parallax.scss */
+.parallax__layer--fore2 {
+  -webkit-transform: translateZ(180px) scale(0.4);
+  transform: translateZ(180px) scale(0.4);
+  z-index: 100;
+  background: url("../img/burbujas3.png") 50% 50% repeat;
+  pointer-events: none;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+/* line 77, ../sass/parallax.scss */
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+  background: url("../img/burbujas3.png") 50% 50% repeat;
+}
+
+/* line 86, ../sass/parallax.scss */
+.parallax__layer--back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: 3;
+  background: url("../img/burbujas2.svg") 50% 50% repeat;
+}
+
+/* line 96, ../sass/parallax.scss */
 .parallax__layer--deep {
   -webkit-transform: translateZ(-2000px) scale(7.66);
   transform: translateZ(-2000px) scale(7.66);
