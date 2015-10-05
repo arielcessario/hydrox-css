@@ -497,7 +497,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                 // Acá adentro las cosas para celu
                 secciones[i].style.position = 'relative';
                 if (i != 0) {
-                    secciones[i].style.marginTop = (-1 * (mainWidth / 1.5)) + 'px';
+                    secciones[i].style.marginTop = (-1 * (mainWidth / 1.2)) + 'px';
                 }
 
                 // Deja fija a la sección de contacto.
