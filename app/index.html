@@ -50,9 +50,8 @@
     </div>
 
     <div id="menu-contact-buttons" ng-if="mainCtrl.openContact">
-        <button class="mobile-button" ng-click="mainCtrl.openContact = false;">Contacto
-        </button>
-        <button class="mobile-button" ng-click="mainCtrl.openContact = false;">Descargas</button>
+        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('contacto');">Contacto</button>
+        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('admin');">Descargas</button>
     </div>
     <div id="menu-mobile">
         <a href="" id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
@@ -424,11 +423,11 @@
                         </div>
                         <div class="nuevo-usuario-button-bar">
                             <button ng-click="mainCtrl.saveUsuario();">GUARDAR</button>
-                            <button ng-click="">CANCELAR</button>
+                            <button ng-click="mainCtrl.admin = 'admin'">CANCELAR</button>
                         </div>
                     </div>
 
-                    <div id="ingreso" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'login'">
+                    <div id="ingreso" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'admin'">
                         <div class="form-input">
                             <span>MAIL</span>
                             <input id="mail" type="email" ng-model="mainCtrl.mail"
@@ -447,7 +446,7 @@
 
                     </div>
 
-                    <div id="catalogo" ng-if="mainCtrl.logged != undefined && mainCtrl.admin == 'logged'">
+                    <div id="catalogo" ng-if="mainCtrl.logged != undefined && mainCtrl.admin == 'admin'">
 
                         <div class="form-titulo">DESCARGA DE FOTOGRAFIAS</div>
                         <div class="admin-inputs">

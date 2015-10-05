@@ -100,9 +100,15 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.logout = logout;
     vm.downloadURI = downloadURI;
     vm.updateUsuario = updateUsuario;
+    vm.goToAdmin = goToAdmin;
     vm.usuarios = [];
     vm.logged = undefined;
     vm.admin = 'contacto';
+
+    function goToAdmin(screen){
+        scrollToMobile(11);
+        vm.admin = screen;
+    }
 
     function downloadURI(origen) {
         var name = '';
@@ -140,6 +146,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function logout() {
         store.remove('jwt');
         vm.isLogin = true;
+        vm.logged = undefined;
+        vm.admin == 'admin';
     }
 
 
@@ -258,6 +266,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function nuevoUsuario() {
         vm.isLogin = false;
         vm.isNuevoUsuario = true;
+        vm.admin = 'nuevo';
     }
 
     function login() {
@@ -280,18 +289,19 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
         LoginService.login(vm.mail, vm.password, function (data) {
 
-            console.log(data);
             if (data != -1) {
                 //LoginState.isLogged = true;
                 store.set('jwt', data);
                 if (jwtHelper.decodeToken(store.get('jwt')).data.rol == 1) {
-                    console.log('entra');
                     LoginService.getClientes(function (data) {
                         vm.usuarios = data;
                     })
                 } else {
                     vm.usuarios = [];
                 }
+
+                vm.logged = jwtHelper.decodeToken(store.get('jwt'));
+                vm.admin = 'admin';
             } else {
                 //LoginState.isLogged = false;
                 AcUtilsService.validations('password', 'Mail o password incorrectos');
