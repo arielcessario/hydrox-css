@@ -53,12 +53,17 @@ body {
 
   }
 
+  #menu-contact-buttons{
+    left: 90px;
+  }
+
   .menu-thumb-button {
     margin-bottom: 10px;
   }
 
   #menu-mobile-buttons,
-  #menu-thumbs-buttons {
+  #menu-thumbs-buttons,
+  #menu-contact-buttons{
     position: fixed;
     display: flex;
     flex-direction: column;

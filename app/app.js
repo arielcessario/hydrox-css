@@ -31,6 +31,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.ypos = 0;
     vm.openMobile = false;
     vm.openThumbs = false;
+    vm.openContact = false;
     vm.hideText = false;
     vm.scrollTo = scrollTo;
     vm.scrollToMobile = scrollToMobile;

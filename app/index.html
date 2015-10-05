@@ -48,22 +48,29 @@
              class="menu-thumb-button"
              width="75">
     </div>
+
+    <div id="menu-contact-buttons" ng-if="mainCtrl.openContact">
+        <button class="mobile-button" ng-click="mainCtrl.openContact = false;">Contacto
+        </button>
+        <button class="mobile-button" ng-click="mainCtrl.openContact = false;">Descargas</button>
+    </div>
     <div id="menu-mobile">
         <a href="" id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
            ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
+        </a>
 
-            <a href="" id="button-contacto" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
-               ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
+        <a href="" id="button-contacto" ng-click="mainCtrl.openContact = !mainCtrl.openContact"
+           ng-mouseover="mainCtrl.openContact = false;" class="hi-icon">
 
-            </a>
+        </a>
 
 
-            <a href="" id="button-centro" ng-click="mainCtrl.hideText = !mainCtrl.hideText" class="hi-icon">
-            </a>
+        <a href="" id="button-centro" ng-click="mainCtrl.hideText = !mainCtrl.hideText" class="hi-icon">
+        </a>
 
-            <!--<div id="menu-mobile-spacer"></div>-->
-            <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"
-                    ng-mouseover="mainCtrl.openThumbs = false;" class="hi-icon"></button>
+        <!--<div id="menu-mobile-spacer"></div>-->
+        <button id="button-derecha" ng-click="mainCtrl.openMobile = !mainCtrl.openMobile"
+                ng-mouseover="mainCtrl.openThumbs = false;" class="hi-icon"></button>
     </div>
     <!--<div id="menu-desktop">-->
     <!--<div class="menu-button" ng-click="mainCtrl.scrollTo(1100);">Zapatillas</div>-->
