@@ -408,12 +408,14 @@ body {
     position: absolute;
     width: 360px;
     max-width: 360px;
+
+    align-items: center;
     //margin-left: -180px;
   }
   display: flex;
   //margin-top: 100px;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   max-height: 300px;
   min-height: 300px;
