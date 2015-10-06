@@ -115,6 +115,10 @@ if ($decoded != null) {
         getHistoricoPedidos($_GET["cliente_id"]);
     } elseif ($function == 'getClientes') {
         getClientes();
+    } elseif ($function == 'getFotos') {
+        getFotos();
+    } elseif ($function == 'getCatalogos') {
+        getCatalogos();
     }
 }
 
@@ -179,6 +183,20 @@ function randomPassword()
         $pass[] = $alphabet[$n];
     }
     return implode($pass); //turn the array into a string
+}
+
+function getFotos()
+{
+    $directorio = './fotos';
+    $ficheros1 = array_diff(scandir($directorio), array('..', '.'));
+    echo json_encode($ficheros1);
+}
+
+function getCatalogos()
+{
+    $directorio = './catalogos';
+    $ficheros1 = array_diff(scandir($directorio), array('..', '.'));
+    echo json_encode($ficheros1);
 }
 
 

@@ -38,6 +38,15 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.sendMail = sendMail;
     vm.thumbs = [];
 
+    var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+    vm.isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+    vm.isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    // At least Safari 3+: "[object HTMLElementConstructor]"
+    vm.isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+    vm.isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
+
+
     vm.img02 = 'zapa_neoprene_01.gif';
     vm.img03 = 'bota_01.gif';
     vm.img04 = 'medias_neoprene_01.gif';
@@ -57,30 +66,11 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.contactoError = false;
 
     vm.fotoDownload = '';
-    vm.fotosDownload = [
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'}
-    ];
+    vm.fotosDownload = [];
+
 
     vm.catalogoDownload = '';
-    vm.catalogosDownload = [
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'},
-        {texto: 'ZAPATILLA DE NEOPRENE 3MM', link: 'zapa_neoprene_01.gif'}
-    ];
+    vm.catalogosDownload = [];
 
 
     vm.usuario = {
@@ -101,11 +91,43 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.downloadURI = downloadURI;
     vm.updateUsuario = updateUsuario;
     vm.goToAdmin = goToAdmin;
+    vm.getFotos = getFotos;
+    vm.getCatalogos = getCatalogos;
     vm.usuarios = [];
     vm.logged = undefined;
     vm.admin = 'contacto';
 
-    function goToAdmin(screen){
+
+
+    function getFotos(){
+        return $http.get('cliente.php?function=getFotos')
+            .success(function(data){
+                var array = Object.keys(data).map(function(val) { return data[val] });
+
+                for(var i = 0; i<array.length; i++){
+                    vm.fotosDownload.push({texto:array[i].split('.')[0].replace('_', ' ').toUpperCase(),link:array[i]})
+                }
+            })
+            .error(function(data){
+                console.log(data);
+            })
+    }
+    function getCatalogos(){
+        return $http.get('cliente.php?function=getCatalogos')
+            .success(function(data){
+                var array = Object.keys(data).map(function(val) { return data[val] });
+
+                for(var i = 0; i<array.length; i++){
+                    vm.catalogosDownload.push({texto:array[i].split('.')[0].replace('_', ' ').toUpperCase(),link:array[i]})
+                }
+            })
+            .error(function(data){
+                console.log(data);
+            })
+    }
+
+
+    function goToAdmin(screen) {
         scrollToMobile(11);
         vm.admin = screen;
     }
@@ -133,7 +155,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         vm.usuario.nombre = vm.logged.data.nombre;
         vm.usuario.mail = vm.logged.data.userName;
         vm.usuario.cliente_id = vm.logged.data.userId;
-
+        getFotos();
+        getCatalogos();
 
         if (jwtHelper.decodeToken(store.get('jwt')).data.rol == 1) {
             LoginService.getClientes(function (data) {
@@ -302,6 +325,9 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
 
                 vm.logged = jwtHelper.decodeToken(store.get('jwt'));
                 vm.admin = 'admin';
+
+                getFotos();
+                getCatalogos();
             } else {
                 //LoginState.isLogged = false;
                 AcUtilsService.validations('password', 'Mail o password incorrectos');
@@ -514,6 +540,14 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     secciones[i].style.marginTop = (mainWidth / 8) + 'px';
                 } else {
                     // Todo lo que está acá solo aplica al formulario final
+                }
+
+
+                // Solo para firefox
+                if (vm.isFirefox) {
+                    if (i != 0 && i != secciones.length - 1) {
+                        secciones[i].style.marginLeft = (-mainWidth / 2) + 'px';
+                    }
                 }
             }
         }

@@ -72,12 +72,6 @@ body {
   font: 100% / 1.5 Arial;
 }
 
-/* line 16, ../sass/style.scss */
-::-webkit-scrollbar {
-  width: 0em;
-  height: 0em;
-}
-
 /* line 21, ../sass/style.scss */
 * {
   margin: 0;
