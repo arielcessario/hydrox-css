@@ -98,30 +98,40 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.admin = 'contacto';
 
 
-
-    function getFotos(){
+    function getFotos() {
         return $http.get('cliente.php?function=getFotos')
-            .success(function(data){
-                var array = Object.keys(data).map(function(val) { return data[val] });
+            .success(function (data) {
+                var array = Object.keys(data).map(function (val) {
+                    return data[val]
+                });
 
-                for(var i = 0; i<array.length; i++){
-                    vm.fotosDownload.push({texto:array[i].split('.')[0].replace('_', ' ').toUpperCase(),link:array[i]})
+                for (var i = 0; i < array.length; i++) {
+                    vm.fotosDownload.push({
+                        texto: array[i].split('.')[0].replace('_', ' ').toUpperCase(),
+                        link: array[i]
+                    })
                 }
             })
-            .error(function(data){
+            .error(function (data) {
                 console.log(data);
             })
     }
-    function getCatalogos(){
-        return $http.get('cliente.php?function=getCatalogos')
-            .success(function(data){
-                var array = Object.keys(data).map(function(val) { return data[val] });
 
-                for(var i = 0; i<array.length; i++){
-                    vm.catalogosDownload.push({texto:array[i].split('.')[0].replace('_', ' ').toUpperCase(),link:array[i]})
+    function getCatalogos() {
+        return $http.get('cliente.php?function=getCatalogos')
+            .success(function (data) {
+                var array = Object.keys(data).map(function (val) {
+                    return data[val]
+                });
+
+                for (var i = 0; i < array.length; i++) {
+                    vm.catalogosDownload.push({
+                        texto: array[i].split('.')[0].replace('_', ' ').toUpperCase(),
+                        link: array[i]
+                    })
                 }
             })
-            .error(function(data){
+            .error(function (data) {
                 console.log(data);
             })
     }
@@ -235,8 +245,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         }
 
 
-        vm.usuario.nombre = vm.usuario.mail;
         vm.usuario.telefono = vm.usuario.mail;
+        vm.usuario.apellido = vm.usuario.mail;
         vm.usuario.direccion = vm.usuario.mail;
         if (conErrores) {
             return;
@@ -311,7 +321,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         }
 
         LoginService.login(vm.mail, vm.password, function (data) {
-
+            console.log(data);
             if (data != -1) {
                 //LoginState.isLogged = true;
                 store.set('jwt', data);
