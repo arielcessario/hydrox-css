@@ -448,7 +448,7 @@
 
                     <div id="catalogo" ng-if="mainCtrl.logged != undefined && mainCtrl.admin == 'admin'">
 
-                        <div class="form-titulo">DESCARGA DE FOTOGRAFIAS</div>
+                        <div class="form-titulo2">DESCARGA DE FOTOGRAFIAS</div>
                         <div class="admin-inputs">
                             <select name="" id="fotos"
                                     ng-model="mainCtrl.fotoDownload"
@@ -456,7 +456,7 @@
                         </div>
                         <button ng-click="mainCtrl.downloadURI('foto');">BAJAR</button>
 
-                        <div class="form-titulo">DESCARGA DE MATERIAL</div>
+                        <div class="form-titulo2">DESCARGA DE MATERIAL</div>
                         <div class="admin-inputs">
                             <select name="" id="catalogos"
                                     ng-model="mainCtrl.catalogoDownload"
@@ -464,7 +464,7 @@
                         </div>
                         <button ng-click="mainCtrl.downloadURI('catalogo');">BAJAR</button>
 
-                        <div class="form-titulo">MODIFICAR DATOS PERSONALES</div>
+                        <div class="form-titulo2">MODIFICAR DATOS PERSONALES</div>
                         <div class="admin-inputs">
                             <div class="form-input"><span>NOMBRE</span>
                                 <input type="text" id="nombre" ng-model="mainCtrl.usuario.nombre">

@@ -1029,6 +1029,17 @@ body {
         font-weight: bolder;
       }
 
+      .form-titulo2 {
+        font-family: 'Bebas Regular', sans-serif;
+        font-size: 35px;
+        font-weight: lighter;
+        margin-bottom: 20px;
+        margin-top: 15px;
+
+      }
+
+
+
       .form-input {
         display: flex;
         flex-direction: row;
@@ -1073,6 +1084,8 @@ body {
 
 
 .administracion-button-bar button,
+#catalogo button,
+#form button,
 .nuevo-usuario-button-bar button{
   background-color: transparent;
   -webkit-border-radius: 5px;
@@ -1082,10 +1095,22 @@ body {
   font-family: 'Bebas Regular', sans-serif;
   padding-left: 5px;
   padding-right: 5px;
-  margin: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
   }
 
+input{
+  font-family: 'Bebas Regular', sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  color: #ff3e17;
+
+}
+
 .administracion-button-bar button:hover,
+#catalogo button:hover,
+#form button:hover,
 .nuevo-usuario-button-bar button:hover{
   background-color: #ff3e17;
   font-weight: bolder;

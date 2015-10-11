@@ -50,11 +50,11 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.img02 = 'zapa_neoprene_01.gif';
     vm.img03 = 'bota_01.gif';
     vm.img04 = 'medias_neoprene_01.gif';
-    vm.img05 = 'jardinero_01.gif';
-    vm.img06 = 'pantalon_neoprene_01.gif';
+    vm.img05 = 'jardinero_04.gif';
+    vm.img06 = 'pantalon_neoprene_04.gif';
     vm.img07 = 'calza_04.gif';
     vm.img08 = 'remera_neoprene_02.gif';
-    vm.img09 = 'remera_lycra_01.gif';
+    vm.img09 = 'remera_lycra_04.gif';
     vm.img10 = 'barbijo.gif';
     vm.img11 = 'milton_01.gif';
 
@@ -783,7 +783,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     vm.img = 'zapa_neoprene_01.gif';
                     vm.thumbs = [
                         {big: 'zapa_neoprene_01.gif', small: 'zapa_neoprene_01t.png', img: 'img02'},
-                        {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png', img: 'img02'}
+                        {big: 'Zapa_neoprene_02.gif', small: 'Zapa_neoprene_02t.png', img: 'img02'},
+                        {big: 'bota_02.gif', small: 'bota_02t.png', img: 'img02'}
                     ];
                     break;
                 case 3:
@@ -814,7 +815,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     vm.hideText = false;
                     //console.log('entra');
                     vm.seccion = 'seccion-05';
-                    vm.img = 'jardinero_01.gif';
+                    vm.img = 'jardinero_04.gif';
                     vm.thumbs = [
                         {big: 'jardinero_01.gif', small: 'jardinero_01t.png', img: 'img05'},
                         {big: 'jardinero_02.gif', small: 'jardinero_02t.png', img: 'img05'},
@@ -827,7 +828,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     vm.hideText = false;
                     //console.log('entra');
                     vm.seccion = 'seccion-06';
-                    vm.img = 'pantalon_neoprene_01.gif';
+                    vm.img = 'pantalon_neoprene_04.gif';
                     vm.thumbs = [
                         {big: 'pantalon_neoprene_01.gif', small: 'pantalon_neoprene_01t.png', img: 'img06'},
                         {big: 'pantalon_neoprene_02.gif', small: 'pantalon_neoprene_02t.png', img: 'img06'},
@@ -865,7 +866,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                     vm.hideText = false;
                     //console.log('entra');
                     vm.seccion = 'seccion-09';
-                    vm.img = 'remera_lycra_01.gif';
+                    vm.img = 'remera_lycra_04.gif';
                     vm.thumbs = [
                         {big: 'remera_lycra_01.gif', small: 'remera_lycra_01t.png', img: 'img09'},
                         {big: 'remera_lycra_02.gif', small: 'remera_lycra_02t.png', img: 'img09'},

@@ -1144,12 +1144,20 @@ body {
   font-weight: bolder;
 }
 /* line 1032, ../sass/style.scss */
+#seccion-12 #form #contacto .form-titulo2, #seccion-12 #form #nuevo-usuario .form-titulo2, #seccion-12 #form #ingreso .form-titulo2, #seccion-12 #form #catalogo .form-titulo2 {
+  font-family: 'Bebas Regular', sans-serif;
+  font-size: 35px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+/* line 1043, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input, #seccion-12 #form #nuevo-usuario .form-input, #seccion-12 #form #ingreso .form-input, #seccion-12 #form #catalogo .form-input {
   display: flex;
   flex-direction: row;
   margin: 10px 0px 10px 0px;
 }
-/* line 1036, ../sass/style.scss */
+/* line 1047, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input input, #seccion-12 #form #nuevo-usuario .form-input input, #seccion-12 #form #ingreso .form-input input, #seccion-12 #form #catalogo .form-input input {
   height: 25px;
   width: 100%;
@@ -1159,20 +1167,20 @@ body {
   border-radius: 10px;
   color: black;
 }
-/* line 1045, ../sass/style.scss */
+/* line 1056, ../sass/style.scss */
 #seccion-12 #form #contacto .form-input span, #seccion-12 #form #nuevo-usuario .form-input span, #seccion-12 #form #ingreso .form-input span, #seccion-12 #form #catalogo .form-input span {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 25px;
   font-weight: bold;
   margin-right: 5px;
 }
-/* line 1053, ../sass/style.scss */
+/* line 1064, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea, #seccion-12 #form #nuevo-usuario .form-textarea, #seccion-12 #form #ingreso .form-textarea, #seccion-12 #form #catalogo .form-textarea {
   display: flex;
   flex-direction: column;
   margin: 10px 0px 5px 0px;
 }
-/* line 1057, ../sass/style.scss */
+/* line 1068, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea textarea, #seccion-12 #form #nuevo-usuario .form-textarea textarea, #seccion-12 #form #ingreso .form-textarea textarea, #seccion-12 #form #catalogo .form-textarea textarea {
   -webkit-border-radius: 10px;
   min-height: 150px;
@@ -1180,15 +1188,17 @@ body {
   border-radius: 10px;
   color: black;
 }
-/* line 1064, ../sass/style.scss */
+/* line 1075, ../sass/style.scss */
 #seccion-12 #form #contacto .form-textarea span, #seccion-12 #form #nuevo-usuario .form-textarea span, #seccion-12 #form #ingreso .form-textarea span, #seccion-12 #form #catalogo .form-textarea span {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
 
-/* line 1075, ../sass/style.scss */
+/* line 1086, ../sass/style.scss */
 .administracion-button-bar button,
+#catalogo button,
+#form button,
 .nuevo-usuario-button-bar button {
   background-color: transparent;
   -webkit-border-radius: 5px;
@@ -1198,17 +1208,29 @@ body {
   font-family: 'Bebas Regular', sans-serif;
   padding-left: 5px;
   padding-right: 5px;
-  margin: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
-/* line 1088, ../sass/style.scss */
+/* line 1103, ../sass/style.scss */
+input {
+  font-family: 'Bebas Regular', sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  color: #ff3e17;
+}
+
+/* line 1111, ../sass/style.scss */
 .administracion-button-bar button:hover,
+#catalogo button:hover,
+#form button:hover,
 .nuevo-usuario-button-bar button:hover {
   background-color: #ff3e17;
   font-weight: bolder;
 }
 
-/* line 1095, ../sass/style.scss */
+/* line 1120, ../sass/style.scss */
 .form-visible-remove,
 .contenedor-inicio-visible-remove,
 .contenedor-inicio-visible-remove {
@@ -1217,7 +1239,7 @@ body {
   animation: form-hide .8s;
 }
 
-/* line 1104, ../sass/style.scss */
+/* line 1129, ../sass/style.scss */
 .form-visible,
 .contenedor-inicio-visible {
   -webkit-animation: form-show .8s;
@@ -1244,14 +1266,14 @@ body {
     opacity: 0;
   }
 }
-/* line 1131, ../sass/style.scss */
+/* line 1156, ../sass/style.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 1137, ../sass/style.scss */
+/* line 1162, ../sass/style.scss */
 .hi-icon {
   display: inline-block;
   font-size: 0px;
@@ -1270,7 +1292,7 @@ body {
   transition: transform ease-out 0.1s, background 0.2s;
 }
 
-/* line 1155, ../sass/style.scss */
+/* line 1180, ../sass/style.scss */
 .hi-icon:after {
   content: "\e00f";
   top: 0;
@@ -1294,7 +1316,7 @@ body {
   border-radius: 80px;
 }
 
-/* line 1180, ../sass/style.scss */
+/* line 1205, ../sass/style.scss */
 .hi-icon:hover {
   background: rgba(255, 255, 255, 0.05);
   -webkit-transform: scale(0.93);
@@ -1304,7 +1326,7 @@ body {
   color: #fff;
 }
 
-/* line 1189, ../sass/style.scss */
+/* line 1214, ../sass/style.scss */
 .hi-icon:hover:after {
   z-index: 400;
   content: "";
