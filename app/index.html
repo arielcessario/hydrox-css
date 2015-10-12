@@ -50,8 +50,12 @@
     </div>
 
     <div id="menu-contact-buttons" ng-if="mainCtrl.openContact">
-        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('contacto');">Contacto</button>
-        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('admin');">Descargas</button>
+        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('contacto'); mainCtrl.openContact = false;">
+            Contacto
+        </button>
+        <button class="mobile-button" ng-click="mainCtrl.goToAdmin('admin');mainCtrl.openContact = false;">
+            Descargas
+        </button>
     </div>
     <div id="menu-mobile">
         <a href="" id="button-izquierda" ng-click="mainCtrl.openThumbs = !mainCtrl.openThumbs"
