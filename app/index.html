@@ -94,8 +94,8 @@
          class="titulo"/>
 </div>
 
-<div ng-if="mainCtrl.isMobile" id="nav-right"></div>
-<div ng-if="mainCtrl.isMobile" id="nav-left"></div>
+<div ng-if="!mainCtrl.isMobile" ng-click="mainCtrl.adelante();" id="nav-right">></div>
+<div ng-if="!mainCtrl.isMobile" ng-click="mainCtrl.atras();" id="nav-left"><</div>
 
 <div class="parallax " id="main-container">
     <div id="group1" class="parallax__group">

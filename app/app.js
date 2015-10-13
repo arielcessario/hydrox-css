@@ -93,9 +93,21 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.goToAdmin = goToAdmin;
     vm.getFotos = getFotos;
     vm.getCatalogos = getCatalogos;
+    vm.adelante = adelante;
+    vm.atras = atras;
     vm.usuarios = [];
     vm.logged = undefined;
     vm.admin = 'contacto';
+
+
+    function adelante() {
+        scrollTo(mainContainer[0].scrollLeft + mainWidth);
+    }
+
+    function atras() {
+
+        scrollTo(mainContainer[0].scrollLeft - mainWidth);
+    }
 
 
     function getFotos() {

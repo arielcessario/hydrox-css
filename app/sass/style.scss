@@ -13,10 +13,10 @@ body {
   font: 100% / 1.5 Arial;
 }
 
-//::-webkit-scrollbar {
-//  width: 1em;
-//  height: 1em;
-//}
+::-webkit-scrollbar {
+  width: 0em;
+  height: 0em;
+}
 
 * {
   margin: 0;
@@ -32,7 +32,15 @@ body {
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
+  z-index: 2000;
 
+}
+
+#nav-right{
+  right: 0;
+}
+#nav-left{
+  left: 0;
 }
 
 #menu {
