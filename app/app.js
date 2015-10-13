@@ -161,13 +161,14 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
             uri = './img/' + vm.fotoDownload.link;
             name = vm.fotoDownload.texto;
         } else {
-            uri = './img/' + vm.catalogoDownload.link;
-            name = vm.catalogoDownload.texto;
+            uri = './catalogos/' + vm.catalogoDownload.link;
+            name = vm.catalogoDownload.link;
         }
 
         var link = document.createElement("a");
         link.download = name;
         link.href = uri;
+        //console.log(link);
         link.click();
     }
 
