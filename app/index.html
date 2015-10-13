@@ -458,17 +458,9 @@
                         <div class="admin-inputs">
                             <select name="" id="fotos"
                                     ng-model="mainCtrl.fotoDownload"
-                                    ng-options="foto.texto for foto in mainCtrl.fotosDownload"></select>
+                                    ng-options="foto.texto for foto in mainCtrl.descargasDownload"></select>
                         </div>
                         <button ng-click="mainCtrl.downloadURI('foto');">BAJAR</button>
-
-                        <div class="form-titulo2">DESCARGA DE MATERIAL</div>
-                        <div class="admin-inputs">
-                            <select name="" id="catalogos"
-                                    ng-model="mainCtrl.catalogoDownload"
-                                    ng-options="catalogo.texto for catalogo in mainCtrl.catalogosDownload"></select>
-                        </div>
-                        <button ng-click="mainCtrl.downloadURI('catalogo');">BAJAR</button>
 
                         <div class="form-titulo2">MODIFICAR DATOS PERSONALES</div>
                         <div class="admin-inputs">

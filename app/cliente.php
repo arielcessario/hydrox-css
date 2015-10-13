@@ -117,8 +117,8 @@ if ($decoded != null) {
         getClientes();
     } elseif ($function == 'getFotos') {
         getFotos();
-    } elseif ($function == 'getCatalogos') {
-        getCatalogos();
+    } elseif ($function == 'getDescargas') {
+        getDescargas();
     }
 }
 
@@ -192,9 +192,9 @@ function getFotos()
     echo json_encode($ficheros1);
 }
 
-function getCatalogos()
+function getDescargas()
 {
-    $directorio = './catalogos';
+    $directorio = './descargas';
     $ficheros1 = array_diff(scandir($directorio), array('..', '.'));
     echo json_encode($ficheros1);
 }

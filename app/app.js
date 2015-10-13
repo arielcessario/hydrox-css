@@ -69,8 +69,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.fotosDownload = [];
 
 
-    vm.catalogoDownload = '';
-    vm.catalogosDownload = [];
+    vm.descargaDownload = '';
+    vm.descargasDownload = [];
 
 
     vm.usuario = {
@@ -91,8 +91,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     vm.downloadURI = downloadURI;
     vm.updateUsuario = updateUsuario;
     vm.goToAdmin = goToAdmin;
-    vm.getFotos = getFotos;
-    vm.getCatalogos = getCatalogos;
+    vm.getDescargas = getDescargas;
     vm.adelante = adelante;
     vm.atras = atras;
     vm.usuarios = [];
@@ -109,35 +108,16 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         scrollTo(mainContainer[0].scrollLeft - mainWidth);
     }
 
-
-    function getFotos() {
-        return $http.get('cliente.php?function=getFotos')
+    function getDescargas() {
+        return $http.get('cliente.php?function=getDescargas')
             .success(function (data) {
+
                 var array = Object.keys(data).map(function (val) {
                     return data[val]
                 });
 
                 for (var i = 0; i < array.length; i++) {
-                    vm.fotosDownload.push({
-                        texto: array[i].split('.')[0].replace('_', ' ').toUpperCase(),
-                        link: array[i]
-                    })
-                }
-            })
-            .error(function (data) {
-                console.log(data);
-            })
-    }
-
-    function getCatalogos() {
-        return $http.get('cliente.php?function=getCatalogos')
-            .success(function (data) {
-                var array = Object.keys(data).map(function (val) {
-                    return data[val]
-                });
-
-                for (var i = 0; i < array.length; i++) {
-                    vm.catalogosDownload.push({
+                    vm.descargasDownload.push({
                         texto: array[i].split('.')[0].replace('_', ' ').toUpperCase(),
                         link: array[i]
                     })
@@ -157,13 +137,8 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
     function downloadURI(origen) {
         var name = '';
         var uri = '';
-        if (origen == 'foto') {
-            uri = './img/' + vm.fotoDownload.link;
-            name = vm.fotoDownload.texto;
-        } else {
-            uri = './catalogos/' + vm.catalogoDownload.link;
-            name = vm.catalogoDownload.link;
-        }
+        uri = './descargas/' + vm.fotoDownload.link;
+        name = vm.fotoDownload.link;
 
         var link = document.createElement("a");
         link.download = name;
@@ -178,8 +153,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
         vm.usuario.nombre = vm.logged.data.nombre;
         vm.usuario.mail = vm.logged.data.userName;
         vm.usuario.cliente_id = vm.logged.data.userId;
-        getFotos();
-        getCatalogos();
+        getDescargas();
 
         if (jwtHelper.decodeToken(store.get('jwt')).data.rol == 1) {
             LoginService.getClientes(function (data) {
@@ -350,7 +324,7 @@ function MainController($scope, $timeout, $http, store, LoginService, AcUtilsSer
                 vm.admin = 'admin';
 
                 getFotos();
-                getCatalogos();
+                getDescargas();
             } else {
                 //LoginState.isLogged = false;
                 AcUtilsService.validations('password', 'Mail o password incorrectos');
