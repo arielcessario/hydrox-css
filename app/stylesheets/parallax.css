@@ -89,5 +89,10 @@
   -webkit-transform: translateZ(-2000px) scale(7.66);
   transform: translateZ(-2000px) scale(7.66);
   z-index: 2;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
   background: white url("../img/degradado.svg") 50% 50% repeat;
 }
