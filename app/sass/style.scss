@@ -3,6 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Anton);
 @import "compass";
 
 body, html {
@@ -80,6 +81,7 @@ body {
   border-radius: 50px;
   z-index: 2000;
   background-size: contain;
+
 }
 
 #nav-right{
@@ -89,9 +91,8 @@ body {
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
   @include animation(bounce 2s infinite);
+  }
 
-
-}
 #nav-left{
   left: 0;
   @include animation(bounce2 2s infinite);
@@ -100,6 +101,7 @@ body {
   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   transform: rotate(90deg);
 }
+
 
 #menu {
   //#menu-desktop {
@@ -204,6 +206,7 @@ body {
     //background-color: red;
     background: url("../img/logo_secciones.svg") 50% 50% no-repeat;
     right: 30px;
+    outline: none;
     @media (max-width: 700px) {
       right: 5px;
 
@@ -544,7 +547,7 @@ body {
   //top: 10%;
   //left: 70%;
   font-family: 'Bebas Regular', sans-serif;
-  color: white;
+  color: #ff3e17;
   font-size: 35px;
   font-weight: bolder;
   text-transform: uppercase;
@@ -556,14 +559,14 @@ body {
   //position: absolute;
   //top: 30%;
   //left: 70%;
-  font-family: 'Bebas Regular', sans-serif;
-  color: white;
+  font-family: 'Anton', sans-serif;
+  color: #ff4d0e;
   line-height: 60px;
   text-align: left;
   margin-left: 20px;
   //width: 600px;
   font-size: 62px;
-  font-weight: bolder;
+  //font-weight: Bolder;
   text-transform: uppercase;
   position: static;
   @media (max-width: 600px) {
@@ -589,7 +592,7 @@ body {
   font-family: 'Bebas Regular', sans-serif;
   font-size: 35px;
   font-variant: small-caps;
-  color: white;
+  color: lightgrey;
   position: static;
   @media (max-width: 600px) {
     font-size: 26px;
@@ -609,7 +612,22 @@ body {
 
 }
 
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .contenedor-logo-inicio {
+  animation: pulse 5s infinite;
   display: flex;
   zoom: 180%;
   width: 550px;
@@ -618,9 +636,10 @@ body {
   align-items: center;
   @media(max-width: 700px) {
     zoom: 60%;
-    margin-top: 100px;
     max-width: 360px;
     text-align: center;
+    margin-top: 25%;
+    margin-left: 12%;
   }
 }
 
@@ -630,7 +649,11 @@ body {
   height: 54px;
 
   @media(max-width: 500px) {
-    margin-bottom: 20px;
+    zoom: 1.5;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+
   }
 
 }
@@ -640,7 +663,10 @@ body {
   width: 189px;
   height: 142px;
   @media(max-width: 500px) {
-    margin-bottom: 20px;
+    zoom: 2;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 10%;
   }
 }
 
@@ -650,8 +676,10 @@ body {
   width: 301px;
   height: 71px;
   @media(max-width: 500px) {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    zoom: 1.5;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
   }
 }
 
@@ -1046,9 +1074,9 @@ body {
   }
 
   #form {
-    min-width: 360px;
-    max-width: 500px;
-    width: 500px;
+    min-width: 500px;
+    max-width: 600px;
+    width: 600px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
