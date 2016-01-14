@@ -22,7 +22,7 @@
 <body ng-controller="MainController as mainCtrl">
 
 <div id="menu">
-    <div id="menu-mobile-buttons" ng-if="mainCtrl.openMobile">
+    <div id="menu-mobile-buttons">
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(1);mainCtrl.openMobile = false;">Zapatillas
         </button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(2);mainCtrl.openMobile = false;">Bota</button>
@@ -40,7 +40,8 @@
         </button>
         <button class="mobile-button" ng-click="mainCtrl.scrollToMobile(10);mainCtrl.openMobile = false;">Miton</button>
     </div>
-    <div id="menu-thumbs-buttons" ng-if="mainCtrl.openThumbs">
+
+    <div id="menu-thumbs-buttons">
         <img ng-repeat="thumb in mainCtrl.thumbs"
              ng-click="mainCtrl.selectImage(thumb.big, thumb.img); mainCtrl.openThumbs = false;"
              ng-src="{{'img/'+thumb.small}}"
@@ -48,6 +49,7 @@
              class="menu-thumb-button"
              width="75">
     </div>
+
 
     <div id="menu-contact-buttons" ng-if="mainCtrl.openContact">
         <button class="mobile-button" ng-click="mainCtrl.goToAdmin('contacto'); mainCtrl.openContact = false;">
@@ -62,13 +64,7 @@
            ng-mouseover="mainCtrl.openMobile = false;" class="hi-icon">
         </a>
 
-        <a href="" id="button-contacto" ng-click="mainCtrl.openContact = !mainCtrl.openContact"
-           ng-mouseover="mainCtrl.openContact = false;" class="hi-icon">
-
-        </a>
-
-
-        <a href="" id="button-centro" ng-click="mainCtrl.hideText = !mainCtrl.hideText" class="hi-icon">
+               <a href="" id="button-centro" ng-click="mainCtrl.hideText = !mainCtrl.hideText" class="hi-icon">
         </a>
 
         <!--<div id="menu-mobile-spacer"></div>-->
@@ -92,6 +88,13 @@
 <div class="upper-container">
     <img src="img/logo_seccion.png" ng-if="mainCtrl.header" id="seccion-02-titulo"
          class="titulo"/>
+
+    <div class="contenedor-upper">
+    <button class="boton-contacto" ng-click="mainCtrl.goToAdmin('contacto'); mainCtrl.openContact = false;">
+    </button>
+    <button class="boton-ingreso" ng-click="mainCtrl.goToAdmin('admin');mainCtrl.openContact = false;">
+    </button>
+</div>
 </div>
 
 <div ng-if="!mainCtrl.isMobile" ng-click="mainCtrl.adelante();" id="nav-right"></div>
@@ -115,9 +118,9 @@
             <div id="seccion-01" class="seccion">
                 <div class="contenedor-inicio">
                     <div class="contenedor-logo-inicio">
-                        <img class="hydrox-inicio" src="img/hydrox.png">
-                        <img class="x-inicio" src="img/x.png">
-                        <img class="foot-inicio" src="img/foot.png">
+                        <img class="hydrox-inicio" src="img/hydrox.svg">
+                        <img class="x-inicio" src="img/x.svg">
+                        <img class="foot-inicio" src="img/foot.svg">
                     </div>
                 </div>
             </div>
@@ -135,7 +138,7 @@
                         <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-sub-titulo"
                              class="sub-titulo">
                             ZAPATILLA DE <br>
-                            NEOPRENE DE 3MM <br>
+                            NEOPRENE 3MM <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-02' || mainCtrl.isMobile" id="seccion-02-detalle"
                              class="detalle">
@@ -161,7 +164,7 @@
                         <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-sub-titulo"
                              class="sub-titulo">
                             BOTA LINUX <br>
-                            NEOPRENE DE 4MM <br>
+                            NEOPRENE 4MM <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-03' || mainCtrl.isMobile" id="seccion-03-detalle"
                              class="detalle">
@@ -187,7 +190,7 @@
                         <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-sub-titulo"
                              class="sub-titulo">
                             Medias estanca <br>
-                            neoprene de 3mm <br>
+                            neoprene 3mm <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-04' || mainCtrl.isMobile" id="seccion-04-detalle"
                              class="detalle">
@@ -211,8 +214,8 @@
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                         <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-sub-titulo"
                              class="sub-titulo">
-                            Jardinero de neoprene <br>
-                            de 3m: <br>
+                            Jardinero de <br>
+                            neoprene 3m: <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-05' || mainCtrl.isMobile" id="seccion-05-detalle"
                              class="detalle">
@@ -240,8 +243,8 @@
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                         <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-sub-titulo"
                              class="sub-titulo">
-                            Pantalon de neoprene <br>
-                            de 3 mm: <br>
+                            Pantalon de <br>
+                            neoprene 3 mm: <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-06' || mainCtrl.isMobile" id="seccion-06-detalle"
                              class="detalle">
@@ -265,8 +268,8 @@
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                         <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-sub-titulo"
                              class="sub-titulo">
-                            Calza de neoprene <br>
-                            de 3mm: <br>
+                            Calza de <br>
+                            neoprene 3mm: <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-07' || mainCtrl.isMobile" id="seccion-07-detalle"
                              class="detalle">
@@ -344,8 +347,8 @@
                     <div class="right-container" ng-class="{'text-hidden': mainCtrl.hideText}">
                         <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-sub-titulo"
                              class="sub-titulo">
-                            Barbijo neoprene <br>
-                            3mm: <br>
+                            Barbijo <br>
+                            neoprene 3mm: <br>
                         </div>
                         <div ng-if="mainCtrl.seccion == 'seccion-10' || mainCtrl.isMobile" id="seccion-10-detalle"
                              class="detalle">
@@ -387,7 +390,7 @@
 
                 <div id="form" ng-class="{'form-visible':mainCtrl.seccion == 'seccion-12'}">
                     <div id="contacto" ng-if="mainCtrl.admin == 'contacto'">
-                        <div class="form-titulo">CONTÁCTENOS:</div>
+                        <div class="form-titulo">CONTACTO:</div>
                         <div class="form-input">
 
                             <span>NOMBRE:</span>
@@ -408,6 +411,7 @@
                         </div>
                         <div class="button-bar">
                             <button id="boton-ok" ng-click="mainCtrl.sendMail();"></button>
+
                             <span id="mensaje-ok" ng-if="mainCtrl.enviado">Mensaje enviado con éxito</span>
                             <span id="mensaje-error" ng-if="mainCtrl.contactoError">Error al enviar el mensaje, por favor escriba a </span>
                         </div>
@@ -434,6 +438,9 @@
                     </div>
 
                     <div id="ingreso" ng-if="mainCtrl.logged == undefined && mainCtrl.admin == 'admin'">
+
+                        <div class="form-titulo">INGRESO</div>
+
                         <div class="form-input">
                             <span>MAIL</span>
                             <input id="mail" type="email" ng-model="mainCtrl.mail"
@@ -478,6 +485,8 @@
                         <div class="nuevo-usuario-button-bar">
                             <button ng-click="mainCtrl.updateUsuario();">GUARDAR</button>
                             <button ng-click="">CANCELAR</button>
+                            <button ng-click="mainCtrl.logout();" ng-if="mainCtrl.logged != undefined">SALIR</button>
+
                         </div>
 
                     </div>
@@ -496,7 +505,6 @@
                         </table>
 
                     </div>
-                    <button ng-click="mainCtrl.logout();" ng-if="mainCtrl.logged != undefined">SALIR</button>
                 </div>
 
 
