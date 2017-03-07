@@ -17,14 +17,14 @@ function sendMail($email, $nombre, $mensaje, $asunto){
     $mail->Host = 'gator4184.hostgator.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'ventas@ac-desarrollos.com';                 // SMTP username
-    $mail->Password = 'ventas';                           // SMTP password
+    $mail->Password = 'ventas0_*020ventas';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;
 
     $mail->From = $email;
     $mail->FromName = $nombre;
     $mail->addAddress('arielcessario@gmail.com');     // Add a recipient
-    $mail->addAddress('juan.dilello@gmail.com');               // Name is optional
+    $mail->addAddress('juanlennox@gmail.com');               // Name is optional
     $mail->addAddress('diegoyankelevich@gmail.com');               // Name is optional
 //    $mail->addReplyTo('info@example.com', 'Information');
 //    $mail->addCC('cc@example.com');
