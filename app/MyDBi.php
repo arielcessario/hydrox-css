@@ -118,9 +118,8 @@ class MysqliDb
      * @param string $db
      * @param int $port
      */
-//    public function __construct($host = 'localhost', $username = 'root', $password = 'concentrador', $db = 'hydrox', $port = NULL) {
-    public function __construct($host = '192.185.4.175', $username = 'arielces_hydrox', $password = 'I]04v28uW+9x', $db = 'arielces_hydrox', $port = NULL){
-
+   public function __construct($host = 'localhost', $username = 'root', $password = 'concentrador', $db = 'hydrox', $port = NULL) {
+   
 
         $this->host = $host;
         $this->username = $username;
